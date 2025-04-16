@@ -42,4 +42,10 @@
       filter: blur(0);
     }
   }
+.text-gradient {
+  @apply text-transparent bg-gradient-to-b from-shark-900 to-black dark:from-white dark:to-shark-200 bg-clip-text;
+}
+.text-gradient-inverted {
+  @apply text-transparent bg-gradient-to-b from-white to-shark-200 dark:from-shark-900 dark:to-black bg-clip-text;
+}
 }
