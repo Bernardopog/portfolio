@@ -31,4 +31,15 @@
   --color-shark-800: hsl(0, 0%, 27%);
   --color-shark-900: hsl(0, 0%, 24%);
   --color-shark-950: hsl(0, 0%, 15%);
+
+  --animate-moving: moving 0.3s ease-in-out;
+
+  @keyframes moving {
+    from {
+      filter: blur(2px);
+    }
+    to {
+      filter: blur(0);
+    }
+  }
 }
