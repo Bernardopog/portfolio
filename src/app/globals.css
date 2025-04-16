@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
---breakpoint-xs: 25.5625rem; //425px
+  --breakpoint-xs: 25.5625rem; //425px
   --breakpoint-sm: 40rem; //640px
   --breakpoint-md: 48rem; //768px
   --breakpoint-lg: 64rem; //1024px
@@ -40,7 +40,6 @@
   --color-shark-950: hsl(0, 0%, 15%);
 
   --animate-moving: moving 0.3s ease-in-out;
-
   @keyframes moving {
     from {
       filter: blur(2px);
@@ -49,10 +48,71 @@
       filter: blur(0);
     }
   }
+
+  --animate-stroke: stroke 1.5s ease-in forwards;
+  @keyframes stroke {
+    0% {
+      stroke-dasharray: 10;
+      color: transparent;
+      stroke: black;
+    }
+    75% {
+      stroke-dasharray: 100;
+      color: transparent;
+      stroke: transparent;
+    }
+    100% {
+      color: black;
+      stroke: transparent;
+    }
+  }
+
+  --animate-stroke-dark: stroke-dark 1.5s ease-in forwards;
+  @keyframes stroke-dark {
+    0% {
+      stroke-dasharray: 10;
+      color: transparent;
+      stroke: white;
+    }
+    75% {
+      stroke-dasharray: 100;
+      color: transparent;
+      stroke: transparent;
+    }
+    100% {
+      color: white;
+      stroke: transparent;
+    }
+  }
+}
+
 .text-gradient {
   @apply text-transparent bg-gradient-to-b from-shark-900 to-black dark:from-white dark:to-shark-200 bg-clip-text;
 }
 .text-gradient-inverted {
   @apply text-transparent bg-gradient-to-b from-white to-shark-200 dark:from-shark-900 dark:to-black bg-clip-text;
 }
+
+.tech {
+  @apply stroke-1 animate-stroke dark:animate-stroke-dark;
+}
+
+@utility grid-bg-light {
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 140px 260px;
+}
+
+@utility grid-bg-dark {
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 140px 260px;
 }
