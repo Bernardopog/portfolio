@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} h-dvh w-full`}>
+      <body
+        className={`${inter.variable} h-dvh w-full grid-bg-light dark:grid-bg-dark bg-white dark:bg-black`}
+      >
         <Header />
         {children}
       </body>
