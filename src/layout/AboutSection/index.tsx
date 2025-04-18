@@ -6,7 +6,7 @@ interface IAboutSectionProps {
 
 export default function AboutSection({ onToMain }: IAboutSectionProps) {
   return (
-    <section className="overflow-hidden">
+    <section>
       Sobre
       <Button label="Voltar" action={() => onToMain()} />
     </section>

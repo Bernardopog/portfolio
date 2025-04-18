@@ -6,7 +6,7 @@ interface IProjectsSectionProps {
 
 export default function ProjectsSection({ onToMain }: IProjectsSectionProps) {
   return (
-    <section className="overflow-hidden">
+    <section>
       Project
       <Button label="Voltar" action={() => onToMain()} />
     </section>
