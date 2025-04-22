@@ -1,7 +1,7 @@
 "use client";
 
 import { Dispatch, ReactNode, SetStateAction, useState } from "react";
-type ViewTypes = "main" | "about" | "project";
+export type ViewTypes = "main" | "about" | "project";
 
 export default function SectionSwitcher({
   children,

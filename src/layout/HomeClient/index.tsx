@@ -27,6 +27,7 @@ export default function HomeClient() {
             onToMain={() => setView("main")}
             onToAbout={() => setView("about")}
             onToProject={() => setView("project")}
+            view={view}
           />
         </>
       )}
