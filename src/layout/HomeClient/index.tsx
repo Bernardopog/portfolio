@@ -4,6 +4,7 @@ import AboutSection from "@/layout/AboutSection";
 import MainSection from "@/layout/MainSection";
 import ProjectsSection from "@/layout/ProjectsSection";
 import SectionSwitcher from "@/layout/SectionSwitcher";
+import Navbar from "../Navbar";
 
 export default function HomeClient() {
   return (
@@ -22,6 +23,11 @@ export default function HomeClient() {
           <Inert isActive={view !== "project"} className="overflow-hidden">
             <ProjectsSection onToMain={() => setView("main")} />
           </Inert>
+          <Navbar
+            onToMain={() => setView("main")}
+            onToAbout={() => setView("about")}
+            onToProject={() => setView("project")}
+          />
         </>
       )}
     </SectionSwitcher>
