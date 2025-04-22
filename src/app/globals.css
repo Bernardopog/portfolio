@@ -99,6 +99,13 @@
   @apply stroke-1 animate-stroke dark:animate-stroke-dark;
 }
 
+.btn-default {
+  @apply min-w-fit py-2 px-4 border rounded-lg ease-in-out duration-300 cursor-pointer;
+}
+.btn-default-color {
+  @apply border-black/25 text-shark-900 dark:border-white/25 dark:text-shark-100 hover:bg-black/10 dark:hover:bg-white/10;
+}
+
 @utility grid-bg-light {
   background-image: linear-gradient(
       90deg,

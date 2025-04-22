@@ -1,16 +1,29 @@
 "use client";
 
+import { ReactNode } from "react";
+
 interface IButtonProps {
-  label: string;
+  label?: string;
   action: () => void;
+  icon?: ReactNode;
+  className?: string;
+  ariaLabel?: string;
 }
 
-export default function Button({ label, action }: IButtonProps) {
+export default function Button({
+  label,
+  action,
+  icon,
+  className,
+  ariaLabel,
+}: IButtonProps) {
   return (
     <button
-      className="min-w-fit py-2 px-4 border rounded-lg ease-in-out duration-300 cursor-pointer border-black/25 text-shark-900 dark:border-white/25 dark:text-shark-100 hover:bg-black/10 dark:hover:bg-white/10"
+      {...(ariaLabel && { "aria-label": ariaLabel })}
+      className={`${className ?? "btn-default btn-default-color"}`}
       onClick={() => action()}
     >
+      {icon}
       {label}
     </button>
   );
