@@ -5,12 +5,14 @@ import MainSection from "@/layout/MainSection";
 import ProjectsSection from "@/layout/ProjectsSection";
 import SectionSwitcher from "@/layout/SectionSwitcher";
 import Navbar from "../Navbar";
+import { GridBackground } from "../GridBackground";
 
 export default function HomeClient() {
   return (
     <SectionSwitcher>
       {(view, setView) => (
         <>
+          <GridBackground view={view} />
           <Inert isActive={view !== "about"} className="overflow-hidden">
             <AboutSection onToMain={() => setView("main")} />
           </Inert>

@@ -12,7 +12,7 @@ export default function MainSection({
   onToProject,
 }: IMainSectionProps) {
   return (
-    <main className="flex flex-col items-center relative w-full h-[calc(100vh-3rem-3rem)] md:h-[calc(100vh-3rem)]">
+    <main className="flex flex-col items-center relative w-full h-[calc(100dvh-3rem-3rem)] md:h-[calc(100dvh-3rem)]">
       <Presentation />
       <div className="flex mt-8 gap-x-2 min-w-fit">
         <Button label="Sobre Mim" action={() => onToAbout()} />
