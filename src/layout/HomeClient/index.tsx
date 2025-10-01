@@ -13,16 +13,16 @@ export default function HomeClient() {
       {(view, setView) => (
         <>
           <GridBackground view={view} />
-          <Inert isActive={view !== "about"} className="overflow-hidden">
+          <Inert isVisible={view === "about"} className="overflow-hidden">
             <AboutSection />
           </Inert>
-          <Inert isActive={view !== "main"} className="overflow-hidden">
+          <Inert isVisible={view === "main"} className="overflow-hidden">
             <MainSection
               onToAbout={() => setView("about")}
               onToProject={() => setView("project")}
             />
           </Inert>
-          <Inert isActive={view !== "project"} className="overflow-hidden">
+          <Inert isVisible={view === "project"} className="overflow-hidden">
             <ProjectsSection onToMain={() => setView("main")} />
           </Inert>
           <Navbar

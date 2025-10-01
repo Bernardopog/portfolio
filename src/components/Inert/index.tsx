@@ -2,17 +2,17 @@ import { ReactNode, useEffect, useRef } from "react";
 
 interface IInertProps {
   children: ReactNode;
-  isActive: boolean;
+  isVisible: boolean;
   className?: string;
 }
 
-export default function Inert({ children, isActive, className }: IInertProps) {
+export default function Inert({ children, isVisible, className }: IInertProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
-    ref.current.inert = isActive;
-  }, [isActive]);
+    ref.current.inert = !isVisible;
+  }, [isVisible]);
 
   return (
     <div ref={ref} className={className}>
