@@ -1,35 +1,30 @@
-import AboutCard from "@/ui/AboutCard";
-import { IoBook, IoCodeSlash, IoPeople, IoPerson } from "react-icons/io5";
+"use client";
+
+import { AboutPageInitial, AboutPageSpecific } from "@/components/AboutPage";
+import type { AboutViewTypes } from "@/types/AboutViewTypes";
+import { useState } from "react";
 
 export default function AboutSection() {
+  const [currentView, setCurrentView] = useState<AboutViewTypes>("none");
+
+  const handleSectionChange = (toView: AboutViewTypes) => {
+    setCurrentView(toView);
+  };
+
   return (
-    <section className="relative overflow-y-auto">
-      <div className="grid grid-cols-1 items-start place-items-center h-[calc(100dvh-3rem-3rem)] pt-4 pb-20 gap-4 overflow-y-auto sm:grid-cols-2 md:h-[calc(100dvh-3rem)]">
-        <AboutCard
-          className={"sm:self-start"}
-          title="Sobre Mim"
-          icon={<IoPerson className="text-2xl" />}
-          animationDelay={150}
-        />
-        <AboutCard
-          className={"sm:self-end"}
-          title="Hardskill"
-          icon={<IoCodeSlash className="text-2xl" />}
-          animationDelay={300}
-        />
-        <AboutCard
-          className={"sm:self-start"}
-          title="Softskill"
-          icon={<IoPeople className="text-2xl" />}
-          animationDelay={450}
-        />
-        <AboutCard
-          className={"sm:self-end"}
-          title="Acadêmico"
-          icon={<IoBook className="text-2xl" />}
-          animationDelay={600}
-        />
-      </div>
+    <section
+      className={`grid grid-cols-[1fr] relative h-[calc(100dvh-3rem-3rem)] duration-500 ease-in-out md:h-[calc(100dvh-3rem)] ${
+        currentView === "none" ? "grid-rows-[1fr_0fr]" : "grid-rows-[0fr_1fr]"
+      }`}
+    >
+      <AboutPageInitial
+        currentView={currentView}
+        changeCurrentView={handleSectionChange}
+      />
+      <AboutPageSpecific
+        currentView={currentView}
+        changeCurrentView={handleSectionChange}
+      />
     </section>
   );
 }
