@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/layout/Header";
+import { cookies } from "next/headers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,17 +16,19 @@ export const metadata: Metadata = {
   description: "Portfólio do Bernardo",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = (await cookies()).get("theme")?.value;
+
   return (
-    <html lang="en">
+    <html lang="en" className={`${theme === "dark" && "dark"}`}>
       <body
         className={`${inter.variable} relative h-dvh w-full bg-white dark:bg-black`}
       >
-        <Header />
+        <Header darkMode={theme === "dark"} />
         {children}
       </body>
     </html>

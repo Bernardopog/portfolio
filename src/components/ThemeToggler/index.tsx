@@ -3,41 +3,25 @@
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
-export default function ThemeToggler() {
+export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const [isMoving, setIsMoving] = useState<boolean>(false);
 
   const handleThemeChange = () => {
-    const html = document.documentElement;
-    const localStorage = window.localStorage;
-
     setIsDarkMode(!isDarkMode);
     setIsMoving(true);
-    setTimeout(() => setIsMoving(false), 300);
+    document.cookie = `theme=${isDarkMode ? "light" : "dark"}; path=/`;
+    document.documentElement.classList.toggle("dark");
 
-    if (!isDarkMode) {
-      localStorage.setItem("theme", "dark");
-      html.classList.add("dark");
-    } else {
-      localStorage.setItem("theme", "light");
-      html.classList.remove("dark");
-    }
+    setTimeout(() => {
+      setIsMoving(false);
+    }, 300);
   };
 
   useEffect(() => {
-    const html = document.documentElement;
-    const localStorage = window.localStorage;
-    const theme = localStorage.getItem("theme");
-
-    if (theme === "dark") {
-      setIsDarkMode(true);
-      html.classList.add("dark");
-    } else {
-      setIsDarkMode(false);
-      html.classList.remove("dark");
-    }
-  }, []);
+    setIsDarkMode(darkMode);
+  }, [darkMode]);
 
   return (
     <button
