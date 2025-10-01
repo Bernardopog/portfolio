@@ -1,0 +1,65 @@
+@theme {
+  --animate-moving: moving 0.3s ease-in-out;
+  @keyframes moving {
+    from {
+      filter: blur(2px);
+    }
+    to {
+      filter: blur(0);
+    }
+  }
+
+  --animate-stroke: stroke 1.5s ease-in forwards;
+  @keyframes stroke {
+    0% {
+      stroke-dasharray: 10;
+      color: transparent;
+      stroke: black;
+    }
+    75% {
+      stroke-dasharray: 100;
+      color: transparent;
+      stroke: transparent;
+    }
+    100% {
+      color: black;
+      stroke: transparent;
+    }
+  }
+  --animate-move-in: move-in 1s ease-in forwards;
+  @keyframes move-in {
+    from {
+      filter: blur(2px);
+      opacity: 0.2;
+      transform: translateY(20px);
+    }
+    to {
+      filter: blur(0px);
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 1;
+    }
+  }
+
+  --animate-stroke-dark: stroke-dark 1.5s ease-in forwards;
+  @keyframes stroke-dark {
+    0% {
+      stroke-dasharray: 10;
+      color: transparent;
+      stroke: white;
+    }
+    75% {
+      stroke-dasharray: 100;
+      color: transparent;
+      stroke: transparent;
+    }
+    100% {
+      color: white;
+      stroke: transparent;
+    }
+  }
+}
+
+.tech {
+  @apply stroke-1 animate-stroke dark:animate-stroke-dark;
+}
