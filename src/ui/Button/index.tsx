@@ -20,7 +20,9 @@ export default function Button({
   return (
     <button
       {...(ariaLabel && { "aria-label": ariaLabel })}
-      className={`${className ?? "btn-default btn-default-color"}`}
+      className={`flex items-center gap-2 ${
+        className ?? "btn-default btn-default-color"
+      }`}
       onClick={() => action()}
     >
       {icon}
