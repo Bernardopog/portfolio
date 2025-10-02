@@ -26,7 +26,7 @@ export default function AboutPageInitial({
           currentView={card.view}
           changeCurrentView={() => changeCurrentView(card.view)}
         >
-          <p>{(card.description + " - ").repeat(48)}</p>
+          {card.description}
         </AboutCard>
       ))}
     </Inert>
