@@ -54,6 +54,14 @@ export default function ExplainCard({ tech }: { tech: string }) {
       <div className="max-h-32">
         <span className="text-sm">{techExplain?.description}</span>
       </div>
+      <article className="hidden w-full max-w-80 h-45 rounded-lg bg-shark-900 dark:bg-shark-100 md:block">
+        <span className="text-center text-shark-50 dark:text-shark-950">
+          Placeholder
+        </span>
+      </article>
+      <footer className="absolute bottom-0 w-full p-1 border rounded-lg text-center text-shark-800 border-black/25 dark:text-shark-200 dark:border-white/25">
+        Placeholder
+      </footer>
     </article>
   );
 }
