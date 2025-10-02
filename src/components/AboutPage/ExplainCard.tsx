@@ -33,7 +33,7 @@ export default function ExplainCard({ tech }: { tech: string }) {
   if (!techExplain) return null;
 
   return (
-    <article className="flex flex-col flex-1 m-1 p-4 rounded-lg gap-8 text-shark-900 dark:text-shark-100">
+    <article className="flex flex-col items-center flex-1 relative min-h-96 m-1 p-4 pb-8 rounded-lg gap-8 overflow-y-auto text-shark-900 dark:text-shark-100">
       <header className="flex flex-col justify-center items-center">
         <span className="text-8xl">{techExplain?.icon}</span>
         <h3 className="font-bold text-2xl">{techExplain?.title}</h3>
@@ -51,8 +51,8 @@ export default function ExplainCard({ tech }: { tech: string }) {
           ))}
         </ul>
       </header>
-      <div>
-        <span>{techExplain?.description}</span>
+      <div className="max-h-32">
+        <span className="text-sm">{techExplain?.description}</span>
       </div>
     </article>
   );

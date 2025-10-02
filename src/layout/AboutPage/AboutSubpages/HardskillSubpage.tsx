@@ -58,8 +58,8 @@ export default function HardskillSubpage() {
   };
 
   return (
-    <section className="flex flex-col-reverse h-full gap-2 md:flex-row">
-      <dl className="flex flex-col gap-1 md:flex-1 md:gap-2">
+    <section className="flex flex-col h-full gap-2 md:flex-row">
+      <dl className="flex flex-col flex-1 order-1 max-h-60 px-1 pb-16 gap-1 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-800 dark:scrollbar-thumb-shark-300 md:gap-2 md:order-0 md:max-h-full md:px-0">
         {dataList.map((item) => (
           <Fragment key={`field-${item.title}`}>
             <dt
@@ -82,7 +82,7 @@ export default function HardskillSubpage() {
             </dt>
             <dd
               className={`overflow-hidden duration-300 ease-in-out scrollbar-track-transparent scrollbar-thumb-shark-900 dark:scrollbar-thumb-shark-100 ${
-                fieldOpen === item.list ? "max-h-40" : "max-h-0"
+                fieldOpen === item.list ? "min-h-40 h-40" : "min-h-0 h-0"
               } ${showScrollbar && "overflow-y-auto scrollbar-thin"}`}
             >
               <Inert isVisible={fieldOpen === item.list}>
