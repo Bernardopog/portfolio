@@ -71,3 +71,10 @@ export const techList: ITech[] = [
     main: false,
   },
 ];
+
+export const getAllTechs = () => {
+  return techList.map((tech) => tech.name);
+};
+export const getMainTechs = () => {
+  return techList.filter((tech) => tech.main);
+};
