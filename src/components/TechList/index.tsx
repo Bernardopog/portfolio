@@ -1,4 +1,4 @@
-import { ITech, techList } from "@/data/techList";
+import { getTechByField, ITech } from "@/data/techList";
 import React, { ReactElement } from "react";
 
 const TechCard = ({ tech }: { tech: ITech }) => {
@@ -22,7 +22,7 @@ const TechCard = ({ tech }: { tech: ITech }) => {
 export default function TechList() {
   return (
     <ul className="grid grid-cols-5 md:grid-cols-10 absolute bottom-0 min-w-screen w-full mb-2 px-2 gap-x-2">
-      {techList.map((tech) => (
+      {getTechByField("frontend").map((tech) => (
         <TechCard key={tech.name} tech={tech} />
       ))}
     </ul>
