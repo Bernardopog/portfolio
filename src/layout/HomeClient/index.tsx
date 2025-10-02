@@ -1,6 +1,6 @@
 "use client";
 import Inert from "@/components/Inert";
-import AboutSection from "@/layout/AboutSection";
+import AboutSection from "@/layout/AboutPage/AboutSection";
 import MainSection from "@/layout/MainSection";
 import ProjectsSection from "@/layout/ProjectsSection";
 import SectionSwitcher from "@/layout/SectionSwitcher";
