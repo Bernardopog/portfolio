@@ -1,5 +1,5 @@
-import Presentation from "@/components/Presentation";
-import TechList from "@/components/TechList";
+import Presentation from "@/components/HomePage/Presentation";
+import TechList from "@/components/HomePage/TechList";
 import Button from "@/ui/Button";
 
 interface IMainSectionProps {
