@@ -26,16 +26,14 @@
       stroke: transparent;
     }
   }
-  --animate-move-in: move-in 1s ease-in forwards;
+  --animate-move-in: move-in 0.5s ease-in both;
   @keyframes move-in {
     from {
-      filter: blur(2px);
-      opacity: 0.2;
-      transform: translateY(20px);
+            opacity: 0;
+      transform: translateY(48px);
     }
     to {
-      filter: blur(0px);
-      opacity: 1;
+            opacity: 1;
       transform: translateY(0);
       z-index: 1;
     }

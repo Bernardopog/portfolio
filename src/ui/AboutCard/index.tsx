@@ -1,5 +1,3 @@
-"use client";
-
 import { AboutViewTypes } from "@/types/AboutViewTypes";
 import { ReactNode } from "react";
 
@@ -11,6 +9,7 @@ interface IAboutCardProps {
   animationDelay?: number;
   currentView: AboutViewTypes;
   changeCurrentView: (toView: AboutViewTypes) => void;
+  isPageVisible: boolean;
 }
 
 export default function AboutCard({
@@ -21,11 +20,14 @@ export default function AboutCard({
   animationDelay,
   currentView,
   changeCurrentView,
+  isPageVisible,
 }: IAboutCardProps) {
   return (
     <article
       style={{ animationDelay: `${animationDelay}ms` }}
-      className={`group relative min-w-72 w-9/10 max-w-xl sm:max-w-2xl h-64  shadow-lg hover:shadow-xl gradient-border ${className}`}
+      className={`group relative min-w-72 w-9/10 max-w-xl sm:max-w-2xl h-64  shadow-lg hover:shadow-xl gradient-border ${
+        isPageVisible && "animate-move-in"
+      } ${className}`}
     >
       <button
         type="button"

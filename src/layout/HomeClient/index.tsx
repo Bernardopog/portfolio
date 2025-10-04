@@ -14,7 +14,7 @@ export default function HomeClient() {
         <>
           <GridBackground view={view} />
           <Inert isVisible={view === "about"} className="overflow-hidden">
-            <AboutSection />
+            <AboutSection isVisible={view === "about"} />
           </Inert>
           <Inert isVisible={view === "main"} className="overflow-hidden">
             <MainSection

@@ -4,7 +4,11 @@ import { AboutPageInitial, AboutPageSpecific } from "@/components/AboutPage";
 import type { AboutViewTypes } from "@/types/AboutViewTypes";
 import { useState } from "react";
 
-export default function AboutSection() {
+interface IAboutSectionProps {
+  isVisible: boolean;
+}
+
+export default function AboutSection({ isVisible }: IAboutSectionProps) {
   const [currentView, setCurrentView] = useState<AboutViewTypes>("none");
 
   const handleSectionChange = (toView: AboutViewTypes) => {
@@ -20,6 +24,7 @@ export default function AboutSection() {
       <AboutPageInitial
         currentView={currentView}
         changeCurrentView={handleSectionChange}
+        isVisible={isVisible}
       />
       <AboutPageSpecific
         currentView={currentView}
