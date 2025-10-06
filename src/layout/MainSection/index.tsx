@@ -1,4 +1,5 @@
 import Presentation from "@/components/HomePage/Presentation";
+import SocialMediaList from "@/components/HomePage/SocialMediaList";
 import TechList from "@/components/HomePage/TechList";
 import Button from "@/ui/Button";
 
@@ -18,6 +19,7 @@ export default function MainSection({
         <Button label="Sobre Mim" action={() => onToAbout()} />
         <Button label="Projetos" action={() => onToProject()} />
       </div>
+      <SocialMediaList />
       <TechList />
     </main>
   );
