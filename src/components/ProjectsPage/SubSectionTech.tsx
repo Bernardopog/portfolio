@@ -1,3 +1,4 @@
+import { techIconMap } from "@/data/techIconMap";
 import { getTechByField, TechFieldType } from "@/data/techList";
 import { ReactNode } from "react";
 
@@ -35,13 +36,13 @@ export default function SubSectionTech({
             }`}
             onClick={() =>
               handleAddToSelectedTechs({
-                icon: tech.icon,
+                icon: techIconMap[tech.name],
                 name: tech.name,
               })
             }
           >
             <span className="text-shark-900 dark:text-shark-100">
-              {tech.icon}
+              {techIconMap[tech.name]}
             </span>
             <span className="capitalize text-shark-900 dark:text-shark-100">
               {tech.name}

@@ -2,6 +2,7 @@
 
 import ExplainCard from "@/components/AboutPage/ExplainCard";
 import Inert from "@/components/Inert";
+import { techIconMap } from "@/data/techIconMap";
 import { getTechByField, TechFieldType } from "@/data/techList";
 import { Fragment, ReactNode, useState } from "react";
 import { FaTools } from "react-icons/fa";
@@ -99,7 +100,7 @@ export default function HardskillSubpage() {
                         onClick={() => handleTechSelection(tech.name)}
                       >
                         <span className="text-lg fill-shark-950 dark:fill-shark-50 md:text-2xl">
-                          {tech.icon}
+                          {techIconMap[tech.name]}
                         </span>
                         <span className="capitalize text-xs text-center text-shark-800 dark:text-shark-200 sm:text-sm">
                           {tech.name}

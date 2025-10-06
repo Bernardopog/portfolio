@@ -1,3 +1,4 @@
+import { TechNameType } from "@/types/TechNameType";
 import { TechFieldType } from "./techList";
 
 type TechLevelType = "iniciante" | "intermediário" | "avançado";
@@ -28,9 +29,9 @@ export interface ITechExplain {
   level: TechLevelType;
 }
 
-interface ITechExplainMap {
-  [key: string]: ITechExplain;
-}
+type ITechExplainMap = {
+  [K in TechNameType]: ITechExplain;
+};
 
 export const techExplainMap: ITechExplainMap = {
   html: {
@@ -129,7 +130,7 @@ export const techExplainMap: ITechExplainMap = {
       "Express é um framework minimalista para Node.js que facilita a criação de APIs e aplicações web. Oferece uma estrutura leve e flexível para lidar com rotas, middlewares e requisições HTTP.",
     level: "iniciante",
   },
-  nestjs: {
+  nest: {
     title: "NestJS",
     field: "backend",
     categories: ["framework"],
@@ -169,7 +170,7 @@ export const techExplainMap: ITechExplainMap = {
       "C# é uma linguagem de programação moderna e orientada a objetos desenvolvida pela Microsoft, amplamente usada para desenvolvimento de aplicações desktop, web, mobile e jogos via Unity.",
     level: "intermediário",
   },
-  ".net": {
+  dotnet: {
     title: ".NET",
     field: "backend",
     categories: ["framework", "plataforma"],

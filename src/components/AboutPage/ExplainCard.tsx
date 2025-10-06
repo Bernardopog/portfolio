@@ -2,7 +2,7 @@ import {
   ITechExplain,
   techExplainMap,
 } from "@/data/aboutSpecificTechExplainMap";
-import { techList } from "@/data/techList";
+import { techIconMap } from "@/data/techIconMap";
 import { ReactNode, useEffect, useState } from "react";
 
 interface ITechExplainWithIcon extends ITechExplain {
@@ -16,11 +16,10 @@ export default function ExplainCard({ tech }: { tech: string }) {
 
   useEffect(() => {
     if (tech) {
-      const icon = techList.find(
-        (item) => item.name.toLowerCase() === tech.toLowerCase()
-      )?.icon;
+      const icon = techIconMap[tech as keyof typeof techIconMap];
+      console.log("==>", tech, icon);
       const data = {
-        ...techExplainMap[tech as keyof ITechExplain],
+        ...techExplainMap[tech as keyof typeof techExplainMap],
         icon,
       };
 

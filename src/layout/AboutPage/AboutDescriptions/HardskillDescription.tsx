@@ -1,3 +1,4 @@
+import { techIconMap } from "@/data/techIconMap";
 import { getMainTechs } from "@/data/techList";
 
 export default function HardskillDescription() {
@@ -10,7 +11,7 @@ export default function HardskillDescription() {
             key={tech.name}
             className="group flex items-center p-1 rounded-lg border capitalize duration-300 ease-in-out text-shark-900 border-black/25 dark:text-shark-100 dark:border-white/25 hover:border-black/50 dark:hover:border-white/50"
           >
-            <span className="text-xl">{tech.icon}</span>
+            <span className="text-xl">{techIconMap[tech.name]}</span>
             <span className="flex-1 text-center">{tech.name}</span>
           </li>
         ))}
