@@ -2,7 +2,7 @@
 import Inert from "@/components/Inert";
 import AboutSection from "@/layout/AboutPage/AboutSection";
 import MainSection from "@/layout/MainSection";
-import ProjectsSection from "@/layout/ProjectsSection";
+import ProjectsSection from "@/layout/ProjectsPage/ProjectsSection";
 import SectionSwitcher from "@/layout/SectionSwitcher";
 import Navbar from "../Navbar";
 import { GridBackground } from "../GridBackground";
@@ -23,7 +23,7 @@ export default function HomeClient() {
             />
           </Inert>
           <Inert isVisible={view === "project"} className="overflow-hidden">
-            <ProjectsSection onToMain={() => setView("main")} />
+            <ProjectsSection />
           </Inert>
           <Navbar
             onToMain={() => setView("main")}
