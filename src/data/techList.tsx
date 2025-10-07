@@ -129,6 +129,76 @@ export const techList: ITech[] = [
     main: false,
     field: "tools",
   },
+  {
+    name: "angular",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "socket.io",
+    main: false,
+    field: "backend",
+  },
+  {
+    name: "svelte",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "flask",
+    main: false,
+    field: "backend",
+  },
+  {
+    name: "blazor",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "styled-components",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "jquery",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "less",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "pinia",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "python",
+    main: false,
+    field: "backend",
+  },
+  {
+    name: "solid",
+    main: false,
+    field: "frontend",
+  },
+  {
+    name: "turborepo",
+    main: false,
+    field: "tools",
+  },
+  {
+    name: "vite",
+    main: false,
+    field: "tools",
+  },
+  {
+    name: "zustand",
+    main: false,
+    field: "frontend",
+  },
 ];
 
 export const getAllTechs = () => {

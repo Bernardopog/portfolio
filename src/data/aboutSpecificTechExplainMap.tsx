@@ -19,12 +19,13 @@ type TechCategoryType =
   | "não relacional"
   | "controle de versão"
   | "design"
-  | "prototipação";
+  | "prototipação"
+  | "servidor";
 
 export interface ITechExplain {
   title: string;
   field: TechFieldType;
-  categories: TechCategoryType[];
+  categories: TechCategoryType[] | string[];
   description: string;
   level: TechLevelType;
 }
@@ -225,5 +226,117 @@ export const techExplainMap: ITechExplainMap = {
     description:
       "Figma é uma ferramenta de design colaborativo baseada em nuvem, usada para criar interfaces, protótipos e fluxos de usuário. Permite trabalho simultâneo entre designers e desenvolvedores.",
     level: "intermediário",
+  },
+  angular: {
+    title: "Angular",
+    field: "frontend",
+    categories: ["framework", "dinâmico", "componentes"],
+    description:
+      "Framework JavaScript mantido pelo Google para construção de aplicações web dinâmicas e escaláveis. Utiliza arquitetura baseada em componentes e oferece ferramentas integradas como roteamento e injeção de dependência.",
+    level: "iniciante",
+  },
+  flask: {
+    title: "Flask",
+    field: "backend",
+    categories: ["framework", "Python", "servidor"],
+    description:
+      "Framework web minimalista escrito em Python. Ideal para aplicações simples e rápidas, oferecendo flexibilidade e controle total sobre a estrutura do projeto.",
+    level: "iniciante",
+  },
+  blazor: {
+    title: "Blazor",
+    field: "frontend",
+    categories: ["framework", "C#", "dinâmico"],
+    description:
+      "Framework da Microsoft que permite criar aplicações web interativas usando C# em vez de JavaScript. Funciona tanto no navegador (via WebAssembly) quanto no servidor.",
+    level: "iniciante",
+  },
+  "socket.io": {
+    title: "Socket.IO",
+    field: "backend",
+    categories: ["biblioteca", "websocket", "comunicação"],
+    description:
+      "Biblioteca JavaScript que permite comunicação bidirecional em tempo real entre cliente e servidor. Muito usada em chats, jogos online e aplicações colaborativas.",
+    level: "iniciante",
+  },
+  "styled-components": {
+    title: "Styled-Components",
+    field: "frontend",
+    categories: ["biblioteca", "estilização", "CSS-in-JS"],
+    description:
+      "Biblioteca para estilização de componentes em React usando CSS dentro do JavaScript. Permite criar estilos encapsulados e dinâmicos com facilidade.",
+    level: "iniciante",
+  },
+  jquery: {
+    title: "jQuery",
+    field: "frontend",
+    categories: ["biblioteca", "dinâmico", "DOM"],
+    description:
+      "Biblioteca JavaScript que simplifica a manipulação do DOM, eventos, animações e requisições AJAX. Muito popular antes da ascensão dos frameworks modernos.",
+    level: "iniciante",
+  },
+  less: {
+    title: "Less",
+    field: "frontend",
+    categories: ["pré-processador", "estilização", "CSS"],
+    description:
+      "Pré-processador CSS que adiciona funcionalidades como variáveis, mixins e funções, tornando o código mais organizado e reutilizável.",
+    level: "iniciante",
+  },
+  pinia: {
+    title: "Pinia",
+    field: "frontend",
+    categories: ["biblioteca", "gerenciador de estado", "vue"],
+    description:
+      "Gerenciador de estado moderno para aplicações Vue.js. É leve, intuitivo e inspirado no padrão de composição do Vue 3.",
+    level: "iniciante",
+  },
+  python: {
+    title: "Python",
+    field: "backend",
+    categories: ["linguagem", "geral", "versátil"],
+    description:
+      "Linguagem de programação de alto nível, conhecida por sua sintaxe simples e legibilidade. Usada em diversas áreas como desenvolvimento web, ciência de dados, automação e inteligência artificial.",
+    level: "iniciante",
+  },
+  solid: {
+    title: "SolidJS",
+    field: "frontend",
+    categories: ["framework", "dinâmico", "componentes"],
+    description:
+      "Framework JavaScript reativo para construção de interfaces de usuário. Foca em desempenho e simplicidade, utilizando reatividade compilada para atualizações eficientes.",
+    level: "iniciante",
+  },
+  svelte: {
+    title: "Svelte",
+    field: "frontend",
+    categories: ["framework", "dinâmico", "componentes"],
+    description:
+      "Framework JavaScript que compila os componentes para código altamente otimizado no momento da construção. Elimina a necessidade de virtual DOM e oferece excelente desempenho.",
+    level: "iniciante",
+  },
+  turborepo: {
+    title: "Turborepo",
+    field: "tools",
+    categories: ["monorepo", "ferramenta", "build"],
+    description:
+      "Ferramenta moderna para gerenciamento de monorepos. Otimiza o processo de build e cache em projetos com múltiplos pacotes, facilitando a colaboração e escalabilidade.",
+    level: "iniciante",
+  },
+  vite: {
+    title: "Vite",
+    field: "tools",
+    categories: ["ferramenta", "build", "frontend"],
+    description:
+      "Ferramenta de build e desenvolvimento frontend extremamente rápida. Utiliza ES modules e oferece hot module replacement eficiente para uma experiência de desenvolvimento ágil.",
+    level: "iniciante",
+  },
+  zustand: {
+    title: "Zustand",
+    field: "frontend",
+    categories: ["biblioteca", "estado", "React"],
+    description:
+      "Biblioteca leve para gerenciamento de estado em aplicações React. Oferece uma API simples e direta, com suporte a atualizações reativas e persistência de dados.",
+    level: "iniciante",
   },
 };
