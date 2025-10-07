@@ -43,9 +43,9 @@ export default function ProjectsFilter() {
   };
 
   return (
-    <div className="flex flex-col items-center relative w-full">
+    <div className="flex flex-col relative w-full">
       <section
-        className={`flex items-center w-full mt-4 p-2 bg-gradient-to-b from-shark-50 to-shark-100 dark:from-shark-900 dark:to-shark-950 ${
+        className={`flex items-center w-full mt-4 p-2 bg-gradient-to-b from-shark-50 to-shark-100 dark:from-shark-900 dark:to-shark-950 ease-in-out duration-300 ${
           subSectionOpen ? "rounded-t-lg" : "rounded-lg"
         }`}
       >

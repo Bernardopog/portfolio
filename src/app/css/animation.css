@@ -38,6 +38,18 @@
       z-index: 1;
     }
   }
+  --animate-move-out: move-out 0.5s ease-in both;
+  @keyframes move-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(48px);
+      z-index: -1;
+    }
+  }
 
   --animate-stroke-dark: stroke-dark 1.5s ease-in forwards;
   @keyframes stroke-dark {
