@@ -9,8 +9,10 @@ export default function AboutPageSpecific({
 }: IAboutPageProps) {
   return (
     <Inert
-      className={`flex flex-col items-start place-items-center h-full gap-4 overflow-hidden ${
-        currentView !== "none" ? "pt-4 pb-8 px-4" : "p-0"
+      className={`flex flex-col items-start place-items-center gap-4 ${
+        currentView !== "none"
+          ? "h-[calc(100dvh-6rem)] pt-4 pb-8 px-4 overflow-y-auto md:h-full"
+          : "p-0 overflow-hidden"
       }`}
       isVisible={currentView !== "none"}
     >
