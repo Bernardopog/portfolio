@@ -86,7 +86,7 @@ export default function ProjectFilter() {
       </section>
       <Inert
         isVisible={subSectionOpen}
-        className={`absolute top-[100%] rounded-b-lg bg-shark-100 duration-300 ease-in-out overflow-hidden dark:bg-shark-950 w-full md:w-full transition-[max-height,padding] ${
+        className={`absolute top-[100%] z-10 rounded-b-lg bg-shark-100 duration-300 ease-in-out overflow-hidden dark:bg-shark-950 w-full md:w-full transition-[max-height,padding] ${
           subSectionOpen ? "max-h-64 p-1" : "max-h-0 p-0"
         }`}
       >
