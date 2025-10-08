@@ -23,6 +23,7 @@ export default function ProjectCard({
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (outOfProjectPage) return;
     const node = cardRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -53,7 +54,7 @@ export default function ProjectCard({
         observer.unobserve(node);
       }
     };
-  }, []);
+  }, [outOfProjectPage]);
 
   return (
     <article
@@ -102,7 +103,8 @@ export default function ProjectCard({
             <FaPlus className="text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100" />
           </button>
         )}
-        {project.image && shouldBeVisible ? (
+        {(project.image && shouldBeVisible) ||
+        (project.image && outOfProjectPage) ? (
           <Image
             loading="lazy"
             placeholder="blur"
