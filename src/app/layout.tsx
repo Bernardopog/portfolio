@@ -26,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${theme === "dark" && "dark"}`}>
       <body
-        className={`${inter.variable} relative h-dvh w-full bg-white dark:bg-black`}
+        className={`${inter.variable} relative max-h-dvh w-full overflow-hidden bg-white dark:bg-black`}
       >
         <Header darkMode={theme === "dark"} />
         {children}

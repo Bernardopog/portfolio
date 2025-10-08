@@ -17,7 +17,7 @@ export default function AboutPage({ isVisible }: IAboutSectionProps) {
 
   return (
     <section
-      className={`grid grid-cols-[1fr] relative h-[calc(100dvh-3rem-3rem)] duration-500 ease-in-out md:h-[calc(100dvh-3rem)] ${
+      className={`grid grid-cols-[1fr] relative h-[calc(100dvh-3rem-3rem)] pb-2 duration-500 ease-in-out md:h-[calc(100dvh-3rem)] ${
         currentView === "none" ? "grid-rows-[1fr_0fr]" : "grid-rows-[0fr_1fr]"
       }`}
     >
