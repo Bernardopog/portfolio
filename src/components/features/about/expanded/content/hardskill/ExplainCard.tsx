@@ -1,3 +1,4 @@
+"use client";
 import { techIconMap } from "@/data/content/techIconMap";
 import { TechNameType } from "@/types/aliases/TechNameType";
 import { getPercentage } from "@/utils/getPercentage";
@@ -7,6 +8,7 @@ import { IExplain } from "@/types/interfaces/IExplain";
 import ProjectCard from "@/components/shared/project/ProjectCard";
 import { IProject } from "@/types/interfaces/IProject";
 import { getRandomProjectByTech } from "@/data/helpers/project/projectListHelpers";
+import { useThemeStore } from "@/store/ThemeStore";
 
 interface IExplainWithIcon extends IExplain {
   icon: ReactNode;
@@ -15,6 +17,8 @@ interface IExplainWithIcon extends IExplain {
 export default function ExplainCard({ tech }: { tech: TechNameType }) {
   const [techExplain, setTechExplain] = useState<IExplainWithIcon | null>(null);
   const [randomProject, setRandomProject] = useState<IProject | null>(null);
+
+  const isDarkMode = useThemeStore((s) => s.isDarkMode);
 
   useEffect(() => {
     if (tech) {
@@ -56,10 +60,11 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
 
         <div
           style={{
-            backgroundImage: `conic-gradient(#333333 ${getPercentage(
-              techExplain.level,
-              5
-            )}%,#d1d1d1 0%)`,
+            backgroundImage: `conic-gradient(${
+              isDarkMode ? "#D1D1D1" : "#333333"
+            } ${getPercentage(techExplain.level, 5)}%,${
+              isDarkMode ? "#333333" : "#D1D1D1"
+            } 0%)`,
           }}
           className="flex items-center justify-center absolute top-2 right-2 w-16 min-h-16 rounded-full opacity-75 bg-shark-200 dark:bg-shark-950 md:size-20"
         >
