@@ -88,7 +88,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["biblioteca", "framework"],
     description:
       "React é uma biblioteca JavaScript para construção de interfaces de usuário reativas e componentizadas. Utiliza o conceito de Virtual DOM para otimizar atualizações na interface.",
-    level: 5,
+    level: 4,
   },
   next: {
     title: "NextJS",
@@ -96,7 +96,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["framework", "fullstack"],
     description:
       "Next.js é um framework baseado em React que oferece renderização híbrida (SSR, SSG), roteamento automático, otimização de performance e suporte nativo a API routes, ideal para aplicações web modernas.",
-    level: 5,
+    level: 4,
   },
   vue: {
     title: "Vue",
@@ -104,7 +104,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["framework"],
     description:
       "Vue.js é um framework progressivo para construção de interfaces de usuário. Focado na camada de visualização, permite criar aplicações reativas com uma sintaxe simples e flexível.",
-    level: 4,
+    level: 3,
   },
   nuxt: {
     title: "NuxtJS",
@@ -112,7 +112,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["framework", "fullstack"],
     description:
       "Nuxt.js é um framework baseado em Vue que facilita o desenvolvimento de aplicações universais, com suporte a SSR, geração estática, roteamento automático e estrutura modular.",
-    level: 3,
+    level: 1,
   },
   node: {
     title: "NodeJS",
@@ -152,7 +152,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["banco de dados", "não relacional"],
     description:
       "MongoDB é um banco de dados NoSQL orientado a documentos, que armazena dados em formato BSON (similar ao JSON), oferecendo flexibilidade e escalabilidade para aplicações modernas.",
-    level: 2,
+    level: 1,
   },
   prisma: {
     title: "Prisma",
@@ -160,7 +160,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["orm", "ferramenta"],
     description:
       "Prisma é um ORM moderno para Node.js e TypeScript que facilita o acesso a bancos de dados com tipagem estática, geração automática de queries e integração com múltiplos bancos relacionais.",
-    level: 2,
+    level: 3,
   },
   csharp: {
     title: "C#",
@@ -216,7 +216,7 @@ export const techExplainMap: ITechExplainMap = {
     categories: ["controle de versão", "ferramenta"],
     description:
       "Git é um sistema de controle de versão distribuído amplamente utilizado para gerenciar código-fonte. Permite rastrear alterações, colaborar em equipe e manter histórico de desenvolvimento.",
-    level: 3,
+    level: 4,
   },
   figma: {
     title: "Figma",
