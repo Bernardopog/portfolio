@@ -26,6 +26,24 @@
       stroke: transparent;
     }
   }
+  --animate-stroke-dark: stroke-dark 1.5s ease-in forwards;
+  @keyframes stroke-dark {
+    0% {
+      stroke-dasharray: 10;
+      color: transparent;
+      stroke: white;
+    }
+    75% {
+      stroke-dasharray: 100;
+      color: transparent;
+      stroke: transparent;
+    }
+    100% {
+      color: white;
+      stroke: transparent;
+    }
+  }
+
   --animate-move-in: move-in 0.5s ease-in both;
   @keyframes move-in {
     from {
@@ -48,24 +66,6 @@
       opacity: 0;
       transform: translateY(48px);
       z-index: -1;
-    }
-  }
-
-  --animate-stroke-dark: stroke-dark 1.5s ease-in forwards;
-  @keyframes stroke-dark {
-    0% {
-      stroke-dasharray: 10;
-      color: transparent;
-      stroke: white;
-    }
-    75% {
-      stroke-dasharray: 100;
-      color: transparent;
-      stroke: transparent;
-    }
-    100% {
-      color: white;
-      stroke: transparent;
     }
   }
 

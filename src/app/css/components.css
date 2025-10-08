@@ -1,0 +1,13 @@
+.text-gradient {
+  @apply text-transparent bg-gradient-to-b from-shark-900 to-black dark:from-white dark:to-shark-200 bg-clip-text;
+}
+.text-gradient-inverted {
+  @apply text-transparent bg-gradient-to-b from-white to-shark-200 dark:from-shark-900 dark:to-black bg-clip-text;
+}
+
+.btn-default {
+  @apply min-w-fit py-2 px-4 border rounded-lg ease-in-out duration-300 cursor-pointer;
+}
+.btn-default-color {
+  @apply border-black/25 text-shark-900 dark:border-white/25 dark:text-shark-100 hover:bg-black/10 dark:hover:bg-white/10 active:bg-black/20 active:shadow-base active:shadow-black/25 dark:active:bg-white/20 dark:active:shadow-white/25;
+}

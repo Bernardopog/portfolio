@@ -1,7 +1,7 @@
+import { Header } from "@/components/shared/layout";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/layout/Header";
 import { cookies } from "next/headers";
 
 const inter = Inter({
