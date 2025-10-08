@@ -120,7 +120,7 @@ export const projectList: IProject[] = [
     name: "Time Tracking Dashboard",
     link: "#",
     image: img.timeTrackingDashboard,
-    techs: ["react", "javascript", "sass", "tailwind", "vite"],
+    techs: ["react", "javascript", "sass", "vite"],
     source: "frontendmentor",
   },
   {

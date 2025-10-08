@@ -2,8 +2,12 @@
 import { SubSectionTech } from "@/components/features/project";
 import { Inert } from "@/components/shared";
 import { Radio } from "@/components/ui";
+import { techIconMap } from "@/data/content/techIconMap";
+import { useProjectFilterStore } from "@/store/ProjectFilterStore";
 import { TechFieldType } from "@/types/aliases/TechFieldType";
-import { ReactNode, useState } from "react";
+import { TechNameType } from "@/types/aliases/TechNameType";
+import { useState } from "react";
+import { useShallow } from "zustand/shallow";
 
 export default function ProjectFilter() {
   const radioList: { id: TechFieldType; label: string }[] = [
@@ -13,33 +17,35 @@ export default function ProjectFilter() {
     { id: "tools", label: "Ferramentas" },
   ];
 
-  const [selectedTechs, setSelectedTechs] = useState<
-    { icon: ReactNode; name: string }[]
-  >([]);
   const [subSectionOpen, setSubSectionOpen] = useState<boolean>(false);
   const [listToShow, setListToShow] = useState<number>(0);
+
+  const { clearTechList, filterTechList, addToTechList, removeFromTechList } =
+    useProjectFilterStore(
+      useShallow((s) => ({
+        filterTechList: s.filterTechList,
+        clearTechList: s.clearTechList,
+        addToTechList: s.addToTechList,
+        removeFromTechList: s.removeFromTechList,
+      }))
+    );
 
   const handleSubSectionToOpen = () => {
     setSubSectionOpen(!subSectionOpen);
   };
 
-  const handleAddToSelectedTechs = (newTech: {
-    icon: ReactNode;
-    name: string;
-  }) => {
-    if (selectedTechs.some((tech) => tech.name === newTech.name)) {
-      setSelectedTechs(
-        selectedTechs.filter((tech) => tech.name !== newTech.name)
-      );
-    } else if (selectedTechs.length >= 5) {
+  const handleAddToSelectedTechs = (newTech: TechNameType) => {
+    if (filterTechList.some((tech) => tech === newTech)) {
+      removeFromTechList(newTech);
+    } else if (filterTechList.length >= 5) {
       return;
     } else {
-      setSelectedTechs([...selectedTechs, newTech]);
+      addToTechList(newTech);
     }
   };
 
   const handleClearSelectedTechs = () => {
-    setSelectedTechs([]);
+    clearTechList();
   };
 
   return (
@@ -64,15 +70,15 @@ export default function ProjectFilter() {
             className="grid grid-cols-5 w-full h-12 p-1 border rounded-lg gap-1 ease-in-out duration-300 cursor-pointer border-black/25 hover:border-black/50 dark:border-white/25 dark:hover:border-white/50"
             onClick={() => handleSubSectionToOpen()}
           >
-            {selectedTechs.length > 0 ? (
-              selectedTechs.map((tech, idx) => (
+            {filterTechList.length > 0 ? (
+              filterTechList.map((tech, idx) => (
                 <li
                   key={idx}
                   className="flex items-center px-1 py-2 gap-1 rounded-lg border text-shark-800 border-black/15 animate-expand-horizontal overflow-hidden dark:text-shark-200 dark:border-white/15"
                 >
-                  <span>{tech.icon}</span>
+                  <span>{techIconMap[tech]}</span>
                   <span className="text-xs capitalize truncate sm:text-sm">
-                    {tech.name}
+                    {tech}
                   </span>
                 </li>
               ))
@@ -86,7 +92,7 @@ export default function ProjectFilter() {
       </section>
       <Inert
         isVisible={subSectionOpen}
-        className={`absolute top-[100%] z-10 rounded-b-lg bg-shark-100 duration-300 ease-in-out overflow-hidden dark:bg-shark-950 w-full md:w-full transition-[max-height,padding] ${
+        className={`absolute top-[100%] z-50 rounded-b-lg bg-shark-100 duration-300 ease-in-out overflow-hidden dark:bg-shark-950 w-full md:w-full transition-[max-height,padding] ${
           subSectionOpen ? "max-h-64 p-1" : "max-h-0 p-0"
         }`}
       >
@@ -109,7 +115,7 @@ export default function ProjectFilter() {
               listToShow={listToShow}
               desiredField={radioData.id}
               handleAddToSelectedTechs={handleAddToSelectedTechs}
-              selectedTechs={selectedTechs}
+              filterTechList={filterTechList}
             />
           ))}
         </div>

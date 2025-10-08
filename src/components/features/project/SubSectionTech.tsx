@@ -1,23 +1,21 @@
+"use client";
 import { techIconMap } from "@/data/content/techIconMap";
 import { getTechByField } from "@/data/helpers/tech/techListHelpers";
 import { TechFieldType } from "@/types/aliases/TechFieldType";
-import { ReactNode } from "react";
+import { TechNameType } from "@/types/aliases/TechNameType";
 
 interface ISubSectionTech {
   desiredField: TechFieldType;
   listToShow: number;
-  handleAddToSelectedTechs: (newTech: {
-    icon: ReactNode;
-    name: string;
-  }) => void;
-  selectedTechs: { icon: ReactNode; name: string }[];
+  handleAddToSelectedTechs: (newTech: TechNameType) => void;
+  filterTechList: TechNameType[];
 }
 
 export default function SubSectionTech({
   listToShow,
   desiredField,
   handleAddToSelectedTechs,
-  selectedTechs,
+  filterTechList,
 }: ISubSectionTech) {
   return (
     <ul
@@ -29,23 +27,16 @@ export default function SubSectionTech({
           <button
             type="button"
             className={`flex items-center py-1 px-2 rounded-lg border gap-1 min-w-32 cursor-pointer border-black/25 dark:border-white/25 hover:border-black/50 dark:hover:border-white/50 ${
-              selectedTechs.some(
-                (selectedTech) => selectedTech.name === tech.name
-              )
+              filterTechList.some((selectedTech) => selectedTech === tech.name)
                 ? "bg-black/10 dark:bg-white/10"
                 : ""
             }`}
-            onClick={() =>
-              handleAddToSelectedTechs({
-                icon: techIconMap[tech.name],
-                name: tech.name,
-              })
-            }
+            onClick={() => handleAddToSelectedTechs(tech.name)}
           >
             <span className="text-shark-900 dark:text-shark-100">
               {techIconMap[tech.name]}
             </span>
-            <span className="capitalize text-shark-900 dark:text-shark-100">
+            <span className="capitalize truncate text-shark-900 dark:text-shark-100">
               {tech.name}
             </span>
           </button>
