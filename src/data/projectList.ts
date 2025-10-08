@@ -346,3 +346,11 @@ export const projectList: IProject[] = [
     source: "frontendmentor",
   },
 ];
+
+export const getRandomProjectByTech = (tech: TechNameType) => {
+  const filteredProjects = projectList.filter((project) =>
+    project.techs.includes(tech)
+  );
+  const randomIndex = Math.floor(Math.random() * filteredProjects.length);
+  return filteredProjects[randomIndex];
+};

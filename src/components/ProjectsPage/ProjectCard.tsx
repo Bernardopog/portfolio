@@ -7,7 +7,15 @@ import { FaPlus, FaUser } from "react-icons/fa6";
 import { SiFrontendmentor } from "react-icons/si";
 import Inert from "../Inert";
 
-export default function ProjectCard({ project }: { project: IProject }) {
+interface IProjectCardProps {
+  project: IProject;
+  outOfProjectPage?: boolean;
+}
+
+export default function ProjectCard({
+  project,
+  outOfProjectPage,
+}: IProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [almostHide, setAlmostHide] = useState(false);
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
@@ -78,20 +86,22 @@ export default function ProjectCard({ project }: { project: IProject }) {
             {project.name}
           </span>
         </header>
-        <button
-          type="button"
-          className={`group flex items-center justify-center absolute inset-0 z-10 p-2 rounded-lg cursor-pointer duration-300 ease-in-out bg-gradient-to-b backdrop-blur-xs from-shark-50/25 to-shark-100/25 dark:from-shark-900/25 dark:to-shark-950/25 ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
-          onClick={() => {
-            if (isOpen) alert("Abrindo subpágina");
-            else console.log("Fazendo nada");
-          }}
-          aria-label="Abrir projeto"
-          title="Clique para ver mais"
-        >
-          <FaPlus className="text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100" />
-        </button>
+        {!outOfProjectPage && (
+          <button
+            type="button"
+            className={`group flex items-center justify-center absolute inset-0 z-10 p-2 rounded-lg cursor-pointer duration-300 ease-in-out bg-gradient-to-b backdrop-blur-xs from-shark-50/25 to-shark-100/25 dark:from-shark-900/25 dark:to-shark-950/25 ${
+              isOpen ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={() => {
+              if (isOpen) alert("Abrindo subpágina");
+              else console.log("Fazendo nada");
+            }}
+            aria-label="Abrir projeto"
+            title="Clique para ver mais"
+          >
+            <FaPlus className="text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100" />
+          </button>
+        )}
         {project.image && shouldBeVisible ? (
           <Image
             loading="lazy"

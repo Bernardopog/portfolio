@@ -8,6 +8,7 @@ import {
   getTechByField,
   TechFieldType,
 } from "@/data/techList";
+import { TechNameType } from "@/types/TechNameType";
 import Radio from "@/ui/Radio";
 import { Fragment, ReactNode, useState } from "react";
 import { FaTools } from "react-icons/fa";
@@ -40,7 +41,7 @@ export default function HardskillSubpage() {
 
   const [fieldOpen, setFieldOpen] = useState<TechFieldType | null>(null);
   const [showScrollbar, setShowScrollbar] = useState(false);
-  const [selectedTech, setSelectedTech] = useState<string | null>(null);
+  const [selectedTech, setSelectedTech] = useState<TechNameType | null>(null);
 
   const [showOnlyMain, setShowOnlyMain] = useState<boolean>(true);
 
@@ -57,11 +58,11 @@ export default function HardskillSubpage() {
     }
   };
 
-  const handleTechSelection = (tech: string) => {
+  const handleTechSelection = (tech: TechNameType) => {
     if (selectedTech === tech.toLowerCase()) {
       setSelectedTech(null);
     } else {
-      setSelectedTech(tech.toLowerCase());
+      setSelectedTech(tech);
     }
   };
 

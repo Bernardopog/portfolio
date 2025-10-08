@@ -2,18 +2,22 @@ import {
   ITechExplain,
   techExplainMap,
 } from "@/data/aboutSpecificTechExplainMap";
+import { getRandomProjectByTech, IProject } from "@/data/projectList";
 import { techIconMap } from "@/data/techIconMap";
+import { TechNameType } from "@/types/TechNameType";
 import { getPercentage } from "@/utils/getPercentage";
 import { ReactNode, useEffect, useState } from "react";
+import ProjectCard from "../ProjectsPage/ProjectCard";
 
 interface ITechExplainWithIcon extends ITechExplain {
   icon: ReactNode;
 }
 
-export default function ExplainCard({ tech }: { tech: string }) {
+export default function ExplainCard({ tech }: { tech: TechNameType }) {
   const [techExplain, setTechExplain] = useState<ITechExplainWithIcon | null>(
     null
   );
+  const [randomProject, setRandomProject] = useState<IProject | null>(null);
 
   useEffect(() => {
     if (tech) {
@@ -24,6 +28,7 @@ export default function ExplainCard({ tech }: { tech: string }) {
       };
 
       setTechExplain(data);
+      setRandomProject(getRandomProjectByTech(tech));
     } else {
       setTechExplain(null);
     }
@@ -71,11 +76,17 @@ export default function ExplainCard({ tech }: { tech: string }) {
         <div className="max-h-32">
           <span className="text-sm">{techExplain?.description}</span>
         </div>
-        <article className="w-full max-w-80 min-h-56 rounded-lg bg-shark-900 dark:bg-shark-100">
-          <span className="text-center text-shark-50 dark:text-shark-950">
-            Placeholder
-          </span>
-        </article>
+        {randomProject ? (
+          <ProjectCard
+            key={randomProject.name}
+            project={randomProject}
+            outOfProjectPage
+          />
+        ) : (
+          <div className="flex items-center justify-center w-full max-w-96 min-h-56 rounded-lg italic text-xl text-center font-medium bg-shark-100 text-shark-800/75 dark:bg-shark-800 dark:text-shark-100/75">
+            Ainda não há projetos com essa tecnologia
+          </div>
+        )}
       </article>
       <footer className="absolute bottom-0 w-full p-1 border rounded-lg text-center text-shark-800 border-black/25 dark:text-shark-200 dark:border-white/25">
         Placeholder
