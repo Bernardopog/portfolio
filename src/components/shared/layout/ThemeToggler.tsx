@@ -1,12 +1,12 @@
 "use client";
 
-import { useThemeTogglerStore } from "@/store/ThemeTogglerStore";
+import { useThemeStore } from "@/store/ThemeStore";
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { useShallow } from "zustand/shallow";
 
 export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
-  const { isDarkMode, setIsDarkMode, toggleTheme } = useThemeTogglerStore(
+  const { isDarkMode, setIsDarkMode, toggleTheme } = useThemeStore(
     useShallow((s) => ({
       isDarkMode: s.isDarkMode,
       setIsDarkMode: s.setIsDarkMode,
