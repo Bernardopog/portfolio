@@ -70,7 +70,7 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
 
   return (
     <>
-      <article className="flex flex-col items-center flex-1 relative h-full max-h-80 m-1 p-4 pb-8 rounded-lg gap-8 overflow-y-auto text-shark-900 dark:text-shark-100 md:max-h-full">
+      <article className="flex flex-col items-center flex-1 relative h-full max-h-80 m-1 p-4 pb-8 rounded-lg gap-8 overflow-y-auto text-shark-900 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 dark:text-shark-100 md:max-h-full">
         <header className="flex flex-col justify-center items-center">
           <span className="text-8xl">{techExplain?.icon}</span>
           <h3 className="font-bold text-2xl">{techExplain?.title}</h3>
