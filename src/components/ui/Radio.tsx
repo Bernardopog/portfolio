@@ -25,7 +25,7 @@ export default function Radio({
         type='radio'
         name={name}
         id={id}
-        className='peer hidden'
+        className='peer sr-only'
         checked={state}
         onChange={() => setState(!state)}
       />
@@ -36,7 +36,7 @@ export default function Radio({
           }`}
         ></div>
       </div>
-      <span className='text-sm md:text-base'>{label}</span>
+      <span className='text-sm md:text-base peer-focus:underline'>{label}</span>
     </label>
   );
 }

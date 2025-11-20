@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { SubSectionTech } from '@/components/features/project';
 import { Inert } from '@/components/shared';
@@ -48,6 +48,8 @@ export default function ProjectFilter() {
     clearTechList();
   };
 
+  const toggleFilter = useRef<HTMLButtonElement>(null);
+
   return (
     <div className='flex flex-col relative w-full'>
       <section
@@ -77,6 +79,7 @@ export default function ProjectFilter() {
               }
             }}
             aria-label={`${subSectionOpen ? 'Fechar filtro' : 'Abrir filtro'}`}
+            ref={toggleFilter}
           >
             <ul className='grid grid-cols-5 w-full h-12 p-1 border rounded-lg gap-1 ease-in-out duration-300 cursor-pointer border-black/25 hover:border-black/50 dark:border-white/25 dark:hover:border-white/50'>
               {filterTechList.length > 0 ? (
@@ -127,6 +130,9 @@ export default function ProjectFilter() {
               desiredField={radioData.id}
               handleAddToSelectedTechs={handleAddToSelectedTechs}
               filterTechList={filterTechList}
+              stopSelection={() => {
+                toggleFilter.current?.focus();
+              }}
             />
           ))}
         </div>

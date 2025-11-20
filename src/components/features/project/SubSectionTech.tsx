@@ -1,4 +1,6 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { Inert } from '@/components/shared';
 import { techIconMap } from '@/data/content/techIconMap';
 import { getTechByField } from '@/data/helpers/tech/techListHelpers';
 import type { TechFieldType } from '@/types/aliases/TechFieldType';
@@ -9,6 +11,7 @@ interface ISubSectionTech {
   listToShow: number;
   handleAddToSelectedTechs: (newTech: TechNameType) => void;
   filterTechList: TechNameType[];
+  stopSelection: () => void;
 }
 
 export default function SubSectionTech({
@@ -16,9 +19,26 @@ export default function SubSectionTech({
   desiredField,
   handleAddToSelectedTechs,
   filterTechList,
+  stopSelection,
 }: ISubSectionTech) {
+  const listToViewMap: Record<string, TechFieldType> = {
+    '0': 'frontend',
+    '-100': 'backend',
+    '-200': 'mobile',
+    '-300': 'tools',
+  };
+
+  const [viewingList, setViewingList] = useState(0);
+
+  useEffect(() => {
+    const whatToView = -100 * listToShow;
+    setViewingList(whatToView);
+  }, [listToShow]);
+
   return (
-    <ul
+    <Inert
+      isVisible={listToViewMap[viewingList] === desiredField}
+      as={'ul'}
       style={{ transform: `translatey(${-100 * listToShow}%)` }}
       className='flex items-center size-full px-1 py-2 border rounded-lg gap-2 ease-in-out duration-300 overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 border-black/25 dark:border-white/25'
     >
@@ -31,6 +51,12 @@ export default function SubSectionTech({
                 ? 'bg-black/10 dark:bg-white/10'
                 : ''
             }`}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') {
+                e.preventDefault();
+                stopSelection();
+              }
+            }}
             onClick={() => handleAddToSelectedTechs(tech.name)}
           >
             <span className='text-shark-900 dark:text-shark-100'>
@@ -42,6 +68,6 @@ export default function SubSectionTech({
           </button>
         </li>
       ))}
-    </ul>
+    </Inert>
   );
 }
