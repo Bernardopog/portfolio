@@ -1,1 +1,1 @@
-export type ViewTypes = "main" | "about" | "project";
+export type ViewTypes = 'main' | 'about' | 'project';

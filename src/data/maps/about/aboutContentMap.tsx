@@ -1,11 +1,11 @@
+import type { ReactNode } from 'react';
 import {
   AboutMeContent,
   AcademicContent,
   HardskillContent,
   SoftskillContent,
-} from "@/components/features/about/expanded/content";
-import { AboutViewTypes } from "@/types/aliases/AboutViewTypes";
-import { ReactNode } from "react";
+} from '@/components/features/about/expanded/content';
+import type { AboutViewTypes } from '@/types/aliases/AboutViewTypes';
 
 type IAboutSpecificMap = Record<AboutViewTypes, ReactNode>;
 

@@ -1,1 +1,1 @@
-export type TechFieldType = "frontend" | "backend" | "mobile" | "tools";
+export type TechFieldType = 'frontend' | 'backend' | 'mobile' | 'tools';

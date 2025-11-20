@@ -1,7 +1,7 @@
-import { TechFieldType } from "@/types/aliases/TechFieldType";
-import { ReactNode } from "react";
-import { FaTools } from "react-icons/fa";
-import { FaDesktop, FaMobile, FaServer } from "react-icons/fa6";
+import type { ReactNode } from 'react';
+import { FaTools } from 'react-icons/fa';
+import { FaDesktop, FaMobile, FaServer } from 'react-icons/fa6';
+import type { TechFieldType } from '@/types/aliases/TechFieldType';
 
 export const techFieldDataList: {
   title: string;
@@ -9,23 +9,23 @@ export const techFieldDataList: {
   icon: ReactNode;
 }[] = [
   {
-    title: "Front-end",
-    list: "frontend",
+    title: 'Front-end',
+    list: 'frontend',
     icon: <FaDesktop />,
   },
   {
-    title: "Back-end",
-    list: "backend",
+    title: 'Back-end',
+    list: 'backend',
     icon: <FaServer />,
   },
   {
-    title: "Mobile",
-    list: "mobile",
+    title: 'Mobile',
+    list: 'mobile',
     icon: <FaMobile />,
   },
   {
-    title: "Ferramentas",
-    list: "tools",
+    title: 'Ferramentas',
+    list: 'tools',
     icon: <FaTools />,
   },
 ];

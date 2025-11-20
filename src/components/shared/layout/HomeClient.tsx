@@ -1,13 +1,13 @@
-"use client";
-import HomePage from "@/views/home";
-import AboutPage from "@/views/about";
-import { Inert } from "@/components/shared";
+'use client';
+import { Inert } from '@/components/shared';
 import {
   GridBackground,
   Navbar,
   SectionSwitcher,
-} from "@/components/shared/layout";
-import ProjectPage from "@/views/project";
+} from '@/components/shared/layout';
+import AboutPage from '@/views/about';
+import HomePage from '@/views/home';
+import ProjectPage from '@/views/project';
 
 export default function HomeClient() {
   return (
@@ -15,22 +15,22 @@ export default function HomeClient() {
       {(view, setView) => (
         <>
           <GridBackground view={view} />
-          <Inert isVisible={view === "about"} className="overflow-hidden">
-            <AboutPage isVisible={view === "about"} />
+          <Inert isVisible={view === 'about'} className='overflow-hidden'>
+            <AboutPage isVisible={view === 'about'} />
           </Inert>
-          <Inert isVisible={view === "main"} className="overflow-hidden">
+          <Inert isVisible={view === 'main'} className='overflow-hidden'>
             <HomePage
-              onToAbout={() => setView("about")}
-              onToProject={() => setView("project")}
+              onToAbout={() => setView('about')}
+              onToProject={() => setView('project')}
             />
           </Inert>
-          <Inert isVisible={view === "project"} className="overflow-hidden">
+          <Inert isVisible={view === 'project'} className='overflow-hidden'>
             <ProjectPage />
           </Inert>
           <Navbar
-            onToMain={() => setView("main")}
-            onToAbout={() => setView("about")}
-            onToProject={() => setView("project")}
+            onToMain={() => setView('main')}
+            onToAbout={() => setView('about')}
+            onToProject={() => setView('project')}
             view={view}
           />
         </>

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useThemeStore } from "@/store/ThemeStore";
-import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa6";
-import { useShallow } from "zustand/shallow";
+import { useEffect, useState } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa6';
+import { useShallow } from 'zustand/shallow';
+import { useThemeStore } from '@/store/ThemeStore';
 
 export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
   const { isDarkMode, setIsDarkMode, toggleTheme } = useThemeStore(
@@ -11,7 +11,7 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
       isDarkMode: s.isDarkMode,
       setIsDarkMode: s.setIsDarkMode,
       toggleTheme: s.toggleTheme,
-    }))
+    })),
   );
 
   const [isMoving, setIsMoving] = useState<boolean>(false);
@@ -19,8 +19,8 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
   const handleThemeChange = () => {
     toggleTheme();
     setIsMoving(true);
-    document.cookie = `theme=${isDarkMode ? "light" : "dark"}; path=/`;
-    document.documentElement.classList.toggle("dark");
+    document.cookie = `theme=${isDarkMode ? 'light' : 'dark'}; path=/`;
+    document.documentElement.classList.toggle('dark');
 
     setTimeout(() => {
       setIsMoving(false);
@@ -33,15 +33,15 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
 
   return (
     <button
-      className="flex items-center w-16 p-0.5 rounded-full shadow-lg border-black bg-white shadow-black/15 cursor-pointer dark:bg-black dark:border-white dark:shadow-white/15"
+      className='flex items-center w-16 p-0.5 rounded-full shadow-lg border-black bg-white shadow-black/15 cursor-pointer dark:bg-black dark:border-white dark:shadow-white/15'
       onClick={() => handleThemeChange()}
-      aria-label="Alterar tema"
+      aria-label='Alterar tema'
     >
       <div
         className={`flex items-center justify-center size-6 rounded-full bg-black text-white duration-300 ease-in-out transition-transform dark:bg-white dark:text-black dark:translate-x-[150%]
-        ${isMoving && "animate-moving"}`}
+        ${isMoving && 'animate-moving'}`}
       >
-        {isDarkMode ? <FaMoon className="text-xl" /> : <FaSun />}
+        {isDarkMode ? <FaMoon className='text-xl' /> : <FaSun />}
       </div>
     </button>
   );

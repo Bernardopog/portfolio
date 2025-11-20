@@ -1,2 +1,2 @@
-export { default as AboutIntro } from "./AboutIntro";
-export { default as AboutExpanded } from "./AboutExpanded";
+export { default as AboutExpanded } from './AboutExpanded';
+export { default as AboutIntro } from './AboutIntro';

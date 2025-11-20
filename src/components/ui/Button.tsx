@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 interface IButtonProps {
   label?: string;
@@ -19,9 +19,9 @@ export default function Button({
 }: IButtonProps) {
   return (
     <button
-      {...(ariaLabel && { "aria-label": ariaLabel })}
+      {...(ariaLabel && { 'aria-label': ariaLabel })}
       className={`flex items-center gap-2 ${
-        className ?? "btn-default btn-default-color"
+        className ?? 'btn-default btn-default-color'
       }`}
       onClick={() => action()}
     >

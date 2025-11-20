@@ -1,8 +1,8 @@
-import { StaticImageData } from "next/image";
-import { TechNameType } from "../aliases/TechNameType";
+import type { StaticImageData } from 'next/image';
+import type { TechNameType } from '../aliases/TechNameType';
 
-type SourceType = "personal" | "frontendmentor";
-type BgColorType = "dark" | "light";
+type SourceType = 'personal' | 'frontendmentor';
+type BgColorType = 'dark' | 'light';
 
 export interface IProject {
   name: string;

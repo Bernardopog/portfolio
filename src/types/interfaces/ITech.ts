@@ -1,5 +1,5 @@
-import { TechFieldType } from "../aliases/TechFieldType";
-import { TechNameType } from "../aliases/TechNameType";
+import type { TechFieldType } from '../aliases/TechFieldType';
+import type { TechNameType } from '../aliases/TechNameType';
 
 export interface ITech {
   name: TechNameType;

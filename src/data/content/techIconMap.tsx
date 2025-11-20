@@ -1,41 +1,41 @@
-import { ReactNode } from "react";
+import type { ReactNode } from 'react';
 import {
+  SiAngular,
+  SiBlazor,
   SiCss3,
-  SiHtml5,
-  SiSass,
-  SiTailwindcss,
-  SiJavascript,
-  SiTypescript,
-  SiReact,
-  SiNextdotjs,
-  SiVuedotjs,
-  SiNuxtdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiNestjs,
-  SiPostgresql,
-  SiMongodb,
-  SiPrisma,
   SiDotnet,
   SiExpo,
-  SiGit,
+  SiExpress,
   SiFigma,
-  SiAngular,
-  SiSvelte,
-  SiLess,
-  SiJquery,
-  SiVite,
   SiFlask,
-  SiBlazor,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiJquery,
+  SiLess,
+  SiMongodb,
+  SiNestjs,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNuxtdotjs,
+  SiPostgresql,
+  SiPrisma,
   SiPython,
+  SiReact,
+  SiSass,
+  SiSocketdotio,
   SiSolid,
   SiStyledcomponents,
-  SiSocketdotio,
+  SiSvelte,
+  SiTailwindcss,
   SiTurborepo,
-} from "react-icons/si";
-import { TechNameType } from "@/types/aliases/TechNameType";
-import Pinia from "@/assets/svg/Pinia";
-import Zustand from "@/assets/svg/Zustand";
+  SiTypescript,
+  SiVite,
+  SiVuedotjs,
+} from 'react-icons/si';
+import Pinia from '@/assets/svg/Pinia';
+import Zustand from '@/assets/svg/Zustand';
+import type { TechNameType } from '@/types/aliases/TechNameType';
 
 type ITechIconMap = Record<TechNameType, ReactNode>;
 
@@ -64,8 +64,8 @@ export const techIconMap: ITechIconMap = {
   mongodb: <SiMongodb />,
   prisma: <SiPrisma />,
   dotnet: <SiDotnet />,
-  "asp.net": <SiDotnet />,
-  "react native": <SiReact />,
+  'asp.net': <SiDotnet />,
+  'react native': <SiReact />,
   expo: <SiExpo />,
   nativewind: <SiTailwindcss />,
   git: <SiGit />,
@@ -73,8 +73,8 @@ export const techIconMap: ITechIconMap = {
   vite: <SiVite />,
   flask: <SiFlask />,
   blazor: <SiBlazor />,
-  "styled-components": <SiStyledcomponents />,
-  "socket.io": <SiSocketdotio />,
+  'styled-components': <SiStyledcomponents />,
+  'socket.io': <SiSocketdotio />,
   turborepo: <SiTurborepo />,
 
   pinia: <Pinia />,

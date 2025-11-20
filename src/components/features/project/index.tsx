@@ -1,1 +1,1 @@
-export { default as SubSectionTech } from "./SubSectionTech";
+export { default as SubSectionTech } from './SubSectionTech';

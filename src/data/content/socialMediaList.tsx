@@ -1,19 +1,19 @@
-import { SiFrontendmentor, SiGithub, SiLinkedin } from "react-icons/si";
+import { SiFrontendmentor, SiGithub, SiLinkedin } from 'react-icons/si';
 
 export const socialMediaList = [
   {
-    name: "github",
+    name: 'github',
     icon: <SiGithub />,
-    href: "https://github.com/Bernardopog",
+    href: 'https://github.com/Bernardopog',
   },
   {
-    name: "linkedin",
+    name: 'linkedin',
     icon: <SiLinkedin />,
-    href: "https://www.linkedin.com/in/bernardo-poggioni-3746a42a5/",
+    href: 'https://www.linkedin.com/in/bernardo-poggioni-3746a42a5/',
   },
   {
-    name: "frontendmentor",
+    name: 'frontendmentor',
     icon: <SiFrontendmentor />,
-    href: "https://www.frontendmentor.io/profile/Bernardopog",
+    href: 'https://www.frontendmentor.io/profile/Bernardopog',
   },
 ];

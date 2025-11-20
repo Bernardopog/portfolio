@@ -1,23 +1,24 @@
-"use client";
+'use client';
 
 export default function SoftskillDescription() {
   return (
     <div>
       <p>
         Minhas habilidades interpessoais que desenvolvi ajudando outros devs na
-        prática, colaborando com outros desenvolvedores no site{" "}
+        prática, colaborando com outros desenvolvedores no site{' '}
         <a
-          href="https://www.frontendmentor.io/profile/Bernardopog"
-          target="_blank"
-          className="underline"
+          href='https://www.frontendmentor.io/profile/Bernardopog'
+          target='_blank'
+          className='underline'
           onClick={(ev) => ev.stopPropagation()}
+          rel='noopener'
         >
           <b>Frontend Mentor</b>
         </a>
         .
       </p>
       <br />
-      <ul className="list-disc pl-6 py-2 border rounded-lg border-black/25 dark:border-white/25">
+      <ul className='list-disc pl-6 py-2 border rounded-lg border-black/25 dark:border-white/25'>
         <li>
           <b>Comunicação clara</b>
         </li>

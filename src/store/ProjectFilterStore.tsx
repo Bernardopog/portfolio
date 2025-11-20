@@ -1,5 +1,5 @@
-import { TechNameType } from "@/types/aliases/TechNameType";
-import { create } from "zustand";
+import { create } from 'zustand';
+import type { TechNameType } from '@/types/aliases/TechNameType';
 
 interface IProjectFilterStore {
   filterTechList: TechNameType[];

@@ -1,6 +1,6 @@
-"use client";
-import { navbarMap } from "@/data/maps/navbar/navbarMap";
-import { INavbarFunctions } from "@/types/interfaces/INavbarFunctions";
+'use client';
+import { navbarMap } from '@/data/maps/navbar/navbarMap';
+import type { INavbarFunctions } from '@/types/interfaces/INavbarFunctions';
 
 export function useNavbarSections({
   onToMain,

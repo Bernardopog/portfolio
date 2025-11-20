@@ -10,7 +10,7 @@
 @import "./css/animation.css";
 
 /* Plugins */
-@plugin 'tailwind-scrollbar';
+@plugin "tailwind-scrollbar";
 
 /* Dark Theme */
 @custom-variant dark (&:where(.dark, .dark *));

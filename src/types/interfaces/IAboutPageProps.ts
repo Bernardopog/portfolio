@@ -1,4 +1,4 @@
-import { AboutViewTypes } from "../aliases/AboutViewTypes";
+import type { AboutViewTypes } from '../aliases/AboutViewTypes';
 
 export interface IAboutPageProps {
   currentView: AboutViewTypes;

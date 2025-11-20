@@ -1,5 +1,5 @@
-import { techList } from "@/data/content/tech/techList";
-import { TechFieldType } from "@/types/aliases/TechFieldType";
+import { techList } from '@/data/content/tech/techList';
+import type { TechFieldType } from '@/types/aliases/TechFieldType';
 
 export const getAllTechs = () => {
   return techList.map((tech) => tech.name);

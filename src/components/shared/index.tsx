@@ -1,1 +1,1 @@
-export { default as Inert } from "./Inert";
+export { default as Inert } from './Inert';

@@ -1,24 +1,24 @@
-import { TechFieldType } from "../aliases/TechFieldType";
+import type { TechFieldType } from '../aliases/TechFieldType';
 
 type TechCategoryType =
-  | "linguagem"
-  | "estilização"
-  | "estático"
-  | "tipagem"
-  | "framework"
-  | "biblioteca"
-  | "pré-processador"
-  | "orm"
-  | "banco de dados"
-  | "ferramenta"
-  | "fullstack"
-  | "plataforma"
-  | "relacional"
-  | "não relacional"
-  | "controle de versão"
-  | "design"
-  | "prototipação"
-  | "servidor";
+  | 'linguagem'
+  | 'estilização'
+  | 'estático'
+  | 'tipagem'
+  | 'framework'
+  | 'biblioteca'
+  | 'pré-processador'
+  | 'orm'
+  | 'banco de dados'
+  | 'ferramenta'
+  | 'fullstack'
+  | 'plataforma'
+  | 'relacional'
+  | 'não relacional'
+  | 'controle de versão'
+  | 'design'
+  | 'prototipação'
+  | 'servidor';
 
 export interface IExplain {
   title: string;
