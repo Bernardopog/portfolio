@@ -36,6 +36,12 @@ export default function Accordion({
               fieldOpen === item.list ? 'rounded-t-lg' : 'rounded-lg'
             }`}
             onClick={() => handleFieldToOpen(item.list)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleFieldToOpen(item.list);
+              }
+            }}
           >
             <span className='inline-flex items-center gap-4 sm:text-lg'>
               {item.title}

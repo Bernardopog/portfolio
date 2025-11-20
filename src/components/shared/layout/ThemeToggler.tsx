@@ -33,6 +33,7 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
 
   return (
     <button
+      type='button'
       className='flex items-center w-16 p-0.5 rounded-full shadow-lg border-black bg-white shadow-black/15 cursor-pointer dark:bg-black dark:border-white dark:shadow-white/15'
       onClick={() => handleThemeChange()}
       aria-label='Alterar tema'

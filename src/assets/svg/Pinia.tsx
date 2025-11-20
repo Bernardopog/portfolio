@@ -9,6 +9,7 @@ export default function Pinia() {
         height='24'
         width='24'
       >
+        <title id='pinia-icon-title'>Icon representing Pinia</title>
         <desc>Pinia Streamline Icon: https://streamlinehq.com</desc>
         <path
           fill='url(#a)'

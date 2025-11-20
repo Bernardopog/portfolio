@@ -66,28 +66,39 @@ export default function ProjectFilter() {
           >
             Limpar
           </button>
-          <ul
-            className='grid grid-cols-5 w-full h-12 p-1 border rounded-lg gap-1 ease-in-out duration-300 cursor-pointer border-black/25 hover:border-black/50 dark:border-white/25 dark:hover:border-white/50'
+          <button
+            type='button'
+            className='w-full'
             onClick={() => handleSubSectionToOpen()}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleSubSectionToOpen();
+              }
+            }}
+            aria-label={`${subSectionOpen ? 'Fechar filtro' : 'Abrir filtro'}`}
           >
-            {filterTechList.length > 0 ? (
-              filterTechList.map((tech, idx) => (
-                <li
-                  key={idx}
-                  className='flex items-center px-1 py-2 gap-1 rounded-lg border text-shark-800 border-black/15 animate-expand-horizontal overflow-hidden dark:text-shark-200 dark:border-white/15'
-                >
-                  <span>{techIconMap[tech]}</span>
-                  <span className='text-xs capitalize truncate sm:text-sm'>
-                    {tech}
-                  </span>
+            <ul className='grid grid-cols-5 w-full h-12 p-1 border rounded-lg gap-1 ease-in-out duration-300 cursor-pointer border-black/25 hover:border-black/50 dark:border-white/25 dark:hover:border-white/50'>
+              {filterTechList.length > 0 ? (
+                filterTechList.map((tech, idx) => (
+                  <li
+                    // biome-ignore lint/suspicious/noArrayIndexKey: <Static List>
+                    key={idx}
+                    className='flex items-center px-1 py-2 gap-1 rounded-lg border text-shark-800 border-black/15 animate-expand-horizontal overflow-hidden dark:text-shark-200 dark:border-white/15'
+                  >
+                    <span>{techIconMap[tech]}</span>
+                    <span className='text-xs capitalize truncate sm:text-sm'>
+                      {tech}
+                    </span>
+                  </li>
+                ))
+              ) : (
+                <li className='text-center col-span-5 text-shark-800/75 dark:text-shark-200/75'>
+                  Nenhuma Tecnologia selecionada
                 </li>
-              ))
-            ) : (
-              <li className='text-center col-span-5 text-shark-800/75 dark:text-shark-200/75'>
-                Nenhuma Tecnologia selecionada
-              </li>
-            )}
-          </ul>
+              )}
+            </ul>
+          </button>
         </div>
       </section>
       <Inert

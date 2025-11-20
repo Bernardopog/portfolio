@@ -28,7 +28,8 @@
       },
       "suspicious": {
         "noUnknownAtRules": "off",
-        "noConsole": "info"
+        "noConsole": "info",
+        "noDocumentCookie": "off"
       }
     },
     "domains": {

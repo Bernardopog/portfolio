@@ -20,6 +20,7 @@ export default function Navbar({
       <ul className='flex items-center justify-center size-full gap-4 md:flex-col md:justify-start'>
         {pageList.map((item, index) => (
           <NavbarItem
+            // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
             key={index}
             icon={item.icon}
             action={item.action}

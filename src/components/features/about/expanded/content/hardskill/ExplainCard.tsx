@@ -64,7 +64,7 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
     } else {
       setTechExplain(null);
     }
-  }, [tech, knowledgeExplain]);
+  }, [tech]);
 
   if (!techExplain) return null;
 
@@ -106,7 +106,7 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
           ></button>
 
           <div
-            className='flex items-center justify-center size-12 rounded-full bg-white dark:bg-black md:size-16'
+            className='flex items-center justify-center size-12 rounded-full cursor-help bg-white dark:bg-black md:size-16'
             title={knowledgeExplain}
           >
             <span className='font-bold text-shark-800 dark:text-shark-200 md:text-xl'>

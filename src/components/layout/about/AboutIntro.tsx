@@ -25,6 +25,7 @@ export default function AboutIntro({
         {aboutDescriptionMap.map((card, idx) => (
           <AboutCard
             className={idx % 2 === 0 ? 'sm:self-start' : 'sm:self-end'}
+            // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
             key={idx}
             title={card.title}
             icon={card.icon}

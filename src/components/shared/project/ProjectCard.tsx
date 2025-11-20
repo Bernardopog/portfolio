@@ -60,13 +60,26 @@ export default function ProjectCard({
     <article
       ref={cardRef}
       key={project.name}
-      className='min-w-56 h-56 rounded-lg shadow-base shadow-black/15 opacity-75 duration-300 ease-in-out hover:opacity-100 dark:shadow-white/15 hover:shadow-black/25 dark:hover:shadow-white/30 md:min-w-xs'
+      className='relative min-w-56 h-56 rounded-lg shadow-base shadow-black/15 opacity-75 duration-300 ease-in-out hover:opacity-100 dark:shadow-white/15 hover:shadow-black/25 dark:hover:shadow-white/30 md:min-w-xs'
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-      onClick={() => setIsOpen(!isOpen)}
     >
+      <button
+        type='button'
+        className={`flex items-center justify-center absolute inset-0 rounded-lg cursor-pointer ${isOpen ? '-z-10' : 'z-10'}`}
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setIsOpen(!isOpen);
+          }
+        }}
+        aria-label={`${isOpen ? `Fechar detalhes do projeto ${project.name}` : `Abrir detalhes do projeto ${project.name}`}`}
+        title={`${isOpen ? `Fechar detalhes do projeto ${project.name}` : `Abrir detalhes do projeto ${project.name}`}`}
+        aria-pressed={isOpen}
+      ></button>
       <Inert
-        isVisible={shouldBeVisible && !almostHide}
+        isVisible={shouldBeVisible && !almostHide && isOpen}
         className={`relative size-full rounded-lg border-4 bg-shark-100 text-shark-950 border-shark-200 dark:bg-shark-900 dark:text-shark-50 dark:border-shark-900 animate-move-in ${
           almostHide ? 'animate-move-out' : ''
         }`}
@@ -101,7 +114,7 @@ export default function ProjectCard({
             title='Clique para ver mais'
           >
             <FaPlus
-              className={`text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100 ${project.backgroundColor === 'dark' ? 'text-shark-50' : 'text-shark-950'}`}
+              className={`text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100 group-focus:rotate-180 group-focus:opacity-100 ${project.backgroundColor === 'dark' ? 'text-shark-50' : 'text-shark-950'}`}
             />
           </button>
         )}

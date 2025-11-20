@@ -9,12 +9,6 @@
 /* Animations */
 @import "./css/animation.css";
 
-/* Plugins */
-@plugin "tailwind-scrollbar";
-
-/* Dark Theme */
-@custom-variant dark (&:where(.dark, .dark *));
-
 /* Components */
 @import "./css/components.css";
 
@@ -23,3 +17,9 @@
 
 /* Classes */
 @import "./css/class.css";
+
+/* Plugins */
+@plugin "tailwind-scrollbar";
+
+/* Dark Theme */
+@custom-variant dark (&:where(.dark, .dark *));
