@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import { TechNameType } from "../aliases/TechNameType";
 
 type SourceType = "personal" | "frontendmentor";
+type BgColorType = "dark" | "light";
 
 export interface IProject {
   name: string;
@@ -10,4 +11,5 @@ export interface IProject {
   image?: StaticImageData;
   techs: TechNameType[];
   source: SourceType;
+  backgroundColor: BgColorType;
 }

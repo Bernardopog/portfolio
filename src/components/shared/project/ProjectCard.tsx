@@ -100,7 +100,7 @@ export default function ProjectCard({
             aria-label="Abrir projeto"
             title="Clique para ver mais"
           >
-            <FaPlus className="text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100" />
+            <FaPlus className={`text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100 ${project.backgroundColor === "dark" ? "text-shark-50":"text-shark-950"}`} />
           </button>
         )}
         {(project.image && shouldBeVisible) ||

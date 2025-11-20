@@ -15,6 +15,7 @@ export const projectList: IProject[] = [
       "postgresql",
     ],
     source: "personal",
+    backgroundColor: "light"
   },
   {
     name: "Kronos",
@@ -31,6 +32,7 @@ export const projectList: IProject[] = [
       "postgresql",
     ],
     source: "personal",
+    backgroundColor: "dark"
   },
   {
     name: "Social Dashboard",
@@ -38,6 +40,7 @@ export const projectList: IProject[] = [
     image: img.dashboardApp,
     techs: ["next", "tailwind", "typescript"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Faq Accordion 2",
@@ -45,6 +48,7 @@ export const projectList: IProject[] = [
     image: img.faqAccordion2,
     techs: ["csharp", "blazor", "tailwind"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Bento Grid",
@@ -52,6 +56,7 @@ export const projectList: IProject[] = [
     image: img.bentoGrid,
     techs: ["html", "css", "javascript"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "ToDo App",
@@ -59,6 +64,7 @@ export const projectList: IProject[] = [
     image: img.todoApp,
     techs: ["react", "tailwind", "typescript"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Contact Form",
@@ -66,6 +72,7 @@ export const projectList: IProject[] = [
     image: img.contactForm,
     techs: ["vue", "sass", "typescript"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Calculator App",
@@ -73,6 +80,7 @@ export const projectList: IProject[] = [
     image: img.calculatorApp,
     techs: ["vue", "javascript", "pinia", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Sunnyside Homepage",
@@ -80,6 +88,7 @@ export const projectList: IProject[] = [
     image: img.sunnysidePage,
     techs: ["vue", "sass", "typescript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Pricing Component",
@@ -87,6 +96,7 @@ export const projectList: IProject[] = [
     image: img.pricingComponent,
     techs: ["react", "sass", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Multi Step Form",
@@ -94,6 +104,7 @@ export const projectList: IProject[] = [
     image: img.multiStepForm,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Tip Calculator App",
@@ -101,6 +112,7 @@ export const projectList: IProject[] = [
     image: img.tipCalculator,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Expense Chart",
@@ -108,6 +120,7 @@ export const projectList: IProject[] = [
     image: img.expenseChart,
     techs: ["react", "javascript", "sass", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Clipboard Landing Page",
@@ -115,6 +128,7 @@ export const projectList: IProject[] = [
     image: img.clipboardLandingPage,
     techs: ["python", "flask", "tailwind"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Time Tracking Dashboard",
@@ -122,6 +136,7 @@ export const projectList: IProject[] = [
     image: img.timeTrackingDashboard,
     techs: ["react", "javascript", "sass", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Advice Generator App",
@@ -129,6 +144,7 @@ export const projectList: IProject[] = [
     image: img.adviceGenerator,
     techs: ["solid", "sass", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Snap Homepage",
@@ -136,6 +152,7 @@ export const projectList: IProject[] = [
     image: img.snapHomepage,
     techs: ["vue", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "News Homepage",
@@ -143,6 +160,7 @@ export const projectList: IProject[] = [
     image: img.newsHomepage,
     techs: ["vue", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Age Calculator",
@@ -150,6 +168,7 @@ export const projectList: IProject[] = [
     image: img.ageCalculator,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Huddle Landing Page",
@@ -157,6 +176,7 @@ export const projectList: IProject[] = [
     image: img.huddleLandingPage,
     techs: ["vue", "tailwind", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Easybank Land Page",
@@ -164,6 +184,7 @@ export const projectList: IProject[] = [
     image: img.easybankLandingPage,
     techs: ["angular", "sass", "typescript"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Intro Form",
@@ -171,6 +192,7 @@ export const projectList: IProject[] = [
     image: img.introForm,
     techs: ["svelte", "sass", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Article Preview",
@@ -178,6 +200,7 @@ export const projectList: IProject[] = [
     image: img.articlePreview,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Singe Price",
@@ -185,6 +208,7 @@ export const projectList: IProject[] = [
     image: img.singlePrice,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Ping Coming Soon",
@@ -192,6 +216,7 @@ export const projectList: IProject[] = [
     image: img.pingComingSoon,
     techs: ["vue", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Testimonials Grid",
@@ -199,6 +224,7 @@ export const projectList: IProject[] = [
     image: img.testimonialsGrid,
     techs: ["react", "styled-components", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Interactive Card Details",
@@ -206,6 +232,7 @@ export const projectList: IProject[] = [
     image: img.interactiveCardDetails,
     techs: ["react", "styled-components", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Notification Page",
@@ -213,6 +240,7 @@ export const projectList: IProject[] = [
     image: img.notificationPage,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Profile Card",
@@ -220,6 +248,7 @@ export const projectList: IProject[] = [
     image: img.profileCard,
     techs: ["react", "tailwind", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Stats Card",
@@ -227,6 +256,7 @@ export const projectList: IProject[] = [
     image: img.statsCard,
     techs: ["react", "tailwind", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Social Links Profile",
@@ -234,6 +264,7 @@ export const projectList: IProject[] = [
     image: img.socialLinks,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Four Cards Section",
@@ -241,6 +272,7 @@ export const projectList: IProject[] = [
     image: img.fourCardGrid,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Base Apparel Coming Soon",
@@ -248,6 +280,7 @@ export const projectList: IProject[] = [
     image: img.comingSoonPage,
     techs: ["vue", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Social Proof",
@@ -255,6 +288,7 @@ export const projectList: IProject[] = [
     image: img.socialProof,
     techs: ["react", "tailwind", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Recipe Page",
@@ -262,6 +296,7 @@ export const projectList: IProject[] = [
     image: img.recipeCard,
     techs: ["react", "sass", "javascript", "vite"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "FAQ Accordion",
@@ -269,6 +304,7 @@ export const projectList: IProject[] = [
     image: img.faqAccordion,
     techs: ["html", "sass", "jquery"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "NFT Card",
@@ -276,6 +312,7 @@ export const projectList: IProject[] = [
     image: img.nftCard,
     techs: ["html", "less"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Blog Preview Card",
@@ -283,6 +320,7 @@ export const projectList: IProject[] = [
     image: img.blogPreview,
     techs: ["html", "tailwind"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Order Summary Card",
@@ -290,6 +328,7 @@ export const projectList: IProject[] = [
     image: img.orderSummaryCard,
     techs: ["html", "less"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Newsletter Signup",
@@ -297,6 +336,7 @@ export const projectList: IProject[] = [
     image: img.newsletterSignUp,
     techs: ["html", "sass", "jquery"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Rating Card",
@@ -304,6 +344,7 @@ export const projectList: IProject[] = [
     image: img.ratingCard,
     techs: ["html", "sass", "jquery"],
     source: "frontendmentor",
+    backgroundColor: "dark"
   },
   {
     name: "Three Column Preview Card",
@@ -311,6 +352,7 @@ export const projectList: IProject[] = [
     image: img.threeColumnPreview,
     techs: ["html", "css"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Product Preview Card",
@@ -318,6 +360,7 @@ export const projectList: IProject[] = [
     image: img.productPreviewCard,
     techs: ["html", "css"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "Results Summary",
@@ -325,6 +368,7 @@ export const projectList: IProject[] = [
     image: img.resultSummary,
     techs: ["html", "css"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
   {
     name: "QR Code",
@@ -332,5 +376,6 @@ export const projectList: IProject[] = [
     image: img.qrCode,
     techs: ["html", "css"],
     source: "frontendmentor",
+    backgroundColor: "light"
   },
 ];
