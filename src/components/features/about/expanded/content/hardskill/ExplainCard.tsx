@@ -18,6 +18,8 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
   const [techExplain, setTechExplain] = useState<IExplainWithIcon | null>(null);
   const [randomProject, setRandomProject] = useState<IProject | null>(null);
 
+  const [knowledgeExplain, setKnowledgeExplain] = useState<string>("");
+
   const isDarkMode = useThemeStore((s) => s.isDarkMode);
 
   useEffect(() => {
@@ -28,12 +30,41 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
         icon,
       };
 
+      switch (data.level) {
+        case 1:
+          setKnowledgeExplain(
+            "Tive contato e estudei, mas ainda não apliquei em projeto real"
+          );
+          break;
+        case 2:
+          setKnowledgeExplain(
+            "Usei em projeto pontual, com apoio ou sem domínio completo"
+          );
+          break;
+        case 3:
+          setKnowledgeExplain(
+            "Apliquei em mais de um projeto e entendo bem o fluxo"
+          );
+          break;
+        case 4:
+          setKnowledgeExplain(
+            "Uso com frequência e resolvo problemas com autonomia"
+          );
+          break;
+        case 5:
+          setKnowledgeExplain(
+            "Uso em projetos próprios e tenho domínio suficiente para ensinar"
+          );
+          break;
+        default:
+          break;
+      }
       setTechExplain(data);
       setRandomProject(getRandomProjectByTech(tech));
     } else {
       setTechExplain(null);
     }
-  }, [tech]);
+  }, [tech, knowledgeExplain]);
 
   if (!techExplain) return null;
 
@@ -68,7 +99,13 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
           }}
           className="flex items-center justify-center absolute top-2 right-2 w-16 min-h-16 rounded-full opacity-75 bg-shark-200 dark:bg-shark-950 md:size-20"
         >
-          <div className="flex items-center justify-center size-12 rounded-full bg-white dark:bg-black md:size-16">
+          <button
+            type="button"
+            className="absolute inset-0 z-10 bg-red-600 rounded-full opacity-0 md:hidden"
+            onClick={() => alert(knowledgeExplain)}
+          ></button>
+
+          <div className="flex items-center justify-center size-12 rounded-full bg-white dark:bg-black md:size-16" title={knowledgeExplain}>
             <span className="font-bold text-shark-800 dark:text-shark-200 md:text-xl">
               {getPercentage(techExplain.level, 5)}%
             </span>
