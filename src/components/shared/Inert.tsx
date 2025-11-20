@@ -1,13 +1,27 @@
-import { type ReactNode, useEffect, useRef } from 'react';
+import {
+  type CSSProperties,
+  type ElementType,
+  type ReactNode,
+  useEffect,
+  useRef,
+} from 'react';
 
 interface IInertProps {
   children: ReactNode;
   isVisible: boolean;
   className?: string;
+  style?: CSSProperties;
+  as?: ElementType;
 }
 
-export default function Inert({ children, isVisible, className }: IInertProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export default function Inert({
+  children,
+  isVisible,
+  className,
+  style,
+  as: Tag = 'div',
+}: IInertProps) {
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -15,8 +29,8 @@ export default function Inert({ children, isVisible, className }: IInertProps) {
   }, [isVisible]);
 
   return (
-    <div ref={ref} className={className}>
+    <Tag ref={ref} className={className} style={style} aria-hidden={!isVisible}>
       {children}
-    </div>
+    </Tag>
   );
 }
