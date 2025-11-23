@@ -80,6 +80,17 @@
       width: 100%;
     }
   }
+
+  --animate-lits-a-bit: lits-a-bit 2s ease-in-out;
+  @keyframes lits-a-bit {
+    0%,
+    100% {
+      opacity: 0.75;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 .tech {

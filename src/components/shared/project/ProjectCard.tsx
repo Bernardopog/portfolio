@@ -1,21 +1,33 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import {
+  type Dispatch,
+  type SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { FaPlus, FaUser } from 'react-icons/fa6';
 import { SiFrontendmentor } from 'react-icons/si';
 import { techIconMap } from '@/data/content/techIconMap';
+import { useProjectSelectionStore } from '@/store/ProjectSelectionStore';
+import type { ProjectViewTypes } from '@/types/aliases/ProjectViewTypes';
 import type { IProject } from '@/types/interfaces/IProject';
 import { Inert } from '../../shared';
 
 interface IProjectCardProps {
   project: IProject;
   outOfProjectPage?: boolean;
+  setCurrentView: Dispatch<SetStateAction<ProjectViewTypes>>;
 }
 
 export default function ProjectCard({
   project,
   outOfProjectPage,
+  setCurrentView,
 }: IProjectCardProps) {
+  const selectProject = useProjectSelectionStore((s) => s.selectProject);
+
   const [isOpen, setIsOpen] = useState(false);
   const [almostHide, setAlmostHide] = useState(false);
   const [shouldBeVisible, setShouldBeVisible] = useState(false);
@@ -107,8 +119,10 @@ export default function ProjectCard({
               isOpen ? 'opacity-100' : 'opacity-0'
             }`}
             onClick={() => {
-              if (isOpen) alert('Abrindo subpágina');
-              else console.log('Fazendo nada');
+              if (isOpen) {
+                setCurrentView('details');
+                selectProject(project);
+              } else setCurrentView('none');
             }}
             aria-label='Abrir projeto'
             title='Clique para ver mais'
