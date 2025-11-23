@@ -15,6 +15,12 @@ export default function HomeClient() {
       {(view, setView) => (
         <>
           <GridBackground view={view} />
+          <Navbar
+            onToMain={() => setView('main')}
+            onToAbout={() => setView('about')}
+            onToProject={() => setView('project')}
+            view={view}
+          />
           <Inert isVisible={view === 'about'} className='overflow-hidden'>
             <AboutPage isVisible={view === 'about'} />
           </Inert>
@@ -27,12 +33,6 @@ export default function HomeClient() {
           <Inert isVisible={view === 'project'} className='overflow-hidden'>
             <ProjectPage />
           </Inert>
-          <Navbar
-            onToMain={() => setView('main')}
-            onToAbout={() => setView('about')}
-            onToProject={() => setView('project')}
-            view={view}
-          />
         </>
       )}
     </SectionSwitcher>
