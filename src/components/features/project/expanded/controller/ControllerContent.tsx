@@ -48,7 +48,6 @@ export default function ControllerContent() {
           }
         }}
         disabled={index === 0}
-        className='btn-default border-black/25 text-shark-900 dark:border-white/25 dark:text-shark-100 hover:bg-black/10 dark:hover:bg-white/10 active:bg-black/20 active:shadow-base active:shadow-black/25 dark:active:bg-white/20 dark:active:shadow-white/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-shark-200 disabled:shadow-none dark:disabled:bg-shark-700'
       />
       <Button
         label='Próximo'
@@ -61,7 +60,6 @@ export default function ControllerContent() {
           }
         }}
         disabled={index === projectList.length - 1}
-        className='btn-default border-black/25 text-shark-900 dark:border-white/25 dark:text-shark-100 hover:bg-black/10 dark:hover:bg-white/10 active:bg-black/20 active:shadow-base active:shadow-black/25 dark:active:bg-white/20 dark:active:shadow-white/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-shark-200 disabled:shadow-none dark:disabled:bg-shark-700'
       />
     </footer>
   );
