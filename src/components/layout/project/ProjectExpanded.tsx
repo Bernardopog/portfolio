@@ -23,7 +23,7 @@ export default function ProjectExpanded({
       isVisible={currentView !== 'none'}
       className={`relative ${
         currentView !== 'none'
-          ? 'h-[calc(100dvh-8rem)] pt-4 pb-8 px-4 overflow-y-auto md:h-full'
+          ? 'h-[calc(100dvh-8rem)] pt-4 pb-8 px-4 md:h-full'
           : 'p-0 overflow-hidden'
       }`}
     >
