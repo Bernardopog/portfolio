@@ -7,9 +7,20 @@ type BgColorType = 'dark' | 'light';
 export interface IProject {
   name: string;
   description?: string;
-  link: string;
   image?: StaticImageData;
   techs: TechNameType[];
   source: SourceType;
   backgroundColor: BgColorType;
+  links: {
+    github: string;
+    live: string;
+    source?: string;
+  };
+  info: {
+    createdAt: Date;
+    endedAt?: Date;
+    category: string[];
+    status: 'in-progress' | 'completed';
+    tagline?: string;
+  };
 }
