@@ -1,16 +1,17 @@
-import Image, { type StaticImageData } from 'next/image';
+import Image from 'next/image';
+import type { IMedia } from '@/types/interfaces/IProject';
 
 interface IVisualContent {
-  img: StaticImageData | undefined;
+  media: IMedia;
   alt: string;
 }
 
-export default function VisualContent({ img, alt }: IVisualContent) {
+export default function VisualContent({ media, alt }: IVisualContent) {
   return (
     <figure className='project-expanded-card min-h-64 sm:col-span-1'>
-      {img && (
+      {media && (
         <Image
-          src={img}
+          src={media.thumb}
           alt={alt}
           loading='lazy'
           placeholder='blur'

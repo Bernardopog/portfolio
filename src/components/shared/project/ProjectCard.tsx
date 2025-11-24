@@ -132,14 +132,14 @@ export default function ProjectCard({
             />
           </button>
         )}
-        {(project.image && shouldBeVisible) ||
-        (project.image && outOfProjectPage) ? (
+        {(project.media.thumb && shouldBeVisible) ||
+        (project.media.thumb && outOfProjectPage) ? (
           <Image
             loading='lazy'
             placeholder='blur'
             className='size-full rounded-lg select-none duration-300 ease-in-out'
             alt={project.name}
-            src={project.image}
+            src={project.media.thumb}
             width={320}
             height={224}
             quality={75}

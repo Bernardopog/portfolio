@@ -4,13 +4,19 @@ import type { TechNameType } from '../aliases/TechNameType';
 type SourceType = 'personal' | 'frontendmentor';
 type BgColorType = 'dark' | 'light';
 
+export interface IMedia {
+  thumb: StaticImageData;
+  images?: Record<string, StaticImageData>;
+  videos?: Record<string, string>;
+}
+
 export interface IProject {
   name: string;
   description?: string;
-  image?: StaticImageData;
   techs: TechNameType[];
   source: SourceType;
   backgroundColor: BgColorType;
+  media: IMedia;
   links: {
     github: string;
     live: string;

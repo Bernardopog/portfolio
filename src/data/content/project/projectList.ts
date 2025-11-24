@@ -4,7 +4,9 @@ import type { IProject } from '@/types/interfaces/IProject';
 export const projectList: IProject[] = [
   {
     name: 'Pluto',
-    image: img.plutoApp,
+    media: {
+      thumb: img.plutoApp,
+    },
     techs: [
       'next',
       'tailwind',
@@ -28,7 +30,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Kronos',
-    image: img.kronosApp,
+    media: {
+      thumb: img.kronosApp,
+    },
     techs: [
       'turborepo',
       'typescript',
@@ -54,7 +58,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Social Dashboard',
-    image: img.dashboardApp,
+    media: {
+      thumb: img.dashboardApp,
+    },
     techs: ['next', 'tailwind', 'typescript'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -71,7 +77,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Faq Accordion 2',
-    image: img.faqAccordion2,
+    media: {
+      thumb: img.faqAccordion2,
+    },
     techs: ['csharp', 'blazor', 'tailwind'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -88,7 +96,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Bento Grid',
-    image: img.bentoGrid,
+    media: {
+      thumb: img.bentoGrid,
+    },
     techs: ['html', 'css', 'javascript'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -105,7 +115,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'ToDo App',
-    image: img.todoApp,
+    media: {
+      thumb: img.todoApp,
+    },
     techs: ['react', 'tailwind', 'typescript'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -122,7 +134,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Contact Form',
-    image: img.contactForm,
+    media: {
+      thumb: img.contactForm,
+    },
     techs: ['vue', 'sass', 'typescript'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -139,7 +153,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Calculator App',
-    image: img.calculatorApp,
+    media: {
+      thumb: img.calculatorApp,
+    },
     techs: ['vue', 'javascript', 'pinia', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -156,7 +172,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Sunnyside Homepage',
-    image: img.sunnysidePage,
+    media: {
+      thumb: img.sunnysidePage,
+    },
     techs: ['vue', 'sass', 'typescript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -173,7 +191,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Pricing Component',
-    image: img.pricingComponent,
+    media: {
+      thumb: img.pricingComponent,
+    },
     techs: ['react', 'sass', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -190,7 +210,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Multi Step Form',
-    image: img.multiStepForm,
+    media: {
+      thumb: img.multiStepForm,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -207,7 +229,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Tip Calculator App',
-    image: img.tipCalculator,
+    media: {
+      thumb: img.tipCalculator,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -224,7 +248,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Expense Chart',
-    image: img.expenseChart,
+    media: {
+      thumb: img.expenseChart,
+    },
     techs: ['react', 'javascript', 'sass', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -241,7 +267,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Clipboard Landing Page',
-    image: img.clipboardLandingPage,
+    media: {
+      thumb: img.clipboardLandingPage,
+    },
     techs: ['python', 'flask', 'tailwind'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -258,7 +286,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Time Tracking Dashboard',
-    image: img.timeTrackingDashboard,
+    media: {
+      thumb: img.timeTrackingDashboard,
+    },
     techs: ['react', 'javascript', 'sass', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -275,7 +305,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Advice Generator App',
-    image: img.adviceGenerator,
+    media: {
+      thumb: img.adviceGenerator,
+    },
     techs: ['solid', 'sass', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -292,7 +324,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Snap Homepage',
-    image: img.snapHomepage,
+    media: {
+      thumb: img.snapHomepage,
+    },
     techs: ['vue', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -309,7 +343,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'News Homepage',
-    image: img.newsHomepage,
+    media: {
+      thumb: img.newsHomepage,
+    },
     techs: ['vue', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -326,7 +362,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Age Calculator',
-    image: img.ageCalculator,
+    media: {
+      thumb: img.ageCalculator,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -343,7 +381,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Huddle Landing Page',
-    image: img.huddleLandingPage,
+    media: {
+      thumb: img.huddleLandingPage,
+    },
     techs: ['vue', 'tailwind', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -360,7 +400,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Easybank Land Page',
-    image: img.easybankLandingPage,
+    media: {
+      thumb: img.easybankLandingPage,
+    },
     techs: ['angular', 'sass', 'typescript'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -377,7 +419,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Intro Form',
-    image: img.introForm,
+    media: {
+      thumb: img.introForm,
+    },
     techs: ['svelte', 'sass', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -394,7 +438,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Article Preview',
-    image: img.articlePreview,
+    media: {
+      thumb: img.articlePreview,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -411,7 +457,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Singe Price',
-    image: img.singlePrice,
+    media: {
+      thumb: img.singlePrice,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -428,7 +476,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Ping Coming Soon',
-    image: img.pingComingSoon,
+    media: {
+      thumb: img.pingComingSoon,
+    },
     techs: ['vue', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -445,7 +495,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Testimonials Grid',
-    image: img.testimonialsGrid,
+    media: {
+      thumb: img.testimonialsGrid,
+    },
     techs: ['react', 'styled-components', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -462,7 +514,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Interactive Card Details',
-    image: img.interactiveCardDetails,
+    media: {
+      thumb: img.interactiveCardDetails,
+    },
     techs: ['react', 'styled-components', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -479,7 +533,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Notification Page',
-    image: img.notificationPage,
+    media: {
+      thumb: img.notificationPage,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -496,7 +552,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Profile Card',
-    image: img.profileCard,
+    media: {
+      thumb: img.profileCard,
+    },
     techs: ['react', 'tailwind', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -513,7 +571,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Stats Card',
-    image: img.statsCard,
+    media: {
+      thumb: img.statsCard,
+    },
     techs: ['react', 'tailwind', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -530,7 +590,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Social Links Profile',
-    image: img.socialLinks,
+    media: {
+      thumb: img.socialLinks,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -547,7 +609,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Four Cards Section',
-    image: img.fourCardGrid,
+    media: {
+      thumb: img.fourCardGrid,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -564,7 +628,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Base Apparel Coming Soon',
-    image: img.comingSoonPage,
+    media: {
+      thumb: img.comingSoonPage,
+    },
     techs: ['vue', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -581,7 +647,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Social Proof',
-    image: img.socialProof,
+    media: {
+      thumb: img.socialProof,
+    },
     techs: ['react', 'tailwind', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -598,7 +666,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Recipe Page',
-    image: img.recipeCard,
+    media: {
+      thumb: img.recipeCard,
+    },
     techs: ['react', 'sass', 'javascript', 'vite'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -615,7 +685,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'FAQ Accordion',
-    image: img.faqAccordion,
+    media: {
+      thumb: img.faqAccordion,
+    },
     techs: ['html', 'sass', 'jquery'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -632,7 +704,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'NFT Card',
-    image: img.nftCard,
+    media: {
+      thumb: img.nftCard,
+    },
     techs: ['html', 'less'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -649,7 +723,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Blog Preview Card',
-    image: img.blogPreview,
+    media: {
+      thumb: img.blogPreview,
+    },
     techs: ['html', 'tailwind'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -666,7 +742,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Order Summary Card',
-    image: img.orderSummaryCard,
+    media: {
+      thumb: img.orderSummaryCard,
+    },
     techs: ['html', 'less'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -683,7 +761,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Newsletter Signup',
-    image: img.newsletterSignUp,
+    media: {
+      thumb: img.newsletterSignUp,
+    },
     techs: ['html', 'sass', 'jquery'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -700,7 +780,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Rating Card',
-    image: img.ratingCard,
+    media: {
+      thumb: img.ratingCard,
+    },
     techs: ['html', 'sass', 'jquery'],
     source: 'frontendmentor',
     backgroundColor: 'dark',
@@ -717,7 +799,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Three Column Preview Card',
-    image: img.threeColumnPreview,
+    media: {
+      thumb: img.threeColumnPreview,
+    },
     techs: ['html', 'css'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -734,7 +818,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Product Preview Card',
-    image: img.productPreviewCard,
+    media: {
+      thumb: img.productPreviewCard,
+    },
     techs: ['html', 'css'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -751,7 +837,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Results Summary',
-    image: img.resultSummary,
+    media: {
+      thumb: img.resultSummary,
+    },
     techs: ['html', 'css'],
     source: 'frontendmentor',
     backgroundColor: 'light',
@@ -768,7 +856,9 @@ export const projectList: IProject[] = [
   },
   {
     name: 'QR Code',
-    image: img.qrCode,
+    media: {
+      thumb: img.qrCode,
+    },
     techs: ['html', 'css'],
     source: 'frontendmentor',
     backgroundColor: 'light',
