@@ -1,12 +1,16 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import { useShallow } from 'zustand/shallow';
 import { Button } from '@/components/ui';
 import { projectList } from '@/data/content/project/projectList';
 import { useProjectSelectionStore } from '@/store/ProjectSelectionStore';
 
-export default function ControllerContent() {
+export default function ControllerContent({
+  setMediaIndex,
+}: {
+  setMediaIndex: Dispatch<SetStateAction<number>>;
+}) {
   const { selectedProject, selectProject } = useProjectSelectionStore(
     useShallow((s) => ({
       selectedProject: s.selectedProject,
@@ -25,6 +29,7 @@ export default function ControllerContent() {
   }, [selectedProject?.name]);
 
   const handleController = () => {
+    setMediaIndex(0);
     return {
       back: () => {
         selectProject(projectList[index - 1]);

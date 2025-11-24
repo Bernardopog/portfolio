@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { IProject } from '@/types/interfaces/IProject';
 import { ControllerContent } from './controller';
 import { IntroContent } from './intro';
@@ -10,12 +11,19 @@ export default function ProjectExpandedContent({
 }: {
   project: IProject;
 }) {
+  const [mediaIndex, setMediaIndex] = useState(0);
+
   return (
     <article className='grid grid-cols-1 grid-rows-[0.5fr_0.5fr_1fr_64px] h-full mt-2 gap-2 overflow-y-auto sm:grid-cols-2 sm:grid-rows-[1fr_1fr_64px] md:pl-10 md:grid-cols-[1fr_1fr] md:grid-rows-[1fr_1fr_64px] md:h-[calc(100%-3.25rem)]'>
-      <VisualContent media={project.media} alt={project.name} />
+      <VisualContent
+        media={project.media}
+        alt={project.name}
+        mediaIndex={mediaIndex}
+        setMediaIndex={setMediaIndex}
+      />
       {project && <IntroContent project={project} />}
       <div className='project-expanded-card sm:row-span-2'>C</div>
-      <ControllerContent />
+      <ControllerContent setMediaIndex={setMediaIndex} />
     </article>
   );
 }
