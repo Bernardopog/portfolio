@@ -8,6 +8,7 @@ interface IButtonProps {
   icon?: ReactNode;
   className?: string;
   ariaLabel?: string;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -16,14 +17,16 @@ export default function Button({
   icon,
   className,
   ariaLabel,
+  disabled,
 }: IButtonProps) {
   return (
     <button
       {...(ariaLabel && { 'aria-label': ariaLabel })}
-      className={`flex items-center gap-2 ${
+      className={`flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed ${
         className ?? 'btn-default btn-default-color'
       }`}
       onClick={() => action()}
+      disabled={disabled}
     >
       {icon}
       {label}
