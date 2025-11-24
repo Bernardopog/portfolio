@@ -7,7 +7,7 @@ interface IVisualContent {
 
 export default function VisualContent({ img, alt }: IVisualContent) {
   return (
-    <figure className='project-expanded-card min-h-64 sm:col-span-2 md:col-span-1'>
+    <figure className='project-expanded-card min-h-64 sm:col-span-1'>
       {img && (
         <Image
           src={img}

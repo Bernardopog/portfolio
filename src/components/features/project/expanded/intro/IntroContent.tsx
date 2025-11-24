@@ -9,7 +9,7 @@ export default function IntroContent({ project }: { project: IProject }) {
     source === 'frontendmentor' ? 'Frontend Mentor' : 'Projeto Pessoal';
 
   return (
-    <header className='project-expanded-card flex flex-col relative gap-2 p-2 animate-lits-a-bit text-shark-800 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 dark:text-shark-200 md:row-start-2 md:row-end-4 md:overflow-y-auto'>
+    <header className='project-expanded-card flex flex-col relative gap-2 p-2 animate-lits-a-bit text-shark-800 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 dark:text-shark-200 sm:row-start-2 md:row-end-4 md:overflow-y-auto'>
       <section
         className={`grid gap-2 ${project.source !== 'personal' ? 'grid-cols-2 xs:grid-cols-3' : 'grid-cols-2'}`}
       >
