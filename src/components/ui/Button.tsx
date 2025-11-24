@@ -1,10 +1,10 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
 interface IButtonProps {
   label?: string;
-  action: () => void;
+  action: (e: MouseEvent<HTMLButtonElement>) => void;
   icon?: ReactNode;
   className?: string;
   ariaLabel?: string;
@@ -25,7 +25,7 @@ export default function Button({
       className={`flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed ${
         className ?? 'btn-default btn-default-color'
       }`}
-      onClick={() => action()}
+      onClick={(e) => action(e)}
       disabled={disabled}
     >
       {icon}
