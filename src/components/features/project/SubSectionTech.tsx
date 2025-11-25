@@ -40,7 +40,7 @@ export default function SubSectionTech({
       isVisible={listToViewMap[viewingList] === desiredField}
       as={'ul'}
       style={{ transform: `translatey(${-100 * listToShow}%)` }}
-      className='flex items-center size-full px-1 py-2 border rounded-lg gap-2 ease-in-out duration-300 overflow-y-hidden overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 border-black/25 dark:border-white/25'
+      className='flex items-center size-full px-1 py-2 border rounded-lg gap-2 ease-in-out duration-300 overflow-y-hidden overflow-x-auto scrollbar-base border-black/25 dark:border-white/25'
     >
       {getTechByField(desiredField).map((tech) => (
         <li key={tech.name}>

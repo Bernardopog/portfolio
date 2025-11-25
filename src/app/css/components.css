@@ -15,3 +15,7 @@
 .project-expanded-card {
   @apply border rounded-lg size-full backdrop-blur-xs shadow-md opacity-75 duration-300 ease-in-out border-black/25 shadow-black/25 dark:border-white/25 dark:shadow-white/5 hover:opacity-100;
 }
+
+.scrollbar-base {
+  @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50;
+}

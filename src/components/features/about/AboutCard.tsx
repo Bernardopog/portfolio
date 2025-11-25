@@ -40,7 +40,7 @@ export default function AboutCard({
           </div>
           <h2 className='text-xl font-medium'>{title}</h2>
         </header>
-        <section className='w-full h-[calc(100%-3rem-16px)] mt-2 p-2 overflow-y-auto text-start scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-900 text-shark-950/75 dark:scrollbar-thumb-shark-100 dark:text-shark-50/75'>
+        <section className='w-full h-[calc(100%-3rem-16px)] mt-2 p-2 overflow-y-auto text-start scrollbar-base dark:text-shark-50/75'>
           {children}
         </section>
         <span className='absolute bottom-1 right-4 text-sm select-none pointer-events-none duration-300 ease-in-out text-shark-950/40 group-hover:text-shark-950/75 dark:text-shark-50/20 dark:group-hover:text-shark-50/60'>
