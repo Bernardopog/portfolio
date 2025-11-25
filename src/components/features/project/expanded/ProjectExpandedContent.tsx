@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { IProject } from '@/types/interfaces/IProject';
 import { ControllerContent } from './controller';
+import { DescriptionContent } from './description';
 import { IntroContent } from './intro';
 import { VisualContent } from './visual';
 
@@ -14,7 +15,7 @@ export default function ProjectExpandedContent({
   const [mediaIndex, setMediaIndex] = useState(0);
 
   return (
-    <article className='grid grid-cols-1 grid-rows-[0.5fr_0.5fr_1fr_64px] h-full mt-2 gap-2 overflow-y-auto sm:grid-cols-2 sm:grid-rows-[1fr_1fr_64px] md:pl-10 md:grid-cols-[1fr_1fr] md:grid-rows-[1fr_1fr_64px] md:h-[calc(100%-3.25rem)]'>
+    <article className='grid grid-cols-1 grid-rows-[minmax(260px,1fr)_minmax(360px,1fr)_50vh_64px] h-full pb-8 mt-2 gap-2 overflow-y-auto scrollbar-base sm:grid-cols-2 sm:grid-rows-[1fr_1fr_64px] md:pl-10 md:pb-0 md:grid-cols-[1fr_1fr] md:grid-rows-[minmax(0,1fr)_minmax(0,1fr)_64px] md:h-full md:max-h-[calc(100dvh-8rem)]'>
       <VisualContent
         media={project.media}
         alt={project.name}
@@ -22,7 +23,7 @@ export default function ProjectExpandedContent({
         setMediaIndex={setMediaIndex}
       />
       {project && <IntroContent project={project} />}
-      <div className='project-expanded-card sm:row-span-2'>C</div>
+      <DescriptionContent />
       <ControllerContent setMediaIndex={setMediaIndex} />
     </article>
   );

@@ -9,7 +9,7 @@ export default function IntroContent({ project }: { project: IProject }) {
     source === 'frontendmentor' ? 'Frontend Mentor' : 'Projeto Pessoal';
 
   return (
-    <header className='project-expanded-card flex flex-col justify-between relative gap-2 p-2 animate-lits-a-bit text-shark-800 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50 dark:text-shark-200 sm:row-start-2 md:row-end-4 md:overflow-y-auto'>
+    <header className='project-expanded-card flex flex-col justify-between relative gap-2 p-2 animate-lits-a-bit overflow-y-auto text-shark-800 scrollbar-base dark:text-shark-200 sm:row-start-2 md:row-end-4'>
       <section
         className={`grid gap-2 ${project.source !== 'personal' ? 'grid-cols-2 xs:grid-cols-3' : 'grid-cols-2'}`}
       >
@@ -107,7 +107,7 @@ export default function IntroContent({ project }: { project: IProject }) {
       </div>
       <div>
         <h3 className='text-base'>Tecnologias Utilizadas: </h3>
-        <ul className='flex min-h-12 gap-2 p-1 overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-shark-950 dark:scrollbar-thumb-shark-50'>
+        <ul className='flex min-h-12 gap-2 p-1 overflow-x-auto scrollbar-base'>
           {project.techs.map((tech) => (
             <li
               key={tech}
