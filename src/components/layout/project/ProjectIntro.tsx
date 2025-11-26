@@ -18,7 +18,7 @@ export default function ProjectIntro({
   return (
     <Inert
       isVisible={currentView === 'none'}
-      className={`h-full duration-300 ease-in-out ${currentView === 'none' ? 'px-2 md:pl-14' : 'p-0 overflow-hidden'}`}
+      className={`h-full duration-300 ease-in-out ${currentView === 'none' ? 'px-2' : 'p-0 overflow-hidden'}`}
     >
       <ProjectFilter />
       <ProjectList setCurrentView={setCurrentView} />

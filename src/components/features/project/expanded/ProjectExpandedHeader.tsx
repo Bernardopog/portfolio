@@ -20,7 +20,7 @@ export default function ProjectExpandedHeader({
   };
 
   return (
-    <header className='flex justify-between items-center sticky top-0 z-20 w-full md:pl-10'>
+    <header className='flex justify-between items-center sticky top-0 z-20 w-full'>
       <h2 className='font-bold text-lg text-shark-950 dark:text-shark-50 sm:text-xl md:text-2xl'>
         Projeto | {projectName}
       </h2>

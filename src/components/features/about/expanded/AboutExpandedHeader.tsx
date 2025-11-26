@@ -32,7 +32,7 @@ export default function AboutExpandedHeader({
   }, [currentView]);
 
   return (
-    <header className='flex justify-between items-center w-full md:pl-10'>
+    <header className='flex justify-between items-center w-full'>
       <h2 className='font-bold text-2xl text-shark-950 dark:text-shark-50'>
         {title}
       </h2>
