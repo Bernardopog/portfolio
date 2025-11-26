@@ -111,9 +111,12 @@ export default function IntroContent({ project }: { project: IProject }) {
           {project.techs.map((tech) => (
             <li
               key={tech}
-              className='flex items-center justify-center min-w-20 rounded-lg border border-black/25 dark:border-white/25'
+              className='flex items-center justify-center min-w-24 rounded-lg border border-black/25 dark:border-white/25'
             >
-              <span>{techIconMap[tech]}</span>
+              <span className='flex items-center gap-2 p-1 text-sm capitalize'>
+                <span className='text-xl'>{techIconMap[tech]}</span>
+                {tech}
+              </span>
             </li>
           ))}
         </ul>

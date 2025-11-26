@@ -1,4 +1,5 @@
 import type { StaticImageData } from 'next/image';
+import type { ReactNode } from 'react';
 import type { TechNameType } from '../aliases/TechNameType';
 
 type SourceType = 'personal' | 'frontendmentor';
@@ -12,7 +13,7 @@ export interface IMedia {
 
 export interface IProject {
   name: string;
-  description?: string;
+  description?: ReactNode;
   techs: TechNameType[];
   source: SourceType;
   backgroundColor: BgColorType;

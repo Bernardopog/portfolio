@@ -23,7 +23,7 @@ export default function ProjectExpandedContent({
         setMediaIndex={setMediaIndex}
       />
       {project && <IntroContent project={project} />}
-      <DescriptionContent />
+      <DescriptionContent description={project.description} />
       <ControllerContent setMediaIndex={setMediaIndex} />
     </article>
   );

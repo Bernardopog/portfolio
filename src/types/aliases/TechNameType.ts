@@ -24,6 +24,7 @@ type StateManagerTechs = 'zustand' | 'pinia';
 type BuildingToolTechs = 'vite';
 type WebSocketTechs = 'socket.io';
 type MonoRepoTechs = 'turborepo';
+type BackendAsAServiceTechs = 'supabase' | 'firebase';
 
 export type TechNameType =
   | LanguageTechs
@@ -45,4 +46,5 @@ export type TechNameType =
   | StateManagerTechs
   | BuildingToolTechs
   | WebSocketTechs
-  | MonoRepoTechs;
+  | MonoRepoTechs
+  | BackendAsAServiceTechs;
