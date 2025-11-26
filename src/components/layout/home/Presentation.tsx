@@ -1,4 +1,5 @@
 import { Roboto_Mono } from 'next/font/google';
+import GlitchArea from '@/components/features/home/GlitchArea';
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
@@ -15,15 +16,7 @@ export default function Presentation() {
       >
         Bernardo Poggioni
       </h1>
-      <p
-        className={`mt-2 text-gradient text-xl xs:text-2xl sm:text-3xl duration-300 ${robotoMono.className}`}
-      >
-        Desenvolvedor{' '}
-        <span className='inline-block h-fit px-2 bg-black dark:bg-white rounded-lg'>
-          <span className='text-gradient-inverted'>Front</span>
-        </span>{' '}
-        end
-      </p>
+      <GlitchArea fontFamily={robotoMono.className} />
     </section>
   );
 }
