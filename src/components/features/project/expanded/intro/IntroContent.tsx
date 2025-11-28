@@ -82,10 +82,11 @@ export default function IntroContent({ project }: { project: IProject }) {
         <p className='inline-flex justify-between lg:col-start-2'>
           <span>Concluído: </span>
           {project.info.endedAt
-            ? project.info.endedAt
-                .toISOString()
-                .replaceAll('-', '/')
-                .split('T')[0]
+            ? project.info.endedAt.toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+              })
             : '--/--/----'}
         </p>
       </section>
