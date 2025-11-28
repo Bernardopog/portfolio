@@ -21,6 +21,14 @@ export default function IntroContent({ project }: { project: IProject }) {
           Ver código
           <FaCode />
         </a>
+        <a
+          href={project.links.live}
+          target='_blank'
+          className={`btn-default btn-default-color flex items-center justify-between text-sm order-1 md:text-base md:order-0 ${project.source !== 'personal' && 'col-span-2 xs:col-span-1'}`}
+        >
+          Ver site
+          <FaEye />
+        </a>
         {project.source !== 'personal' && (
           <a
             href={project.links.source}
@@ -31,14 +39,6 @@ export default function IntroContent({ project }: { project: IProject }) {
             <FaQuestion />
           </a>
         )}
-        <a
-          href={project.links.live}
-          target='_blank'
-          className={`btn-default btn-default-color flex items-center justify-between text-sm md:text-base ${project.source !== 'personal' && 'col-span-2 xs:col-span-1'}`}
-        >
-          Ver site
-          <FaEye />
-        </a>
       </section>
       <div
         className={`grid grid-cols-[1fr_0.5fr] gap-x-2 ${project.info.tagline ? 'grid-rows-2' : 'grid-rows-1'}`}
