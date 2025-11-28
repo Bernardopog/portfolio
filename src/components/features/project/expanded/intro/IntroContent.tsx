@@ -51,14 +51,12 @@ export default function IntroContent({ project }: { project: IProject }) {
         <span className='row-start-2 col-span-2 text-sm italic opacity-75'>
           {project.info.tagline}
         </span>
-        <span className='inline-flex items-center gap-2 text-xs'>
+        <span className='inline-flex items-center justify-end gap-2 text-xs'>
           <span>
             {project.source === 'frontendmentor' && <SiFrontendmentor />}
             {project.source === 'personal' && <FaUser />}{' '}
           </span>
-          <span className='inline-block'>
-            {transformSource(project.source)}
-          </span>
+          <span>{transformSource(project.source)}</span>
         </span>
       </div>
       <section className='grid grid-cols-1 grid-rows-3 text-sm md:text-base lg:grid-cols-[0.75fr_0.5fr] lg:grid-rows-2'>
