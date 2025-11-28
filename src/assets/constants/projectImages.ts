@@ -31,6 +31,7 @@ import ProfileCardImage from '@/assets/webp/profile-card.webp';
 import QrCodeImage from '@/assets/webp/qr-code.webp';
 import RatingCardImage from '@/assets/webp/rating-card.webp';
 import RecipeCardImage from '@/assets/webp/recipe-card.webp';
+import RestCountriesImage from '@/assets/webp/rest-countries.webp';
 import ResultSummaryImage from '@/assets/webp/result-summary.webp';
 import SinglePriceImage from '@/assets/webp/single-price.webp';
 import SnapHomepageImage from '@/assets/webp/snap-homepage.webp';
@@ -90,4 +91,5 @@ export const projectImages = {
   timeTrackingDashboard: TimeTrackingDashboardImage,
   tipCalculator: TipCalculatorImage,
   todoApp: TodoAppImage,
+  restCountries: RestCountriesImage,
 };

@@ -202,7 +202,7 @@ export const projectList: IProject[] = [
             {
               tech: 'typescript',
               reason:
-                'Utilizado para garantir segutura de tipos pela aplicação.',
+                'Utilizado para garantir segurança de tipos pela aplicação.',
             },
             {
               tech: 'next',
@@ -328,6 +328,127 @@ export const projectList: IProject[] = [
     ),
   },
   {
+    name: 'REST Countries',
+    media: {
+      thumb: img.restCountries,
+    },
+    techs: ['typescript', 'next', 'tailwind'],
+    source: 'frontendmentor',
+    backgroundColor: 'light',
+    links: {
+      github: 'https://github.com/Bernardopog/rest-countries-api-next-ts',
+      live: 'https://rest-countries-api-next-ts.vercel.app/',
+      source:
+        'https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca',
+    },
+    info: {
+      createdAt: new Date(2024, 4, 5),
+      endedAt: new Date(2024, 4, 5),
+      category: ['frontend'],
+      status: 'completed',
+    },
+    description: (
+      <>
+        <Description content='REST Counties é um desafio d enível 4 do site Frontend Mentor, o foco é implementar um sistema de filtragem por pesquisa ou regiões, alternância de temas e detalhes de cada país.' />
+        <FeatureList
+          featureList={[
+            'Filtro de pesquisa',
+            'Filtro por regiões',
+            'Alternância de temas',
+            'Detalhes de cada país',
+            'Consumo de API',
+          ]}
+        />
+        <TechStack
+          techList={[
+            {
+              tech: 'typescript',
+              reason:
+                'Utilizado para garantir segurança de tipos pela aplicação.',
+            },
+            {
+              tech: 'next',
+              reason:
+                'Utilizado devido a facilidade de criação de rotas dinâmicas, SSR e agilidade na construção da aplicação.',
+            },
+            {
+              tech: 'tailwind',
+              reason:
+                'Utilizado devido a alta velocidade de criação de componentes e estilização.',
+            },
+          ]}
+        />
+        <Highlights
+          highlightList={['Consumo de API', 'Refatoração de Código legado']}
+        />
+        <Challenges
+          challengeList={[
+            {
+              name: 'Tipagem',
+              category: 'frontend',
+              difficulty: 'low',
+              difficultyReason:
+                'Primeira vez tendo que utilizar tipagens com Typescript',
+            },
+            {
+              name: 'Consumo de API',
+              category: 'frontend',
+              difficulty: 'mid',
+              difficultyReason:
+                'Primeira vez trabalhando com fetch de dados para buscar dados de uma API',
+            },
+            {
+              name: 'Refatoração de Código',
+              category: 'frontend',
+              difficulty: 'mid',
+              difficultyReason:
+                'O código estava com muitas funcionalidades e estava dificil de entender.',
+            },
+            {
+              name: 'Filtros e Buscas',
+              category: 'frontend',
+              difficulty: 'high',
+              difficultyReason:
+                'A época não se sabia como implementar filtros e buscas com facilidade.',
+            },
+          ]}
+        />
+        <Learnings
+          learningsList={[
+            {
+              learned: 'Importância de tipagem e lints',
+              tech: 'typescript',
+            },
+            {
+              learned: 'Criação de filtros e buscas',
+              tech: 'typescript',
+            },
+            {
+              learned: 'Uso de SSG',
+              tech: 'next',
+            },
+            {
+              learned: 'Consumo de API',
+              tech: 'next',
+            },
+          ]}
+        />
+        <FuturePlans
+          plans={[
+            {
+              name: 'Consertar bug da página não carregar',
+              completionDate: new Date(2025, 10, 28),
+            },
+            {
+              name: 'Refatorar código',
+              completionDate: new Date(2025, 10, 28),
+            },
+          ]}
+        />
+      </>
+    ),
+  },
+  {
     name: 'Social Dashboard',
     media: {
       thumb: img.dashboardApp,
@@ -336,9 +457,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/dashboard-app-next',
+      live: 'https://bernardopog.github.io/dashboard-app-next/',
+      source:
+        'https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -355,9 +477,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/faq-accordion-blazor',
+      live: 'https://bernardopog.github.io/faq-accordion-blazor/',
+      source:
+        'https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -374,9 +497,9 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/vanilla-bento-grid',
+      live: 'https://bernardopog.github.io/vanilla-bento-grid/',
+      source: 'https://www.frontendmentor.io/challenges/bento-grid-RMydElrlOj',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -393,9 +516,9 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/todo-app-react-tailwind',
+      live: 'https://bernardopog.github.io/todo-app-react-tailwind/',
+      source: 'https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -412,9 +535,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/contact-form-vue',
+      live: 'https://bernardopog.github.io/contact-form-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -431,9 +555,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/calculator-app-vue',
+      live: 'https://bernardopog.github.io/calculator-app-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -450,9 +575,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/sunnyside-agency-vue',
+      live: 'https://bernardopog.github.io/sunnyside-agency-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/agency-landing-page-7yVs3B6ef',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -469,9 +595,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/pricing-component-react',
+      live: 'https://bernardopog.github.io/pricing-component-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -488,9 +615,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/multi-step-form-react',
+      live: 'https://bernardopog.github.io/multi-step-form-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -507,9 +635,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/tip-calculator-app-react',
+      live: 'https://bernardopog.github.io/tip-calculator-app-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -526,9 +655,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/expense-chart-react',
+      live: 'https://bernardopog.github.io/expense-chart-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -545,9 +675,11 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github:
+        'https://github.com/Bernardopog/clipboard-landing-page-python-flask',
+      live: 'https://bernardopog.github.io/clipboard-landing-page-python-flask/',
+      source:
+        'https://www.frontendmentor.io/challenges/clipboard-landing-page-5cc9bccd6c4c91111378ecb9',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -564,9 +696,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/time-tracking-dashboard-react',
+      live: 'https://bernardopog.github.io/time-tracking-dashboard-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -583,9 +716,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/advice-generator-app-solid',
+      live: 'https://bernardopog.github.io/advice-generator-app-solid/',
+      source:
+        'https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -602,9 +736,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/snap-homepage-dropdown-vue',
+      live: 'https://bernardopog.github.io/snap-homepage-dropdown-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -621,9 +756,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/news-homepage-vue',
+      live: 'https://bernardopog.github.io/news-homepage-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -640,9 +776,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/age-calculator-app-react',
+      live: 'https://bernardopog.github.io/age-calculator-app-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -659,9 +796,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/huddle-landing-page-vue',
+      live: 'https://bernardopog.github.io/huddle-landing-page-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/huddle-landing-page-with-a-single-introductory-section-B_2Wvxgi0',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -678,9 +816,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/easybank-landing-page-angular17',
+      live: 'https://bernardopog.github.io/easybank-landing-page-angular17/',
+      source:
+        'https://www.frontendmentor.io/challenges/digital-bank-landing-page-WaUhkoDN',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -697,9 +836,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/intro-signup-form-svelte',
+      live: 'https://bernardopog.github.io/intro-signup-form-svelte/',
+      source:
+        'https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -716,9 +856,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/article-preview-comp-react',
+      live: 'https://bernardopog.github.io/article-preview-comp-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -735,9 +876,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/single-price-grid-react',
+      live: 'https://bernardopog.github.io/single-price-grid-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/single-price-grid-component-5ce41129d0ff452fec5abbbc',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -754,9 +896,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/ping-coming-soon-page-vue',
+      live: 'https://bernardopog.github.io/ping-coming-soon-page-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -773,9 +916,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/testimonials-grid-section-react',
+      live: 'https://bernardopog.github.io/testimonials-grid-section-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -792,9 +936,11 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github:
+        'https://github.com/Bernardopog/interactive-details-card-form-react',
+      live: 'https://bernardopog.github.io/interactive-details-card-form-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -811,9 +957,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/notifications-page-react',
+      live: 'https://bernardopog.github.io/notifications-page-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/notifications-page-DqK5QAmKbC',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -830,9 +977,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/profile-component-card-react',
+      live: 'https://bernardopog.github.io/profile-component-card-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -849,9 +997,11 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github:
+        'https://github.com/Bernardopog/stats-preview-card-component-react',
+      live: 'https://bernardopog.github.io/stats-preview-card-component-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -868,9 +1018,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/social-links-profile-react',
+      live: 'https://bernardopog.github.io/social-links-profile-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -887,9 +1038,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/four-card-feature-section-react',
+      live: 'https://bernardopog.github.io/four-card-feature-section-react/',
+      source:
+        'https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -906,9 +1058,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/base-apparel-coming-soon-vue',
+      live: 'https://bernardopog.github.io/base-apparel-coming-soon-vue/',
+      source:
+        'https://www.frontendmentor.io/challenges/base-apparel-coming-soon-page-5d46b47f8db8a7063f9331a0',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -925,9 +1078,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/social-proof-react-tailwind',
+      live: 'https://bernardopog.github.io/social-proof-react-tailwind/',
+      source:
+        'https://www.frontendmentor.io/challenges/social-proof-section-6e0qTv_bA',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -944,9 +1098,9 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/recipe-page-main-react',
+      live: 'https://bernardopog.github.io/recipe-page-main-react/',
+      source: 'https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -963,9 +1117,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/faq-accordion-sass-jquery',
+      live: 'https://bernardopog.github.io/faq-accordion-sass-jquery/',
+      source:
+        'https://www.frontendmentor.io/challenges/faq-accordion-wyfFdeBwBz',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -982,9 +1137,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/nft-preview-card-less',
+      live: 'https://bernardopog.github.io/nft-preview-card-less/',
+      source:
+        'https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1001,9 +1157,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/blog-preview-card-tailwind',
+      live: 'https://bernardopog.github.io/blog-preview-card-tailwind/',
+      source:
+        'https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1020,9 +1177,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/order-summary-card',
+      live: 'https://bernardopog.github.io/order-summary-card/',
+      source:
+        'https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1039,9 +1197,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/newsletter-signup-jquery',
+      live: 'https://bernardopog.github.io/newsletter-signup-jquery/',
+      source:
+        'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1058,9 +1217,11 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'dark',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github:
+        'https://github.com/Bernardopog/interactive-rating-component-jquery',
+      live: 'https://bernardopog.github.io/interactive-rating-component-jquery/',
+      source:
+        'https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1077,9 +1238,11 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github:
+        'https://github.com/Bernardopog/3-column-preview-card-component-main-r3ygoski',
+      live: 'https://bernardopog.github.io/3-column-preview-card-component-main-r3ygoski/',
+      source:
+        'https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1096,9 +1259,10 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/product-preview',
+      live: 'https://bernardopog.github.io/product-preview/',
+      source:
+        'https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa',
     },
     info: {
       createdAt: new Date(2000, 0, 1),
@@ -1115,12 +1279,14 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/summary-component',
+      live: 'https://bernardopog.github.io/summary-component/',
+      source:
+        'https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV',
     },
     info: {
-      createdAt: new Date(2000, 0, 1),
+      createdAt: new Date(2023, 9, 22),
+      endedAt: new Date(2023, 9, 22),
       category: ['fullstack'],
       status: 'completed',
     },
@@ -1134,12 +1300,14 @@ export const projectList: IProject[] = [
     source: 'frontendmentor',
     backgroundColor: 'light',
     links: {
-      github: '#',
-      live: '#',
-      source: '#',
+      github: 'https://github.com/Bernardopog/QR-Code-Frontend-Mentor',
+      live: 'https://bernardopog.github.io/QR-Code-Frontend-Mentor/',
+      source:
+        'https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H',
     },
     info: {
-      createdAt: new Date(2000, 0, 1),
+      createdAt: new Date(2023, 9, 5),
+      endedAt: new Date(2023, 9, 5),
       category: ['fullstack'],
       status: 'completed',
     },
