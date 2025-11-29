@@ -191,4 +191,14 @@ export const techList: ITech[] = [
     main: true,
     field: 'frontend',
   },
+  {
+    name: 'supabase',
+    main: false,
+    field: 'backend',
+  },
+  {
+    name: 'firebase',
+    main: false,
+    field: 'backend',
+  },
 ];

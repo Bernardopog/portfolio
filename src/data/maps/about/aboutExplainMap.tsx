@@ -303,9 +303,25 @@ export const aboutExplainMap: ITechExplainMap = {
   zustand: {
     title: 'Zustand',
     field: 'frontend',
-    categories: ['biblioteca', 'estado', 'React'],
+    categories: ['biblioteca', 'estado', 'react'],
     description:
       'Biblioteca leve para gerenciamento de estado em aplicações React. Oferece uma API simples e direta, com suporte a atualizações reativas e persistência de dados.',
     level: 4,
+  },
+  supabase: {
+    title: 'Supabase',
+    field: 'backend',
+    categories: ['ferramenta', 'banco de dados', 'backend'],
+    description:
+      'Ferramenta de backend como serviço que simplifica a criação de APIs, autenticação e armazenamento de dados SQL. Oferece uma solução completa para desenvolvimento de aplicativos web e mobile, com suporte a autenticação e armazenamento de dados.',
+    level: 1,
+  },
+  firebase: {
+    title: 'Firebase',
+    field: 'backend',
+    categories: ['ferramenta', 'banco de dados', 'backend'],
+    description:
+      'Ferramenta de backend como serviço que simplifica a criação de APIs, autenticação e armazenamento de dados NoSQL. Oferece uma solução completa para desenvolvimento de aplicativos web e mobile.',
+    level: 1,
   },
 };
