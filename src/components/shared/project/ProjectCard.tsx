@@ -18,7 +18,7 @@ import { Inert } from '../../shared';
 interface IProjectCardProps {
   project: IProject;
   outOfProjectPage?: boolean;
-  setCurrentView: Dispatch<SetStateAction<ProjectViewTypes>>;
+  setCurrentView?: Dispatch<SetStateAction<ProjectViewTypes>>;
 }
 
 export default function ProjectCard({
@@ -119,6 +119,7 @@ export default function ProjectCard({
               isOpen ? 'opacity-100' : 'opacity-0'
             }`}
             onClick={() => {
+              if (!setCurrentView) return;
               if (isOpen) {
                 setCurrentView('details');
                 selectProject(project);
