@@ -1,9 +1,14 @@
 'use client';
 import { type ReactNode, useEffect, useState } from 'react';
+import { MdArrowBack } from 'react-icons/md';
+import { useShallow } from 'zustand/shallow';
 import ProjectCard from '@/components/shared/project/ProjectCard';
+import { Button } from '@/components/ui';
 import { techIconMap } from '@/data/content/techIconMap';
 import { getRandomProjectByTech } from '@/data/helpers/project/projectListHelpers';
 import { aboutExplainMap } from '@/data/maps/about/aboutExplainMap';
+import { useAppViewStore } from '@/store/AppViewStore';
+import { useProjectFilterStore } from '@/store/ProjectFilterStore';
 import { useThemeStore } from '@/store/ThemeStore';
 import type { TechNameType } from '@/types/aliases/TechNameType';
 import type { IExplain } from '@/types/interfaces/IExplain';
@@ -21,6 +26,16 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
   const [knowledgeExplain, setKnowledgeExplain] = useState<string>('');
 
   const isDarkMode = useThemeStore((s) => s.isDarkMode);
+  const { addToTechList, clearTechList, filterTechList } =
+    useProjectFilterStore(
+      useShallow((s) => ({
+        filterTechList: s.filterTechList,
+        addToTechList: s.addToTechList,
+        removeFromTechList: s.removeFromTechList,
+        clearTechList: s.clearTechList,
+      })),
+    );
+  const setCurrent = useAppViewStore((s) => s.setCurrentView);
 
   useEffect(() => {
     if (tech) {
@@ -130,8 +145,17 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
           </div>
         )}
       </article>
-      <footer className='absolute bottom-0 w-full p-1 border rounded-lg text-center text-shark-800 border-black/25 dark:text-shark-200 dark:border-white/25'>
-        Placeholder
+      <footer className='flex justify-center absolute bottom-0 w-full p-1 border rounded-lg text-center text-shark-800 border-black/25 dark:text-shark-200 dark:border-white/25'>
+        <Button
+          action={() => {
+            if (filterTechList.length >= 1) clearTechList();
+            addToTechList(tech);
+            setCurrent('project');
+          }}
+          label='Ver ptojetos com essa Tecnologia'
+          icon={<MdArrowBack className='rotate-180 order-1' />}
+          title='Ver ptojetos com essa Tecnologia'
+        />
       </footer>
     </>
   );
