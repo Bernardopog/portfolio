@@ -1,34 +1,33 @@
 'use client';
 
-import {
-  type Dispatch,
-  type ReactNode,
-  type SetStateAction,
-  useState,
-} from 'react';
+import type { ReactNode } from 'react';
+import { useShallow } from 'zustand/shallow';
+import { useAppViewStore } from '@/store/AppViewStore';
 import type { ViewTypes } from '@/types/aliases/ViewTypes';
 
 export default function SectionSwitcher({
   children,
 }: {
-  children: (
-    view: ViewTypes,
-    setView: Dispatch<SetStateAction<ViewTypes>>,
-  ) => ReactNode;
+  children: (view: ViewTypes, setView: (view: ViewTypes) => void) => ReactNode;
 }) {
-  const [view, setView] = useState<ViewTypes>('main');
+  const { currentView, setCurrentView } = useAppViewStore(
+    useShallow((s) => ({
+      currentView: s.currentView,
+      setCurrentView: s.setCurrentView,
+    })),
+  );
 
   return (
     <div
       className={`grid duration-500 ease-in-out ${
-        view === 'about'
+        currentView === 'about'
           ? 'grid-cols-[1fr_0fr_0fr]'
-          : view === 'project'
+          : currentView === 'project'
             ? 'grid-cols-[0fr_0fr_1fr]'
             : 'grid-cols-[0fr_1fr_0fr]'
       }`}
     >
-      {children(view, setView)}
+      {children(currentView, setCurrentView)}
     </div>
   );
 }
