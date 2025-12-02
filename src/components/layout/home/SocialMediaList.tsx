@@ -5,7 +5,7 @@ export default function SocialMediaList() {
   const t = useTranslations('Home');
 
   return (
-    <ul className='flex absolute top-46 p-2 gap-2 rounded-lg border border-black/10 dark:border-white/10 text-black md:flex-col md:left-[calc(100vw-3.5rem)] md:top-0'>
+    <ul className='flex absolute top-54 p-2 gap-2 rounded-lg border border-black/10 dark:border-white/10 text-black sm:top-46 md:flex-col md:left-[calc(100vw-3.5rem)] md:top-0'>
       {socialMediaList.map((socialMedia) => (
         <li
           key={socialMedia.name}
