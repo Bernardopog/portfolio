@@ -1,5 +1,5 @@
 import { Roboto_Mono } from 'next/font/google';
-import GlitchArea from '@/components/features/home/GlitchArea';
+import { GlitchArea } from '@/components/features/home';
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
