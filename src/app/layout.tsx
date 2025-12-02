@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
+import { I18nProvider } from '@/i18n';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,14 +23,21 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const theme = (await cookies()).get('theme')?.value;
+  const locale = (await cookies()).get('locale')?.value;
 
   return (
-    <html lang='en' className={`${theme === 'dark' && 'dark'}`}>
+    <html lang='pt' className={`${theme === 'dark' && 'dark'}`}>
       <body
         className={`${inter.variable} relative max-h-dvh w-full overflow-hidden bg-white dark:bg-black`}
       >
-        <Header darkMode={theme === 'dark'} />
-        {children}
+        <I18nProvider locale={locale ?? 'pt'}>
+          <Header
+            darkMode={theme === 'dark'}
+            startLocale={(locale as 'pt' | 'en') ?? 'pt'}
+          />
+
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );
