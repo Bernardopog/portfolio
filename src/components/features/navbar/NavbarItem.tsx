@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import Button from '@/components/ui/Button';
 import type { ViewTypes } from '@/types/aliases/ViewTypes';
@@ -7,6 +8,7 @@ interface INavbarItemProps {
   action: () => void;
   name: string;
   view: ViewTypes;
+  label: string;
 }
 
 export default function NavbarItem({
@@ -14,7 +16,10 @@ export default function NavbarItem({
   action,
   name,
   view,
+  label,
 }: INavbarItemProps) {
+  const t = useTranslations('Navbar');
+
   return (
     <li>
       <Button
@@ -25,6 +30,7 @@ export default function NavbarItem({
         }`}
         action={() => action()}
         icon={icon}
+        title={`${t('To')} ${label}`}
       />
     </li>
   );

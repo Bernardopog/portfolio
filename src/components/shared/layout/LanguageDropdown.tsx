@@ -1,9 +1,11 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { useEffect, useState } from 'react';
 import { MdLanguage } from 'react-icons/md';
 import { Button } from '@/components/ui';
+import { useLocaleStore } from '@/store/LocaleStore';
 import Inert from '../Inert';
 
 interface ILanguageDropdownProps {
@@ -16,9 +18,17 @@ export default function LanguageDropdown({
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
+  const t = useTranslations('Header');
+
+  const { changeLocale } = useLocaleStore();
+
+  useEffect(() => {
+    changeLocale(startLocale);
+  }, [changeLocale, startLocale]);
 
   const handleLanguageChange = (language: 'pt' | 'en') => {
     document.cookie = `locale=${language}; path=/`;
+    changeLocale(language);
     router.refresh();
   };
 
@@ -26,7 +36,11 @@ export default function LanguageDropdown({
     <div className='flex flex-col items-end relative gap-2'>
       <Button
         action={() => setIsOpen(!isOpen)}
-        ariaLabel={'Abrir menu de idiomas'}
+        ariaLabel={
+          isOpen
+            ? t('LanguageDropdownAriaOpen')
+            : t('LanguageDropdownAriaClose')
+        }
         icon={<MdLanguage />}
         className='flex items-center text-2xl p-1 rounded-full duration-300 ease-in-out text-shark-950 hover:bg-black/10 dark:text-shark-50 dark:hover:bg-white/10'
       />

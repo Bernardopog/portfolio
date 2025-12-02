@@ -1,0 +1,19 @@
+{
+  "Home": {
+    "CTAAbout": "Sobre mim",
+    "CTAProject": "Projetos",
+    "IntroGlitchedArea": "Desenvolvedor Front End",
+    "IntroDeveloper": "Desenvolvedor",
+    "SocialMediaTo": "Visitar"
+  },
+  "Header": {
+    "LanguageDropdownAriaOpen": "Fechar menu de idioma",
+    "LanguageDropdownAriaClose": "Abrir menu de idioma"
+  },
+  "Navbar": {
+    "About": "Sobre mim",
+    "Project": "Projetos",
+    "Home": "Home",
+    "To": "Ir para"
+  }
+}

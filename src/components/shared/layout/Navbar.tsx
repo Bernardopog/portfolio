@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { NavbarItem } from '@/components/features/navbar';
 import { useNavbarSections } from '@/hooks/useNavbarPages';
 import type { ViewTypes } from '@/types/aliases/ViewTypes';
@@ -14,6 +15,7 @@ export default function Navbar({
   view,
 }: INavbarProps) {
   const pageList = useNavbarSections({ onToMain, onToAbout, onToProject });
+  const t = useTranslations('Navbar');
 
   return (
     <nav className='absolute bottom-0 z-50 w-full h-12 rounded-t-lg border-t border-black/10 backdrop-blur-xs duration-300 ease-in-out dark:border-white/10 md:top-0 md:bottom-auto md:left-0 md:w-fit md:h-12 md:px-4 md:border md:rounded-none md:rounded-r-lg'>
@@ -26,6 +28,7 @@ export default function Navbar({
             action={item.action}
             view={view}
             name={item.name}
+            label={t(item.key)}
           />
         ))}
       </ul>
