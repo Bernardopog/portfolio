@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { type Dispatch, type SetStateAction, useMemo } from 'react';
 import ProjectCard from '@/components/shared/project/ProjectCard';
 import { projectList } from '@/data/content/project/projectList';
@@ -11,6 +12,8 @@ interface IProjectListProps {
 
 export default function ProjectList({ setCurrentView }: IProjectListProps) {
   const filterTechList = useProjectFilterStore((s) => s.filterTechList);
+
+  const t = useTranslations('Projects');
 
   const filteredList = useMemo(() => {
     const filteredProjectList = projectList.filter((proj) => {
@@ -30,7 +33,9 @@ export default function ProjectList({ setCurrentView }: IProjectListProps) {
           />
         ))
       ) : (
-        <p>Não há nenhum projeto que use todas essas techs selecionadas</p>
+        <p className='col-span-4 text-2xl text-center text-shark-950/75 dark:text-shark-50/75'>
+          {t('NoProjects')}
+        </p>
       )}
     </main>
   );

@@ -179,5 +179,14 @@
       }
     }
   },
+  "Projects": {
+    "Technologies": "Tecnologias",
+    "Clear": "Limpar",
+    "NoTechSelected": "Nenhuma tecnologia selecionada",
+    "NoProjects": "Nenhum projeto com essas tecnologias",
+    "FilterType": {
+      "Tools": "Ferramentas"
+    }
+  },
   "Back": "Voltar"
 }

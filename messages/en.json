@@ -182,5 +182,14 @@
       }
     }
   },
+  "Projects": {
+    "Technologies": "Technologies",
+    "Clear": "Clear",
+    "NoTechSelected": "No technologies selected",
+    "NoProjects": "No projects with these technologies",
+    "FilterType": {
+      "Tools": "Tools"
+    }
+  },
   "Back": "Back"
 }

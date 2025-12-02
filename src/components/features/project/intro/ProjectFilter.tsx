@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { SubSectionTech } from '@/components/features/project';
@@ -11,8 +12,8 @@ import type { TechNameType } from '@/types/aliases/TechNameType';
 
 export default function ProjectFilter() {
   const radioList: { id: TechFieldType; label: string }[] = [
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'backend', label: 'Backend' },
+    { id: 'frontend', label: 'Front end' },
+    { id: 'backend', label: 'Back end' },
     { id: 'mobile', label: 'Mobile' },
     { id: 'tools', label: 'Ferramentas' },
   ];
@@ -50,6 +51,8 @@ export default function ProjectFilter() {
 
   const toggleFilter = useRef<HTMLButtonElement>(null);
 
+  const t = useTranslations('Projects');
+
   return (
     <div className='flex flex-col relative w-full'>
       <section
@@ -59,14 +62,14 @@ export default function ProjectFilter() {
       >
         <div className='relative flex flex-col items-center w-full gap-2 md:w-1/3'>
           <p className='text-center text-shark-900 dark:text-shark-100'>
-            Tecnologias
+            {t('Technologies')}
           </p>
           <button
             type='button'
             className='absolute right-2 top-2 text-xs cursor-pointer duration-300 ease-in-out text-shark-800/50 dark:text-shark-200/50 hover:text-shark-800 dark:hover:text-shark-200 md:text-sm'
             onClick={() => handleClearSelectedTechs()}
           >
-            Limpar
+            {t('Clear')}
           </button>
           <button
             type='button'
@@ -97,7 +100,7 @@ export default function ProjectFilter() {
                 ))
               ) : (
                 <li className='text-center col-span-5 text-shark-800/75 dark:text-shark-200/75'>
-                  Nenhuma Tecnologia selecionada
+                  {t('NoTechSelected')}
                 </li>
               )}
             </ul>
@@ -116,7 +119,13 @@ export default function ProjectFilter() {
               key={radioData.id}
               id={radioData.id}
               name='tech'
-              label={radioData.label}
+              label={
+                radioData.id === 'tools'
+                  ? t(
+                      `FilterType.${radioData.id[0].toUpperCase()}${radioData.id.slice(1)}`,
+                    )
+                  : radioData.label
+              }
               state={listToShow === idx}
               setState={() => setListToShow(idx)}
             />
