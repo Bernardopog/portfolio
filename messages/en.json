@@ -18,5 +18,169 @@
   },
   "SocialMedia": {
     "To": "Visit"
-  }
+  },
+  "AboutMe": {
+    "CardAbout": "About me",
+    "CardAboutDesc": "<span>Front-end Developer aspiring to become <strong>Fullstack</strong>. Driven by curiosity and the desire to turn ideas into reality. I love building projects and exploring new technologies.</span><br></br><br></br><span>Outside of coding, I'm a fan of a good chess match, binge-watching series, and playing strategy and management games. I enjoy challenges that require reasoning and planning, both on screen and in real life.</span>",
+    "CardHardskills": "Hard Skills",
+    "CardHardskillsDesc": "Main Technologies",
+    "CardSoftskills": "Soft Skills",
+    "CardSoftskillsDesc": {
+      "Desc1": "My interpersonal skills, developed by helping other devs and collaborating with fellow developers on the site <a>Frontend Mentor</a>.",
+      "Communication": "Clear Communication",
+      "Empathy": "Empathy",
+      "Colaboration": "Colaboration",
+      "Desc2": "These skills are pillars of my growth, both inside and outside of coding."
+    },
+    "CardAcademic": "Academic",
+    "CardAcademicDesc": "I'm self-taught and have been building my technical foundation through courses, learning paths, and a degree in IT Management.<br></br><br></br> I learn both through practice and in formal environments, always striving to grow as a developer.",
+    "CardMoreDetail": "Click to see details",
+    "WIP": {
+      "About": "This subsection is under construction and will soon include more details about my journey and passions, both inside and outside of coding.",
+      "Softskill": "This subsection is under construction and will soon include more details on how I apply these skills.",
+      "Academic": "This subsection is under construction and will soon include more details about my journey and passions, both inside and outside of coding."
+    },
+    "Expanded": {
+      "Hardskill": {
+        "SelectATechnology": "Select a Technology",
+        "MainTechnologies": "Main Technologies",
+        "AllTechnologies": "All Technologies",
+        "AccordionListTitle": {
+          "Tools": "Tools"
+        },
+        "KnowledgeLevel": {
+          "Learning": "I've had contact and studied, but haven't applied in a real project yet",
+          "Beginner": "Used in a point project, with support or without complete mastery",
+          "Intermediate": "Applied in more than one project and understand the flow",
+          "Advanced": "Used frequently and solve problems autonomously",
+          "Familiar": "Used in my own projects and have sufficient mastery to teach"
+        },
+        "NoProjects": "No projects with this technology",
+        "SeeProjects": "See projects with this technology",
+        "TechExplain": {
+          "html": {
+            "Desc": "Hypertext Markup Language used to create web pages. Responsible for defining the structural content of a web page, such as text, images, forms, etc."
+          },
+          "css": {
+            "Desc": "Cascading Style Sheets used to style HTML elements and define the presentation of HTML or XML documents."
+          },
+          "javascript": {
+            "Desc": "High-level programming language mainly used to create dynamic and interactive user interfaces in websites and applications."
+          },
+          "typescript": {
+            "Desc": "TypeScript is a superset of JavaScript that adds static typing and advanced development features such as interfaces, generics, and compile-time error checking."
+          },
+          "csharp": {
+            "Desc": "C# is a modern, object-oriented programming language developed by Microsoft, widely used for desktop, web, mobile applications, and game development with Unity."
+          },
+          "python": {
+            "Desc": "High-level programming language known for its simple syntax and readability. Used in various fields such as web development, data science, automation, and artificial intelligence."
+          },
+          "jquery": {
+            "Desc": "JavaScript library that simplifies DOM manipulation, events, animations, and AJAX requests. Very popular before the rise of modern frameworks."
+          },
+          "sass": {
+            "Desc": "Sass (Syntactically Awesome Stylesheets) is a CSS preprocessor that adds features such as variables, mixins, functions, and nesting, making it easier to write more organized and reusable styles."
+          },
+          "less": {
+            "Desc": "CSS preprocessor that adds features such as variables, mixins, and functions, making the code more organized and reusable."
+          },
+          "tailwind": {
+            "Desc": "Tailwind CSS is a utility-first framework for styling that allows applying styles directly to HTML elements using predefined classes, promoting speed and consistency in design."
+          },
+          "styled-components": {
+            "Desc": "Library for styling React components using CSS within JavaScript. Enables creating encapsulated and dynamic styles with ease."
+          },
+          "react": {
+            "Desc": "React is a JavaScript library for building reactive and component-based user interfaces. It uses the concept of Virtual DOM to optimize interface updates."
+          },
+          "vue": {
+            "Desc": "Vue.js is a progressive framework for building user interfaces. Focused on the view layer, it allows creating reactive applications with simple and flexible syntax."
+          },
+          "angular": {
+            "Desc": "JavaScript framework maintained by Google for building dynamic and scalable web applications. It uses a component-based architecture and offers integrated tools such as routing and dependency injection."
+          },
+          "svelte": {
+            "Desc": "JavaScript framework that compiles components into highly optimized code at build time. Eliminates the need for a virtual DOM and provides excellent performance."
+          },
+          "solid": {
+            "Desc": "Reactive JavaScript framework for building user interfaces. Focuses on performance and simplicity, using compiled reactivity for efficient updates."
+          },
+          "next": {
+            "Desc": "Next.js is a React-based framework that offers hybrid rendering (SSR, SSG), automatic routing, performance optimization, and native support for API routes, making it ideal for modern web applications."
+          },
+          "nuxt": {
+            "Desc": "Nuxt.js is a Vue-based framework that simplifies the development of universal applications, with support for SSR, static generation, automatic routing, and a modular structure."
+          },
+          "express": {
+            "Desc": "Express is a minimalist framework for Node.js that simplifies the creation of APIs and web applications. Provides a lightweight and flexible structure for handling routes, middleware, and HTTP requests."
+          },
+          "nest": {
+            "Desc": "NestJS is a framework for Node.js that uses TypeScript and concepts of modular and object-oriented architecture. Ideal for building scalable and well-structured applications."
+          },
+          "asp-net": {
+            "Desc": "ASP.NET is a Microsoft framework for building robust and scalable web applications. Supports multiple paradigms such as MVC, Web API, and Razor Pages, integrating with the .NET ecosystem."
+          },
+          "postgresql": {
+            "Desc": "PostgreSQL is an open-source relational database management system known for its robustness, SQL standards compliance, and support for advanced extensions such as JSON and custom functions."
+          },
+          "mongodb": {
+            "Desc": "MongoDB is a document-oriented NoSQL database that stores data in BSON format (similar to JSON), offering flexibility and scalability for modern applications."
+          },
+          "prisma": {
+            "Desc": "Prisma is a modern ORM for Node.js and TypeScript that simplifies database access with static typing, automatic query generation, and integration with multiple relational databases."
+          },
+          "dotnet": {
+            "Desc": ".NET is a Microsoft development platform that supports multiple languages, including C#, and enables the creation of web, desktop, mobile, and cloud applications with high performance."
+          },
+          "node": {
+            "Desc": "Node.js is a server-side JavaScript runtime environment. Enables building fast and scalable applications using an event-driven, non-blocking architecture."
+          },
+          "react-native": {
+            "Desc": "React Native is a framework created by Facebook for developing native mobile applications using JavaScript and React. Allows sharing logic across iOS and Android platforms."
+          },
+          "expo": {
+            "Desc": "Expo is a platform and set of tools that simplifies development with React Native, offering automated builds, access to native APIs, and instant preview on devices."
+          },
+          "nativewind": {
+            "Desc": "NativeWind is a library that brings the utility-first approach of Tailwind CSS to React Native, enabling fast and consistent styling with classes directly in components."
+          },
+          "git": {
+            "Desc": "Git is a widely used distributed version control system for managing source code. Allows tracking changes, team collaboration, and maintaining development history."
+          },
+          "figma": {
+            "Desc": "Figma is a cloud-based collaborative design tool used to create interfaces, prototypes, and user flows. Enables simultaneous work between designers and developers."
+          },
+          "flask": {
+            "Desc": "Minimalist web framework written in Python. Ideal for simple and fast applications, offering flexibility and full control over project structure."
+          },
+          "blazor": {
+            "Desc": "Blazor is a Microsoft framework that enables building interactive web applications using C# instead of JavaScript. Works both in the browser (via WebAssembly) and on the server."
+          },
+          "zustand": {
+            "Desc": "Zustand is a lightweight state management library for React applications. Provides a simple and straightforward API with support for reactive updates and data persistence."
+          },
+          "pinia": {
+            "Desc": "Pinia is a modern state management library for Vue.js applications. Lightweight, intuitive, and inspired by Vue 3’s composition pattern."
+          },
+          "vite": {
+            "Desc": "Vite is an extremely fast frontend build and development tool. Uses ES modules and provides efficient hot module replacement for an agile development experience."
+          },
+          "socket-io": {
+            "Desc": "JavaScript library that enables real-time bidirectional communication between client and server. Widely used in chats, online games, and collaborative applications."
+          },
+          "turborepo": {
+            "Desc": "Modern tool for managing monorepos. Optimizes build and caching processes in projects with multiple packages, facilitating collaboration and scalability."
+          },
+          "supabase": {
+            "Desc": "Backend-as-a-service platform that simplifies API creation, authentication, and SQL data storage. Provides a complete solution for developing web and mobile applications, with support for authentication and data storage."
+          },
+          "firebase": {
+            "Desc": "Backend-as-a-service platform that simplifies API creation, authentication, and NoSQL data storage. Offers a complete solution for developing web and mobile applications."
+          }
+        }
+      }
+    }
+  },
+  "Back": "Back"
 }

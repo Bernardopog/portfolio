@@ -30,6 +30,7 @@ export default function LanguageDropdown({
     document.cookie = `locale=${language}; path=/`;
     changeLocale(language);
     router.refresh();
+    setIsOpen(false);
   };
 
   return (

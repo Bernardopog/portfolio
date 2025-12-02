@@ -1,11 +1,13 @@
+import { useTranslations } from 'next-intl';
+
 export default function AcademicDescription() {
+  const t = useTranslations('AboutMe');
+
   return (
     <p>
-      Sou autodidata e venho construindo minha base técnica através de cursos,
-      trilhas e graduação em Gestão de TI.
-      <br />
-      Aprendo tanto na prática quanto em ambientes formais, sempre buscando
-      evoluir como desenvolvedor.
+      {t.rich('CardAcademicDesc', {
+        br: () => <br />,
+      })}
     </p>
   );
 }

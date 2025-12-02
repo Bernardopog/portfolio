@@ -1,10 +1,13 @@
+import { useTranslations } from 'next-intl';
 import { techIconMap } from '@/data/content/techIconMap';
 import { getMainTechs } from '@/data/helpers/tech/techListHelpers';
 
 export default function HardskillDescription() {
+  const t = useTranslations('AboutMe');
+
   return (
     <>
-      <p>Principais Tecnologias:</p>
+      <p>{t('CardHardskillsDesc')}:</p>
       <ul className='grid grid-cols-2 mt-4 gap-2 md:grid-cols-3 lg:grid-cols-4'>
         {getMainTechs().map((tech) => (
           <li

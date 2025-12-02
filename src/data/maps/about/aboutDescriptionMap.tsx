@@ -9,7 +9,7 @@ import {
 import type { AboutViewTypes } from '@/types/aliases/AboutViewTypes';
 
 interface IAboutCardData {
-  title: string;
+  key: string;
   icon: ReactNode;
   view: AboutViewTypes;
   delay: number;
@@ -18,28 +18,28 @@ interface IAboutCardData {
 
 export const aboutDescriptionMap: IAboutCardData[] = [
   {
-    title: 'Sobre Mim',
+    key: 'CardAbout',
     icon: <IoPerson className='text-2xl' />,
     view: 'about',
     delay: 150,
     description: <AboutMeDescription />,
   },
   {
-    title: 'Hardskill',
+    key: 'CardHardskills',
     icon: <IoCodeSlash className='text-2xl' />,
     view: 'hard',
     delay: 300,
     description: <HardskillDescription />,
   },
   {
-    title: 'Softskill',
+    key: 'CardSoftskills',
     icon: <IoPeople className='text-2xl' />,
     view: 'soft',
     delay: 450,
     description: <SoftskillDescription />,
   },
   {
-    title: 'Acadêmico',
+    key: 'CardAcademic',
     icon: <IoBook className='text-2xl' />,
     view: 'academic',
     delay: 600,

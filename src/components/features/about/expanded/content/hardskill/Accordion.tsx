@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { Fragment } from 'react';
 import { IoCaretDownSharp } from 'react-icons/io5';
 import { Inert } from '@/components/shared';
@@ -27,6 +28,8 @@ export default function Accordion({
   selectedTech,
   handleTechSelection,
 }: IAccordionProps) {
+  const t = useTranslations('AboutMe');
+
   return (
     <dl className='flex flex-col flex-1 order-1 max-h-60 px-1 pb-16 gap-1 overflow-y-auto scrollbar-base md:gap-2 md:order-0 md:max-h-full md:px-0'>
       {techFieldDataList.map((item) => (
@@ -44,7 +47,9 @@ export default function Accordion({
             }}
           >
             <span className='inline-flex items-center gap-4 sm:text-lg'>
-              {item.title}
+              {item.key
+                ? t(`Expanded.Hardskill.AccordionListTitle.${item.key}`)
+                : item.title}
               <span className='hidden opacity-25 sm:inline dark:opacity-10'>
                 {item.icon}
               </span>

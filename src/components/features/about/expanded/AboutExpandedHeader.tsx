@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { IoArrowBack } from 'react-icons/io5';
 import { Button } from '@/components/ui';
@@ -9,27 +10,30 @@ export default function AboutExpandedHeader({
 }: IAboutPageProps) {
   const [title, setTitle] = useState<string>('');
 
+  const tAboutMe = useTranslations('AboutMe');
+  const tBack = useTranslations();
+
   useEffect(() => {
     switch (currentView) {
       case 'none':
         setTitle('');
         break;
       case 'about':
-        setTitle('Sobre mim');
+        setTitle(tAboutMe('CardAbout'));
         break;
       case 'hard':
-        setTitle('Hardskill');
+        setTitle(tAboutMe('CardHardskills'));
         break;
       case 'soft':
-        setTitle('Softskill');
+        setTitle(tAboutMe('CardSoftskills'));
         break;
       case 'academic':
-        setTitle('Acadêmico');
+        setTitle(tAboutMe('CardAcademic'));
         break;
       default:
         break;
     }
-  }, [currentView]);
+  }, [currentView, tAboutMe]);
 
   return (
     <header className='flex justify-between items-center w-full'>
@@ -37,7 +41,7 @@ export default function AboutExpandedHeader({
         {title}
       </h2>
       <Button
-        label='Voltar'
+        label={tBack('Back')}
         action={() => changeCurrentView('none')}
         icon={<IoArrowBack className='text-xl' />}
         ariaLabel='Voltar'

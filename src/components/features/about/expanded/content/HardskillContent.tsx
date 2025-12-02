@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import type { TechFieldType } from '@/types/aliases/TechFieldType';
 import type { TechNameType } from '@/types/aliases/TechNameType';
@@ -11,6 +12,8 @@ export default function HardskillSubpage() {
   const [selectedTech, setSelectedTech] = useState<TechNameType | null>(null);
 
   const [showOnlyMain, setShowOnlyMain] = useState<boolean>(true);
+
+  const t = useTranslations('AboutMe');
 
   const handleFieldToOpen = (field: TechFieldType) => {
     setShowScrollbar(false);
@@ -54,7 +57,7 @@ export default function HardskillSubpage() {
           <ExplainCard tech={selectedTech} />
         ) : (
           <p className='text-center text-xl italic text-shark-950/75 dark:text-shark-50/75'>
-            Selecione uma tecnologia
+            {t('Expanded.Hardskill.SelectATechnology')}
           </p>
         )}
       </div>

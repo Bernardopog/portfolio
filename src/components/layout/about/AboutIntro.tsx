@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { AboutCard } from '@/components/features/about';
 import { Inert } from '@/components/shared';
 import { aboutDescriptionMap } from '@/data/maps/about/aboutDescriptionMap';
@@ -12,6 +13,8 @@ export default function AboutIntro({
   changeCurrentView,
   isVisible,
 }: IAboutPageInitialProps) {
+  const t = useTranslations('AboutMe');
+
   return (
     <Inert
       className={`${
@@ -27,7 +30,7 @@ export default function AboutIntro({
             className={idx % 2 === 0 ? 'sm:self-start' : 'sm:self-end'}
             // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
             key={idx}
-            title={card.title}
+            title={t(card.key)}
             icon={card.icon}
             animationDelay={card.delay}
             currentView={card.view}

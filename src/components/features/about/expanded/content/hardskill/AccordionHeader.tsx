@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import type { Dispatch, SetStateAction } from 'react';
 import { Radio } from '@/components/ui';
 
@@ -10,12 +11,14 @@ export default function AccordionHeader({
   showOnlyMain,
   setShowOnlyMain,
 }: IAccordionHeaderProps) {
+  const t = useTranslations('AboutMe');
+
   return (
     <div className='flex items-center gap-2'>
       <Radio
         id='main'
         name='main'
-        label='Techs Principais'
+        label={t('Expanded.Hardskill.MainTechnologies')}
         state={showOnlyMain}
         setState={() => {
           setShowOnlyMain(true);
@@ -24,7 +27,7 @@ export default function AccordionHeader({
       <Radio
         id='not-main'
         name='main'
-        label='Todas Techs'
+        label={t('Expanded.Hardskill.AllTechnologies')}
         state={!showOnlyMain}
         setState={() => {
           setShowOnlyMain(false);

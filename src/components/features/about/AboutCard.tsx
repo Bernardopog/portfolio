@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import type { AboutViewTypes } from '@/types/aliases/AboutViewTypes';
 
@@ -22,6 +23,8 @@ export default function AboutCard({
   changeCurrentView,
   isPageVisible,
 }: IAboutCardProps) {
+  const t = useTranslations('AboutMe');
+
   return (
     <article
       style={{ animationDelay: `${animationDelay}ms` }}
@@ -44,7 +47,7 @@ export default function AboutCard({
           {children}
         </section>
         <span className='absolute bottom-1 right-4 text-sm select-none pointer-events-none duration-300 ease-in-out text-shark-950/40 group-hover:text-shark-950/75 dark:text-shark-50/20 dark:group-hover:text-shark-50/60'>
-          Clique para ver detalhes
+          {t('CardMoreDetail')}
         </span>
       </button>
     </article>

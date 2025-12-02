@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { type ReactNode, useEffect, useState } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
@@ -37,6 +38,8 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
     );
   const setCurrent = useAppViewStore((s) => s.setCurrentView);
 
+  const t = useTranslations('AboutMe');
+
   useEffect(() => {
     if (tech) {
       const icon = techIconMap[tech as keyof typeof techIconMap];
@@ -47,29 +50,21 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
 
       switch (data.level) {
         case 1:
-          setKnowledgeExplain(
-            'Tive contato e estudei, mas ainda não apliquei em projeto real',
-          );
+          setKnowledgeExplain(t('Expanded.Hardskill.KnowledgeLevel.Learning'));
           break;
         case 2:
-          setKnowledgeExplain(
-            'Usei em projeto pontual, com apoio ou sem domínio completo',
-          );
+          setKnowledgeExplain(t('Expanded.Hardskill.KnowledgeLevel.Beginner'));
           break;
         case 3:
           setKnowledgeExplain(
-            'Apliquei em mais de um projeto e entendo bem o fluxo',
+            t('Expanded.Hardskill.KnowledgeLevel.Intermediate'),
           );
           break;
         case 4:
-          setKnowledgeExplain(
-            'Uso com frequência e resolvo problemas com autonomia',
-          );
+          setKnowledgeExplain(t('Expanded.Hardskill.KnowledgeLevel.Advanced'));
           break;
         case 5:
-          setKnowledgeExplain(
-            'Uso em projetos próprios e tenho domínio suficiente para ensinar',
-          );
+          setKnowledgeExplain(t('Expanded.Hardskill.KnowledgeLevel.Familiar'));
           break;
         default:
           break;
@@ -79,7 +74,11 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
     } else {
       setTechExplain(null);
     }
-  }, [tech]);
+  }, [tech, t]);
+
+  const techKeys = Object.keys(aboutExplainMap) as Array<
+    keyof typeof aboutExplainMap
+  >;
 
   if (!techExplain) return null;
 
@@ -114,12 +113,6 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
           }}
           className='flex items-center justify-center absolute top-2 right-2 w-16 min-h-16 rounded-full opacity-75 bg-shark-200 dark:bg-shark-950 md:size-20'
         >
-          <button
-            type='button'
-            className='absolute inset-0 z-10 bg-red-600 rounded-full opacity-0 md:hidden'
-            onClick={() => alert(knowledgeExplain)}
-          ></button>
-
           <div
             className='flex items-center justify-center size-12 rounded-full cursor-help bg-white dark:bg-black md:size-16'
             title={knowledgeExplain}
@@ -131,7 +124,11 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
         </div>
 
         <div className='max-h-32'>
-          <span className='text-sm'>{techExplain?.description}</span>
+          <span className='text-sm'>
+            {t(
+              `Expanded.Hardskill.TechExplain.${techKeys[techKeys.indexOf(tech)].replaceAll('.', '-').replaceAll(' ', '-')}.Desc`,
+            )}
+          </span>
         </div>
         {randomProject ? (
           <ProjectCard
@@ -141,7 +138,7 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
           />
         ) : (
           <div className='flex items-center justify-center w-full max-w-96 min-h-56 rounded-lg italic text-xl text-center font-medium bg-shark-100 text-shark-800/75 dark:bg-shark-800 dark:text-shark-100/75'>
-            Ainda não há projetos com essa tecnologia
+            {t('Expanded.Hardskill.NoProjects')}
           </div>
         )}
       </article>
@@ -152,9 +149,9 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
             addToTechList(tech);
             setCurrent('project');
           }}
-          label='Ver ptojetos com essa Tecnologia'
+          label={t('Expanded.Hardskill.SeeProjects')}
           icon={<MdArrowBack className='rotate-180 order-1' />}
-          title='Ver ptojetos com essa Tecnologia'
+          title={t('Expanded.Hardskill.SeeProjects')}
         />
       </footer>
     </>

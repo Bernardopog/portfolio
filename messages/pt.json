@@ -15,5 +15,169 @@
     "Project": "Projetos",
     "Home": "Home",
     "To": "Ir para"
-  }
+  },
+  "AboutMe": {
+    "CardAbout": "Sobre mim",
+    "CardAboutDesc": "<span>Desenvolvedor Front-end com aspiração de me tornar <strong>Fullstack</strong>. Sou movido pela curiosidade e pela vontade de transformar ideias em realidade. Adoro criar projetos e explorar novas tecnologias.</span><br></br><br></br><span>Fora do código, sou fã de uma boa partida de xadrez, maratonas de séries e jogos de estratégia e administração. Gosto de desafios que exigem raciocínio e planejamento, tanto na tela quanto na vida real.</span>",
+    "CardHardskills": "Hard Skills",
+    "CardHardskillsDesc": "Principais Tecnologias",
+    "CardSoftskills": "Soft Skills",
+    "CardSoftskillsDesc": {
+      "Desc1": "Minhas habilidades interpessoais que desenvolvi ajudando outros devs na prática, colaborando com outros desenvolvedores no site <a>Frontend Mentor</a>.",
+      "Communication": "Comunicação Clara",
+      "Empathy": "Empatia",
+      "Colaboration": "Colaboração",
+      "Desc2": "Estas habilidades são pilares do meu crescimento, dentro e fora do código."
+    },
+    "CardAcademic": "Acadêmico",
+    "CardAcademicDesc": "Sou autodidata e venho construindo minha base técnica através de cursos, trilhas e graduação em Gestão de TI. <br></br><br></br> Aprendo tanto na prática quanto em ambientes formais, sempre buscando evoluir como desenvolvedor.",
+    "CardMoreDetail": "Clique para ver detalhes",
+    "WIP": {
+      "About": "Esta subseção está em construção, em breve terá mais detalhes sobre minha jornada e paixões, dentro e fora do código.",
+      "Softskill": "Esta subseção está em construção, em breve terá mais detalhes como aplico essas habilidades.",
+      "Academic": "Esta subseção está em construção, em breve terá mais detalhes sobre minha jornada e paixões, dentro e fora do código."
+    },
+    "Expanded": {
+      "Hardskill": {
+        "SelectATechnology": "Selecione uma Tecnologia",
+        "MainTechnologies": "Principais Tecnologias",
+        "AllTechnologies": "Todas Tecnologias",
+        "AccordionListTitle": {
+          "Tools": "Ferramentas"
+        },
+        "KnowledgeLevel": {
+          "Learning": "Tive contato e estudei, mas ainda não apliquei em projeto real",
+          "Beginner": "Usei em projeto pontual, com apoio ou sem domínio completo",
+          "Intermediate": "Apliquei em mais de um projeto e entendo bem o fluxo",
+          "Advanced": "Uso com frequência e resolvo problemas com autonomia",
+          "Familiar": "Uso em projetos próprios e tenho domínio suficiente para ensinar"
+        },
+        "NoProjects": "Sem projetos com essa tecnologia",
+        "SeeProjects": "Ver projetos com essa tecnologia",
+        "TechExplain": {
+          "html": {
+            "Desc": "Linguagem de marcação de hipertexto usada para criar páginas web. Responsável por definir o conteúdo estrutural de uma página web, como textos, imagens, formulários, etc."
+          },
+          "css": {
+            "Desc": "Folha de estilo em cascata, ou Cascading Style Sheets, usada para estilizar elementos HTML e definir a apresentação de documentos HTML ou XML."
+          },
+          "javascript": {
+            "Desc": "Linguagem de programação de alto-nível, usada principalmente para criar interfaces de usuário dinâmicas e interativas em websites e aplicativos."
+          },
+          "typescript": {
+            "Desc": "TypeScript é um superset do JavaScript que adiciona tipagem estática e recursos avançados de desenvolvimento, como interfaces, tipos genéricos  verificação de erros em tempo de compilação."
+          },
+          "csharp": {
+            "Desc": "C# é uma linguagem de programação moderna e orientada a objetos desenvolvida pela Microsoft, amplamente usada para desenvolvimento de aplicações desktop, web, mobile e jogos via Unity."
+          },
+          "python": {
+            "Desc": "Linguagem de programação de alto nível, conhecida por sua sintaxe simples e legibilidade. Usada em diversas áreas como desenvolvimento web, ciência de dados, automação e inteligência artificial. "
+          },
+          "jquery": {
+            "Desc": "Biblioteca JavaScript que simplifica a manipulação do DOM, eventos, animações e requisições AJAX. Muito popular antes da ascensão dos frameworks modernos."
+          },
+          "sass": {
+            "Desc": "Sass (Syntactically Awesome Stylesheets) é um pré-processador CSS que adiciona funcionalidades como variáveis, mixins, funções e aninhamento, facilitando a escrita de estilos mais organizados e reutilizáveis."
+          },
+          "less": {
+            "Desc": "Pré-processador CSS que adiciona funcionalidades como variáveis, mixins e funções, tornando o código mais organizado e reutilizável."
+          },
+          "tailwind": {
+            "Desc": "Tailwind CSS é um framework utilitário para estilização, que permite aplicar estilos diretamente nos elementos HTML usando classes pré-definidas, promovendo agilidade e consistência no design."
+          },
+          "styled-components": {
+            "Desc": "Biblioteca para estilização de componentes em React usando CSS dentro do JavaScript. Permite criar estilos encapsulados e dinâmicos com facilidade."
+          },
+          "react": {
+            "Desc": "React é uma biblioteca JavaScript para construção de interfaces de usuário reativas e componentizadas. Utiliza o conceito de Virtual DOM para otimizar atualizações na interface."
+          },
+          "vue": {
+            "Desc": "Vue.js é um framework progressivo para construção de interfaces de usuário. Focado na camada de visualização, permite criar aplicações reativas com uma sintaxe simples e flexível."
+          },
+          "angular": {
+            "Desc": "Framework JavaScript mantido pelo Google para construção de aplicações web dinâmicas e escaláveis. Utiliza arquitetura baseada em componentes e oferece ferramentas integradas como roteamento e injeção de dependência."
+          },
+          "svelte": {
+            "Desc": "Framework JavaScript que compila os componentes para código altamente otimizado no momento da construção. Elimina a necessidade de virtual DOM e oferece excelente desempenho."
+          },
+          "solid": {
+            "Desc": "Framework JavaScript reativo para construção de interfaces de usuário. Foca em desempenho e simplicidade, utilizando reatividade compilada para atualizações eficientes. "
+          },
+          "next": {
+            "Desc": "Next.js é um framework baseado em React que oferece renderização híbrida (SSR, SSG), roteamento automático, otimização de performance e suporte nativo a API routes, ideal para aplicações web modernas."
+          },
+          "nuxt": {
+            "Desc": "Nuxt.js é um framework baseado em Vue que facilita o desenvolvimento de aplicações universais, com suporte a SSR, geração estática, roteamento automático e estrutura modular."
+          },
+          "express": {
+            "Desc": "Express é um framework minimalista para Node.js que facilita a criação de APIs e aplicações web. Oferece uma estrutura leve e flexível para lidar com rotas, middlewares e requisições HTTP."
+          },
+          "nest": {
+            "Desc": "NestJS é um framework para Node.js que utiliza TypeScript e conceitos de arquitetura modular e orientada a objetos. Ideal para construir aplicações escaláveis e bem estruturadas."
+          },
+          "asp-net": {
+            "Desc": "ASP.NET é um framework da Microsoft para construção de aplicações web robustas e escaláveis. Suporta múltiplos paradigmas como MVC, Web API e Razor Pages, integrando-se ao ecossistema .NET."
+          },
+          "postgresql": {
+            "Desc": "PostgreSQL é um sistema de gerenciamento de banco de dados relacional open-source, conhecido por sua robustez, conformidade com padrões SQL e suporte a extensões avançadas como JSON e funções customizadas."
+          },
+          "mongodb": {
+            "Desc": "MongoDB é um banco de dados NoSQL orientado a documentos, que armazena dados em formato BSON (similar ao JSON), oferecendo flexibilidade e escalabilidade para aplicações modernas."
+          },
+          "prisma": {
+            "Desc": "Prisma é um ORM moderno para Node.js e TypeScript que facilita o acesso a bancos de dados com tipagem estática, geração automática de queries e integração com múltiplos bancos relacionais."
+          },
+          "dotnet": {
+            "Desc": ".NET é uma plataforma de desenvolvimento da Microsoft que suporta múltiplas linguagens, incluindo C#, e permite criar aplicações web, desktop, mobile e serviços em nuvem com alta performance."
+          },
+          "node": {
+            "Desc": "Node.js é um ambiente de execução JavaScript do lado do servidor. Permite construir aplicações escaláveis e rápidas, utilizando uma arquitetura orientada a eventos e não bloqueante."
+          },
+          "react-native": {
+            "Desc": "React Native é um framework criado pelo Facebook para desenvolvimento de aplicativos móveis nativos utilizando JavaScript e React. Permite compartilhar lógica entre plataformas iOS e Android."
+          },
+          "expo": {
+            "Desc": "Expo é uma plataforma e conjunto de ferramentas que simplifica o desenvolvimento com React Native, oferecendo build automatizado, acesso a APIs nativas e preview instantâneo em dispositivos."
+          },
+          "nativewind": {
+            "Desc": "NativeWind é uma biblioteca que traz a abordagem utilitária do Tailwind CSS para o React Native, permitindo estilização rápida e consistente com classes diretamente nos componentes."
+          },
+          "git": {
+            "Desc": "Git é um sistema de controle de versão distribuído amplamente utilizado para gerenciar código-fonte. Permite rastrear alterações, colaborar em equipe e manter histórico de desenvolvimento."
+          },
+          "figma": {
+            "Desc": "Figma é uma ferramenta de design colaborativo baseada em nuvem, usada para criar interfaces, protótipos e fluxos de usuário. Permite trabalho simultâneo entre designers e desenvolvedores."
+          },
+          "flask": {
+            "Desc": "Framework web minimalista escrito em Python. Ideal para aplicações simples e rápidas, oferecendo flexibilidade e controle total sobre a estrutura do projeto."
+          },
+          "blazor": {
+            "Desc": "Framework da Microsoft que permite criar aplicações web interativas usando C# em vez de JavaScript. Funciona tanto no navegador (via WebAssembly) quanto no servidor."
+          },
+          "zustand": {
+            "Desc": "Biblioteca leve para gerenciamento de estado em aplicações React. Oferece uma API simples e direta, com suporte a atualizações reativas e persistência de dados. "
+          },
+          "pinia": {
+            "Desc": "Gerenciador de estado moderno para aplicações Vue.js. É leve, intuitivo e inspirado no padrão de composição do Vue 3."
+          },
+          "vite": {
+            "Desc": "Ferramenta de build e desenvolvimento frontend extremamente rápida. Utiliza ES modules e oferece hot module replacement eficiente para uma experiência de desenvolvimento ágil."
+          },
+          "socket-io": {
+            "Desc": "Biblioteca JavaScript que permite comunicação bidirecional em tempo real entre cliente e servidor. Muito usada em chats, jogos online e aplicações colaborativas."
+          },
+          "turborepo": {
+            "Desc": "Ferramenta moderna para gerenciamento de monorepos. Otimiza o processo de build e cache em projetos com múltiplos pacotes, facilitando a colaboração e escalabilidade."
+          },
+          "supabase": {
+            "Desc": "Ferramenta de backend como serviço que simplifica a criação de APIs, autenticação e armazenamento de dados SQL. Oferece uma solução completa para desenvolvimento de aplicativos web e mobile, com suporte a autenticação e armazenamento de dados."
+          },
+          "firebase": {
+            "Desc": "Ferramenta de backend como serviço que simplifica a criação de APIs, autenticação e armazenamento de dados NoSQL. Oferece uma solução completa para desenvolvimento de aplicativos web e mobile."
+          }
+        }
+      }
+    }
+  },
+  "Back": "Voltar"
 }
