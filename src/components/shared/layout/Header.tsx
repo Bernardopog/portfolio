@@ -1,4 +1,4 @@
-import { LanguageDropdown, ThemeToggler } from './';
+import { LanguageDropdown, ThemeToggler } from '@/components/features/header';
 
 interface IHeaderProps {
   darkMode: boolean;

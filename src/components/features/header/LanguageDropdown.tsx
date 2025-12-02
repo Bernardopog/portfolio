@@ -4,9 +4,9 @@ import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { MdLanguage } from 'react-icons/md';
+import { Inert } from '@/components/shared';
 import { Button } from '@/components/ui';
 import { useLocaleStore } from '@/store/LocaleStore';
-import Inert from '../Inert';
 
 interface ILanguageDropdownProps {
   startLocale: 'pt' | 'en';
