@@ -4,6 +4,12 @@ import ArticlePreviewImage from '@/assets/webp/article-preview.webp';
 import BentoGridImage from '@/assets/webp/bento-grid.webp';
 import BlogPreviewImage from '@/assets/webp/blog-preview-card.webp';
 import CalculatorAppImage from '@/assets/webp/calculator-app.webp';
+//Carousel
+import PlutoAppC1 from '@/assets/webp/carousel/pluto-app-c1.webp';
+import PlutoAppC2 from '@/assets/webp/carousel/pluto-app-c2.webp';
+import PlutoAppC3 from '@/assets/webp/carousel/pluto-app-c3.webp';
+import PlutoAppC4 from '@/assets/webp/carousel/pluto-app-c4.webp';
+import PlutoAppC5 from '@/assets/webp/carousel/pluto-app-c5.webp';
 import ClipboardLandingPageImage from '@/assets/webp/clipboard-landing-page.webp';
 import ComingSoonPageImage from '@/assets/webp/coming-soon-page.webp';
 import ContactFormImage from '@/assets/webp/contact-form.webp';
@@ -92,4 +98,14 @@ export const projectImages = {
   tipCalculator: TipCalculatorImage,
   todoApp: TodoAppImage,
   restCountries: RestCountriesImage,
+};
+
+export const projectImagesCarousel = {
+  plutoApp: {
+    plutoAppC1: PlutoAppC1,
+    plutoAppC2: PlutoAppC2,
+    plutoAppC3: PlutoAppC3,
+    plutoAppC4: PlutoAppC4,
+    plutoAppC5: PlutoAppC5,
+  },
 };
