@@ -1,4 +1,5 @@
 import {
+  BetterProjects,
   CTASection,
   Presentation,
   SocialMediaList,
@@ -19,6 +20,7 @@ export default function HomePage({
       <Presentation />
       <CTASection onToAbout={onToAbout} onToProject={onToProject} />
       <SocialMediaList />
+      <BetterProjects />
       <TechList />
     </main>
   );

@@ -5,7 +5,13 @@
     "CTACurriculum": "Baixar Currículo",
     "IntroGlitchedArea": "Desenvolvedor Front End",
     "IntroDeveloper": "Desenvolvedor",
-    "SocialMediaTo": "Visitar"
+    "SocialMediaTo": "Visitar",
+    "BetterProjects": "Meus Melhores Projetos",
+    "Personal": "Pessoal",
+    "Source": "Fonte",
+    "SeeCode": "Ver Código",
+    "SeeLive": "Ver Site Publicado",
+    "SeeDetails": "Ver Detalhes"
   },
   "Header": {
     "LanguageDropdownAriaOpen": "Fechar menu de idioma",

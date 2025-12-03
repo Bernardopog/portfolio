@@ -1,3 +1,4 @@
+export { default as BetterProjects } from './BetterProjects';
 export { default as CTASection } from './CTASection';
 export { default as Presentation } from './Presentation';
 export { default as SocialMediaList } from './SocialMediaList';

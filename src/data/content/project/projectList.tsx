@@ -16,6 +16,7 @@ import type { IProject } from '@/types/interfaces/IProject';
 export const projectList: IProject[] = [
   {
     name: 'Pluto',
+    point: 90,
     media: {
       thumb: img.plutoApp,
       images: {
@@ -164,6 +165,7 @@ export const projectList: IProject[] = [
   },
   {
     name: 'Kronos',
+    point: 100,
     media: {
       thumb: img.kronosApp,
     },
@@ -358,6 +360,7 @@ export const projectList: IProject[] = [
   },
   {
     name: 'REST Countries',
+    point: 20,
     media: {
       thumb: img.restCountries,
     },

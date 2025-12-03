@@ -18,6 +18,7 @@ export interface IProject {
   source: SourceType;
   backgroundColor: BgColorType;
   media: IMedia;
+  point?: number; //? For ranking
   links: {
     github: string;
     live: string;
