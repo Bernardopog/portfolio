@@ -1,4 +1,3 @@
-import type { Dispatch, SetStateAction } from 'react';
 import {
   ProjectExpandedContent,
   ProjectExpandedHeader,
@@ -9,12 +8,10 @@ import type { ProjectViewTypes } from '@/types/aliases/ProjectViewTypes';
 
 interface IProjectExpandedProps {
   currentView: ProjectViewTypes;
-  setCurrentView: Dispatch<SetStateAction<ProjectViewTypes>>;
 }
 
 export default function ProjectExpanded({
   currentView,
-  setCurrentView,
 }: IProjectExpandedProps) {
   const selectedProject = useProjectSelectionStore((s) => s.selectedProject);
 
@@ -28,10 +25,7 @@ export default function ProjectExpanded({
       }`}
     >
       {selectedProject && (
-        <ProjectExpandedHeader
-          setCurrentView={setCurrentView}
-          projectName={selectedProject.name}
-        />
+        <ProjectExpandedHeader projectName={selectedProject.name} />
       )}
       {selectedProject && <ProjectExpandedContent project={selectedProject} />}
     </Inert>

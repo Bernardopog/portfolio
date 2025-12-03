@@ -2,21 +2,20 @@
 
 import { IoArrowBack } from 'react-icons/io5';
 import { Button } from '@/components/ui';
+import { useAppViewStore } from '@/store/AppViewStore';
 import { useProjectSelectionStore } from '@/store/ProjectSelectionStore';
-import type { ProjectViewTypes } from '@/types/aliases/ProjectViewTypes';
 
 export default function ProjectExpandedHeader({
-  setCurrentView,
   projectName,
 }: {
-  setCurrentView: React.Dispatch<React.SetStateAction<ProjectViewTypes>>;
   projectName: string | undefined;
 }) {
   const selectProject = useProjectSelectionStore((s) => s.selectProject);
+  const setProjectSubview = useAppViewStore((s) => s.setProjectSubview);
 
   const handleCloseProjectExpanded = () => {
     selectProject(null);
-    setCurrentView('none');
+    setProjectSubview('none');
   };
 
   return (

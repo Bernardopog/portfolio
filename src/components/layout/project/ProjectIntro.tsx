@@ -1,4 +1,3 @@
-import type { Dispatch, SetStateAction } from 'react';
 import {
   ProjectFilter,
   ProjectList,
@@ -8,20 +7,16 @@ import type { ProjectViewTypes } from '@/types/aliases/ProjectViewTypes';
 
 interface IProjectIntroProps {
   currentView: ProjectViewTypes;
-  setCurrentView: Dispatch<SetStateAction<ProjectViewTypes>>;
 }
 
-export default function ProjectIntro({
-  currentView,
-  setCurrentView,
-}: IProjectIntroProps) {
+export default function ProjectIntro({ currentView }: IProjectIntroProps) {
   return (
     <Inert
       isVisible={currentView === 'none'}
       className={`h-full duration-300 ease-in-out ${currentView === 'none' ? 'px-2' : 'p-0 overflow-hidden'}`}
     >
       <ProjectFilter />
-      <ProjectList setCurrentView={setCurrentView} />
+      <ProjectList />
     </Inert>
   );
 }
