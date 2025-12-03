@@ -28,20 +28,20 @@ export default function GlitchArea({ fontFamily }: { fontFamily?: string }) {
       setGlitchCompleted(true);
     }, 5500);
 
-    const timertToInvert = setTimeout(() => {
+    const timerToInvert = setTimeout(() => {
       setExpandInvert(true);
     }, 6500);
 
     return () => {
       clearTimeout(timer);
-      clearTimeout(timertToInvert);
+      clearTimeout(timerToInvert);
     };
   }, []);
 
   return (
     <div className='relative'>
       <span
-        className={`absolute top-0 z-10 h-full rounded-lg bg-transparent backdrop-invert duration-300 ease-in-out ${expandInvert ? 'w-20' : 'w-0'} ${locale === 'pt' ? 'left-69' : 'left-15'}`}
+        className={`hidden absolute top-0 z-10 h-full rounded-lg bg-transparent backdrop-invert duration-300 ease-in-out md:block ${expandInvert ? 'w-20' : 'w-0'} ${locale === 'pt' ? 'left-69' : 'left-15'}`}
       ></span>
 
       <p
