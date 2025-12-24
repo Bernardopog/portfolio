@@ -29,7 +29,7 @@ export default function BetterProjects() {
   };
 
   return (
-    <div className='hidden w-full max-w-[1540px] md:block'>
+    <div className='flex-1 hidden w-full max-w-[1540px] md:grid md:content-center pb-8'>
       <h2 className='mt-4 font-medium text-center text-2xl text-shark-900 dark:text-shark-100'>
         {t('BetterProjects')}
       </h2>
