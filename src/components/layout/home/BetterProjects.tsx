@@ -37,6 +37,8 @@ export default function BetterProjects() {
         type='button'
         onClick={() => handleCarouselChange('back')}
         className='flex items-center justify-center absolute z-50 cursor-pointer left-2 top-1/2 -transalte-1/2 size-8 rounded-lg text-4xl bg-shark-800 text-shark-50 dark:bg-shark-200 dark:text-shark-950'
+        aria-label={t('PreviousProject')}
+        title={t('PreviousProject')}
       >
         <MdArrowDropDown className='rotate-90' />
       </button>
@@ -44,6 +46,8 @@ export default function BetterProjects() {
         type='button'
         onClick={() => handleCarouselChange('front')}
         className='flex items-center justify-center absolute z-50 cursor-pointer right-2 top-1/2 -transalte-1/2 size-8 rounded-lg text-4xl bg-shark-800 text-shark-50 dark:bg-shark-200 dark:text-shark-950'
+        aria-label={t('NextProject')}
+        title={t('NextProject')}
       >
         <MdArrowDropDown className='rotate-270' />
       </button>
