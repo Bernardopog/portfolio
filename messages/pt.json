@@ -2,7 +2,9 @@
   "Home": {
     "CTAAbout": "Sobre mim",
     "CTAProject": "Projetos",
-    "CTACurriculum": "Baixar Currículo",
+    "CTADownloadResume": "Baixar Currículo",
+    "CTAViewResume": "Ver Currículo",
+    "CTAResumeSwitcher": "Alterar entre download e visualização",
     "IntroGlitchedArea": "Desenvolvedor Front End",
     "IntroDeveloper": "Desenvolvedor",
     "SocialMediaTo": "Visitar",

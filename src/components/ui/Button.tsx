@@ -10,6 +10,7 @@ interface IButtonProps {
   ariaLabel?: string;
   disabled?: boolean;
   title?: string;
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
 export default function Button({
@@ -20,9 +21,11 @@ export default function Button({
   ariaLabel,
   disabled,
   title,
+  ref,
 }: IButtonProps) {
   return (
     <button
+      ref={ref}
       {...(ariaLabel && { 'aria-label': ariaLabel })}
       {...((title || ariaLabel) && { title: title || ariaLabel })}
       className={`flex items-center gap-2 cursor-pointer disabled:cursor-not-allowed ${
