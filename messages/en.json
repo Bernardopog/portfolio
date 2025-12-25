@@ -195,6 +195,9 @@
   },
   "Projects": {
     "Technologies": "Technologies",
+    "Source": "Source",
+    "Personal": "Personal",
+    "Frontendmentor": "Frontendmentor",
     "Clear": "Clear",
     "NoTechSelected": "No technologies selected",
     "NoProjects": "No projects with these technologies",

@@ -1,24 +1,22 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useShallow } from 'zustand/shallow';
 import { Inert } from '@/components/shared';
 import { techIconMap } from '@/data/content/techIconMap';
 import { getTechByField } from '@/data/helpers/tech/techListHelpers';
+import { useProjectFilterStore } from '@/store/ProjectFilterStore';
 import type { TechFieldType } from '@/types/aliases/TechFieldType';
 import type { TechNameType } from '@/types/aliases/TechNameType';
 
 interface ISubSectionTech {
   desiredField: TechFieldType;
   listToShow: number;
-  handleAddToSelectedTechs: (newTech: TechNameType) => void;
-  filterTechList: TechNameType[];
   stopSelection: () => void;
 }
 
 export default function SubSectionTech({
   listToShow,
   desiredField,
-  handleAddToSelectedTechs,
-  filterTechList,
   stopSelection,
 }: ISubSectionTech) {
   const listToViewMap: Record<string, TechFieldType> = {
@@ -28,7 +26,27 @@ export default function SubSectionTech({
     '-300': 'tools',
   };
 
+  const { filterTechList, addToTechList, removeFromTechList } =
+    useProjectFilterStore(
+      useShallow((s) => ({
+        filterTechList: s.filterTechList,
+        clearTechList: s.clearTechList,
+        addToTechList: s.addToTechList,
+        removeFromTechList: s.removeFromTechList,
+      })),
+    );
+
   const [viewingList, setViewingList] = useState(0);
+
+  const handleAddToSelectedTechs = (newTech: TechNameType) => {
+    if (filterTechList.some((tech) => tech === newTech)) {
+      removeFromTechList(newTech);
+    } else if (filterTechList.length >= 5) {
+      return;
+    } else {
+      addToTechList(newTech);
+    }
+  };
 
   useEffect(() => {
     const whatToView = -100 * listToShow;

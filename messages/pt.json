@@ -192,6 +192,9 @@
   },
   "Projects": {
     "Technologies": "Tecnologias",
+    "Source": "Fonte",
+    "Personal": "Pessoal",
+    "Frontendmentor": "Frontendmentor",
     "Clear": "Limpar",
     "NoTechSelected": "Nenhuma tecnologia selecionada",
     "NoProjects": "Nenhum projeto com essas tecnologias",

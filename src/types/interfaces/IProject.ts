@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
 import type { TechNameType } from '../aliases/TechNameType';
 
-type SourceType = 'personal' | 'frontendmentor';
+export type SourceType = 'personal' | 'frontendmentor';
 type BgColorType = 'dark' | 'light';
 
 export interface IMedia {
