@@ -49,6 +49,25 @@
       "Academic": "Esta subseção está em construção, em breve terá mais detalhes sobre minha jornada e paixões, dentro e fora do código."
     },
     "Expanded": {
+      "Softskill": {
+        "comments": "Comentários",
+        "helpfulComments": "Comentários Úteis",
+        "mentorScore": "Pontos de Mentor",
+        "wallOfFame": "Posição Rank",
+        "SoftskillCardNote": "Dados atualizados semanalmente.",
+        "SoftskillFrontendMentor": "Frontend Mentor é uma plataforma online que oferece desafios práticos de desenvolvimento front-end para desenvolvedores de todos os níveis praticarem, construindo projetos que simulam cenários reais, aprimorando o portfólio e recebendo feedback da comunidade",
+        "Evidence": "Evidência",
+        "OpenEvidence": "Abrir Evidência",
+        "CloseEvidence": "Fechar Evidência",
+        "EvidenceSectionTitle": "Evidência de Soft skill",
+        "Phrases": {
+          "Phrase1": "Soft skills não são sobre mim, eles são sobre como eu ajudo outras pessoas a crescerem.",
+          "Phrase2": "Código cria projetos, mas empatia cria desenvolvedores.",
+          "Phrase3": "Feedback não é critica — ele é combustível para crescimento.",
+          "Phrase4": "Ensinar outras pessoas é a melhor forma de aprender a si mesmos.",
+          "Phrase5": "Debaixo de cada linha de código, há uma pessoa aprendendo."
+        }
+      },
       "Hardskill": {
         "SelectATechnology": "Selecione uma Tecnologia",
         "MainTechnologies": "Principais Tecnologias",

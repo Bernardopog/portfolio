@@ -12,6 +12,7 @@ interface IInertProps {
   className?: string;
   style?: CSSProperties;
   as?: ElementType;
+  onClick?: () => void;
 }
 
 export default function Inert({
@@ -20,6 +21,7 @@ export default function Inert({
   className,
   style,
   as: Tag = 'div',
+  onClick,
 }: IInertProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -29,7 +31,13 @@ export default function Inert({
   }, [isVisible]);
 
   return (
-    <Tag ref={ref} className={className} style={style} aria-hidden={!isVisible}>
+    <Tag
+      ref={ref}
+      className={className}
+      style={style}
+      aria-hidden={!isVisible}
+      onClick={onClick}
+    >
       {children}
     </Tag>
   );

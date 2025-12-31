@@ -28,7 +28,7 @@ export default async function RootLayout({
   return (
     <html lang='pt' className={`${theme === 'dark' && 'dark'}`}>
       <body
-        className={`${inter.variable} relative max-h-dvh w-full overflow-hidden bg-white dark:bg-black`}
+        className={`${inter.variable} relative max-h-dvh w-full pb-8 overflow-hidden bg-white dark:bg-black`}
       >
         <I18nProvider locale={locale ?? 'pt'}>
           <Header
