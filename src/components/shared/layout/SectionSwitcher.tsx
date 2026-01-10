@@ -1,6 +1,7 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { type ReactNode, useEffect } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { useAppViewStore } from '@/store/AppViewStore';
 import type { ViewTypes } from '@/types/aliases/ViewTypes';
@@ -16,6 +17,15 @@ export default function SectionSwitcher({
       setCurrentView: s.setCurrentView,
     })),
   );
+
+  const params = useSearchParams();
+
+  useEffect(() => {
+    const view = params.get('view');
+    if (view) {
+      setCurrentView(view as ViewTypes);
+    }
+  }, [params, setCurrentView]);
 
   return (
     <div
