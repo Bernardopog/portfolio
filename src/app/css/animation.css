@@ -1,14 +1,4 @@
 @theme {
-  --animate-moving: moving 0.3s ease-in-out;
-  @keyframes moving {
-    from {
-      filter: blur(2px);
-    }
-    to {
-      filter: blur(0);
-    }
-  }
-
   --animate-stroke: stroke 1.5s ease-in forwards;
   @keyframes stroke {
     0% {

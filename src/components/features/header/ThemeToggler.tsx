@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { FaMoon, FaSun } from 'react-icons/fa6';
+import { useEffect } from 'react';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
 import { useThemeStore } from '@/store/ThemeStore';
 
@@ -14,17 +14,10 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
     })),
   );
 
-  const [isMoving, setIsMoving] = useState<boolean>(false);
-
   const handleThemeChange = () => {
     toggleTheme();
-    setIsMoving(true);
     document.cookie = `theme=${isDarkMode ? 'light' : 'dark'}; path=/`;
     document.documentElement.classList.toggle('dark');
-
-    setTimeout(() => {
-      setIsMoving(false);
-    }, 300);
   };
 
   useEffect(() => {
@@ -34,15 +27,23 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
   return (
     <button
       type='button'
-      className='flex items-center w-16 p-0.5 rounded-full shadow-lg border-black bg-white shadow-black/15 cursor-pointer dark:bg-black dark:border-white dark:shadow-white/15'
+      className='flex items-center relative w-20 p-0.5 rounded-full border-2 shadow-lg shadow-black/15 cursor-pointer border-shark-900 dark:border-shark-100 dark:shadow-white/15'
       onClick={() => handleThemeChange()}
       aria-label='Alterar tema'
+      title='Alterar tema'
     >
+      <span className='absolute left-8 font-medium duration-300 ease-in-out text-shark-950 dark:text-shark-50 dark:left-2'>
+        {isDarkMode ? 'Dark' : 'Light'}
+      </span>
       <div
-        className={`flex items-center justify-center size-6 rounded-full bg-black text-white duration-300 ease-in-out transition-transform dark:bg-white dark:text-black dark:translate-x-[150%]
-        ${isMoving && 'animate-moving'}`}
+        className='flex items-center justify-center size-6 rounded-full duration-300 ease-in-out transition-transform bg-shark-950 text-shark-50 dark:translate-x-[200%] dark:bg-shark-50 dark:text-shark-950 
+        '
       >
-        {isDarkMode ? <FaMoon className='text-xl' /> : <FaSun />}
+        {isDarkMode ? (
+          <MdDarkMode className='text-xl' />
+        ) : (
+          <MdLightMode className='text-xl' />
+        )}
       </div>
     </button>
   );
