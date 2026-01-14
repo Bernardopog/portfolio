@@ -91,6 +91,46 @@
       opacity: 1;
     }
   }
+
+  --animate-book-open-cape: book-open-cape 1s linear 1s;
+  @keyframes book-open-cape {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+
+  --animate-book-close-cape: book-close-cape 1s linear 1s;
+  @keyframes book-close-cape {
+    from {
+      transform: rotateY(180deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+
+  --animate-book-showing-content: showing-content 1s ease-in-out 0.9s both;
+  @keyframes showing-content {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  --animate-book-selected-overlay: selected-overlay 1s ease-in-out 0.9s both;
+  @keyframes selected-overlay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 .tech {
