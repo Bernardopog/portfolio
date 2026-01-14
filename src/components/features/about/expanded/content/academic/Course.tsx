@@ -1,4 +1,5 @@
 import { useCourseStore } from '@/store/BookStore';
+import { useNavbarStore } from '@/store/NavbarStore';
 import type { ICourseContentProps } from '@/types/interfaces/ICourseContent';
 
 export default function Course({
@@ -11,12 +12,16 @@ export default function Course({
   endYear,
 }: ICourseContentProps) {
   const selectBook = useCourseStore((s) => s.selectCourse);
+  const blockNavbar = useNavbarStore((s) => s.blockNavbar);
 
   return (
     <li className='shadow-md'>
       <button
         type='button'
-        onClick={() => selectBook(label)}
+        onClick={() => {
+          selectBook(label);
+          blockNavbar();
+        }}
         className='group relative flex flex-col h-38 p-1 border rounded-lg backdrop-blur-xs overflow-clip border-black/15 text-shark-950 dark:text-shark-50 dark:border-white/15 animate-expand-horizontal cursor-pointer text-left xs:h-40 sm:h-32'
       >
         <h3 className='text-sm xs:text-base'>

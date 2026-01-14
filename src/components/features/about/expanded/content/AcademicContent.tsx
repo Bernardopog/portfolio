@@ -4,6 +4,7 @@ import { useShallow } from 'zustand/shallow';
 import { Inert } from '@/components/shared';
 import { academicCourses } from '@/data/content/about/academicCourses';
 import { useCourseStore } from '@/store/BookStore';
+import { useNavbarStore } from '@/store/NavbarStore';
 import { AcademicController, Book, Course, CourseExpanded } from './academic';
 
 export default function AcademicSubpage() {
@@ -11,12 +12,14 @@ export default function AcademicSubpage() {
   const [selectedDates, setSelectedDates] = useState<number[]>([]);
   const [isMobile, setIsMobile] = useState(false);
 
-  const { selectedBook, selectBook } = useCourseStore(
-    useShallow((s) => ({
-      selectedBook: s.selectedCourse,
-      selectBook: s.selectCourse,
-    })),
-  );
+  const { selectedCourse: selectedBook, selectCourse: selectBook } =
+    useCourseStore(
+      useShallow((s) => ({
+        selectedCourse: s.selectedCourse,
+        selectCourse: s.selectCourse,
+      })),
+    );
+  const unblockNavbar = useNavbarStore((s) => s.unblockNavbar);
 
   useEffect(() => {
     const handleDates = () => {
@@ -37,6 +40,7 @@ export default function AcademicSubpage() {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
       selectBook(null);
+      unblockNavbar();
     };
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -44,11 +48,12 @@ export default function AcademicSubpage() {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [selectBook]);
+  }, [selectBook, unblockNavbar]);
 
   const onFilterChange = (value: number[]) => {
     setSelectedDates(value);
     selectBook(null);
+    unblockNavbar();
   };
 
   return (
@@ -68,6 +73,7 @@ export default function AcademicSubpage() {
             className={`flex items-center justify-center fixed left-0 top-0 z-50 h-full backdrop-blur-xs bg-black/50 ${selectedBook ? 'w-full cursor-pointer' : 'w-0 overflow-clip'}`}
             onClick={() => {
               selectBook(null);
+              unblockNavbar();
             }}
           >
             <CourseExpanded />

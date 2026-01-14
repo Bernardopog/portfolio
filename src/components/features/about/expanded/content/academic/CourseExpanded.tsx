@@ -9,6 +9,7 @@ import {
   type IBook,
 } from '@/data/content/about/academicCourses';
 import { useCourseStore } from '@/store/BookStore';
+import { useNavbarStore } from '@/store/NavbarStore';
 
 export default function CourseExpanded() {
   const [bookData, setBookData] = useState<IBook | null>(null);
@@ -18,6 +19,7 @@ export default function CourseExpanded() {
       selectedBook: s.selectedCourse,
     })),
   );
+  const unblockNavbar = useNavbarStore((s) => s.unblockNavbar);
   const t = useTranslations('Words');
 
   useEffect(() => {
@@ -34,7 +36,10 @@ export default function CourseExpanded() {
       onClick={(ev) => ev.stopPropagation()}
     >
       <Button
-        action={() => selectBook(null)}
+        action={() => {
+          selectBook(null);
+          unblockNavbar();
+        }}
         className='btn-default-color absolute top-1 right-1 p-1 rounded-full border text-xl'
         ariaLabel={t('Close')}
         icon={<MdClose />}

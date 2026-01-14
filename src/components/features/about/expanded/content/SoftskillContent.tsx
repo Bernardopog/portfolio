@@ -3,49 +3,23 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
+import { useShallow } from 'zustand/shallow';
 import { Inert } from '@/components/shared';
 import { Button } from '@/components/ui';
 import { softskillComments } from '@/data/content/about/softskillComments';
-import { Comment, SoftskillIntroPhrase } from './softskill';
-
-const AnimatedCounter = ({
-  target,
-  duration,
-}: {
-  target: number;
-  duration: number;
-}) => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number | null = null;
-
-    const easeOut = (progress: number) => 1 - (1 - progress) ** 3;
-
-    const step = (timeByBrowser: number) => {
-      if (!startTime) startTime = timeByBrowser;
-      const progress = Math.min((timeByBrowser - startTime) / duration, 1);
-      const easedProgress = easeOut(progress);
-      setCount(Math.floor(target * easedProgress));
-
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
-    };
-    requestAnimationFrame(step);
-  }, [target, duration]);
-
-  return (
-    <span className='text-gradient text-xl sm:text-2xl lg:text-4xl font-black'>
-      {count}
-    </span>
-  );
-};
+import { useNavbarStore } from '@/store/NavbarStore';
+import { AnimatedCounter, Comment, SoftskillIntroPhrase } from './softskill';
 
 export default function SoftskillSubpage() {
   const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
   const [FEMStats, setFEMStats] = useState<Record<string, number> | null>(null);
   const t = useTranslations('AboutMe.Expanded.Softskill');
+  const { blockNavbar, unblockNavbar } = useNavbarStore(
+    useShallow((s) => ({
+      blockNavbar: s.blockNavbar,
+      unblockNavbar: s.unblockNavbar,
+    })),
+  );
 
   useEffect(() => {
     const getStatsData = async () => {
@@ -62,13 +36,18 @@ export default function SoftskillSubpage() {
     ? order.map((key) => ({ name: key, value: FEMStats[key] }))
     : [];
 
+  const handleEvidenceBarClose = () => {
+    setIsEvidenceOpen(false);
+    unblockNavbar();
+  };
+
   return (
     <>
       <Inert
         isVisible={isEvidenceOpen}
         as='aside'
         className={`flex justify-end fixed right-0 top-0 z-50 h-full backdrop-blur-xs duration-300 ease-in-out overflow-clip cursor-pointer bg-black/25 ${isEvidenceOpen ? 'w-full' : 'w-0'}`}
-        onClick={() => setIsEvidenceOpen(false)}
+        onClick={() => handleEvidenceBarClose()}
       >
         {/** biome-ignore lint/a11y/noStaticElementInteractions: <Necessary to avoid event propagation> */}
         <div
@@ -86,7 +65,7 @@ export default function SoftskillSubpage() {
           </ul>
           <Button
             className='btn-default-color absolute z-50 top-4 right-4 rounded-full text-2xl border ease-in-out duration-300'
-            action={() => setIsEvidenceOpen(false)}
+            action={() => handleEvidenceBarClose()}
             icon={<MdClose />}
             ariaLabel={t('CloseEvidence')}
           />
@@ -134,7 +113,10 @@ export default function SoftskillSubpage() {
 
             <Button
               label={t('Evidence')}
-              action={() => setIsEvidenceOpen(true)}
+              action={() => {
+                setIsEvidenceOpen(true);
+                blockNavbar();
+              }}
               icon={<MdCheck />}
               className='btn-default btn-default-color mt-4'
               ariaLabel={t('OpenEvidence')}

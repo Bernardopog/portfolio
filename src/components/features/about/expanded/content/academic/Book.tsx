@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 import { Inert } from '@/components/shared';
 import { useCourseStore } from '@/store/BookStore';
+import { useNavbarStore } from '@/store/NavbarStore';
 import type { IBookContentProps } from '@/types/interfaces/ICourseContent';
 import { BookPage } from '.';
 
@@ -25,6 +26,7 @@ export default function Book({
       selectBook: s.selectCourse,
     })),
   );
+  const blockNavbar = useNavbarStore((s) => s.blockNavbar);
 
   useEffect(() => {
     if (selectedBook === label) {
@@ -56,6 +58,7 @@ export default function Book({
             if (isAnimating || selectedBook) return;
             setIsAnimating(true);
             selectBook(label);
+            blockNavbar();
             setTimeout(() => {
               setIsAnimating(false);
             }, 2000);
