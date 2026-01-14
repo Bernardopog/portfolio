@@ -220,11 +220,39 @@
     "NoProjects": "No projects with these technologies",
     "FilterType": {
       "Tools": "Tools"
+    },
+    "CloseFilter": "Close Filter",
+    "OpenFilter": "Open Filter",
+    "CloseProjectDetail": "Close Project Detail",
+    "OpenProjectDetail": "Open Project Detail",
+    "ClickToSee": "Click to see more",
+    "Expanded": {
+      "CloseAccordion": "Close all Accordions",
+      "OpenAccordion": "Open all Accordions",
+      "CloseOverlay": "Close Overlay",
+      "OpenOverlay": "Open Overlay",
+      "SeeCode": "See Code",
+      "SeeSite": "See Site",
+      "PersonalProject": "Personal Project",
+      "ProjectStatus": "Project Status",
+      "UsedTechs": "Used Technologies",
+      "InProgress": "In Progress"
     }
   },
-  "Back": "Back",
   "Words": {
     "Light": "Light",
-    "Dark": "Dark"
+    "Dark": "Dark",
+    "Close": "Close",
+    "Open": "Open",
+    "Back": "Back",
+    "Next": "Next",
+    "Previous": "Previous",
+    "Project": "Project",
+    "Video": "Video",
+    "Image": "Image",
+    "Created": "Created",
+    "Concluded": "Concluded",
+    "Categories": "Categories",
+    "Category": "Category"
   }
 }

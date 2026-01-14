@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { useCourseStore } from '@/store/BookStore';
@@ -16,6 +17,8 @@ export default function BookPage({
   instituition,
 }: IBookPageProps) {
   const selectBook = useCourseStore((s) => s.selectCourse);
+
+  const t = useTranslations('Words');
 
   return (
     <div
@@ -45,8 +48,8 @@ export default function BookPage({
           <button
             type='button'
             className='group absolute right-1 top-1 size-8 bg-gradient-to-tr from-[#c0ae87] from-50% to-[#d1c4a8] to-50% cursor-pointer duration-300 ease-in-out hover:size-16'
-            aria-label='Fechar'
-            title='Fechar'
+            aria-label={t('Back')}
+            title={t('Back')}
             onClick={() => selectBook(null)}
           >
             <MdArrowBack className='absolute top-0 right-0 text-3xl opacity-0 duration-100 ease-in-out group-hover:opacity-100' />

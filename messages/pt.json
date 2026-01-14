@@ -220,11 +220,39 @@
     "NoProjects": "Nenhum projeto com essas tecnologias",
     "FilterType": {
       "Tools": "Ferramentas"
+    },
+    "CloseFilter": "Fechar Filtro",
+    "OpenFilter": "Abrir Filtro",
+    "CloseProjectDetail": "Fechar Detalhes do Projeto",
+    "OpenProjectDetail": "Abrir Detalhes do Projeto",
+    "ClickToSee": "Clique para ver mais",
+    "Expanded": {
+      "CloseAccordion": "Fechar todos Accordions",
+      "OpenAccordion": "Abrir todos Accordions",
+      "CloseOverlay": "Fechar Overlay",
+      "OpenOverlay": "Abrir Overlay",
+      "SeeCode": "Ver Código",
+      "SeeSite": "Ver Site",
+      "PersonalProject": "Projeto pessoal",
+      "ProjectStatus": "Status do Projeto",
+      "UsedTechs": "Tecnologias utilizadas",
+      "InProgress": "Em andamento"
     }
   },
-  "Back": "Voltar",
   "Words": {
     "Light": "Claro",
-    "Dark": "Escuro"
+    "Dark": "Escuro",
+    "Close": "Fechar",
+    "Open": "Abrir",
+    "Back": "Voltar",
+    "Next": "Próximo",
+    "Previous": "Anterior",
+    "Project": "Projeto",
+    "Video": "Vídeo",
+    "Image": "Imagem",
+    "Created": "Criado",
+    "Concluded": "Concluido",
+    "Categories": "Categorias",
+    "Category": "Categoria"
   }
 }

@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import { FaUser } from 'react-icons/fa';
 import { FaCode, FaEye, FaQuestion } from 'react-icons/fa6';
 import { SiFrontendmentor } from 'react-icons/si';
@@ -5,8 +6,11 @@ import { techIconMap } from '@/data/content/techIconMap';
 import type { IProject } from '@/types/interfaces/IProject';
 
 export default function IntroContent({ project }: { project: IProject }) {
+  const t = useTranslations('Projects.Expanded');
+  const w = useTranslations('Words');
+
   const transformSource = (source: 'frontendmentor' | 'personal') =>
-    source === 'frontendmentor' ? 'Frontend Mentor' : 'Projeto Pessoal';
+    source === 'frontendmentor' ? 'Frontend Mentor' : t('PersonalProject');
 
   return (
     <header className='project-expanded-card flex flex-col justify-between relative gap-2 p-2 animate-lits-a-bit overflow-y-auto text-shark-800 scrollbar-base dark:text-shark-200 sm:row-start-2 md:row-end-4'>
@@ -18,7 +22,7 @@ export default function IntroContent({ project }: { project: IProject }) {
           target='_blank'
           className='btn-default btn-default-color flex items-center justify-between text-sm md:text-base'
         >
-          Ver código
+          {t('SeeCode')}
           <FaCode />
         </a>
         <a
@@ -26,7 +30,7 @@ export default function IntroContent({ project }: { project: IProject }) {
           target='_blank'
           className={`btn-default btn-default-color flex items-center justify-between text-sm order-1 md:text-base md:order-0 ${project.source !== 'personal' && 'col-span-2 xs:col-span-1'}`}
         >
-          Ver site
+          {t('SeeSite')}
           <FaEye />
         </a>
         {project.source !== 'personal' && (
@@ -61,16 +65,18 @@ export default function IntroContent({ project }: { project: IProject }) {
       </div>
       <section className='grid grid-cols-1 grid-rows-3 text-sm md:text-base lg:grid-cols-[0.75fr_0.5fr] lg:grid-rows-2'>
         <p className='row-span-2 flex items-center gap-2'>
-          Status do Projeto:{' '}
+          {t('ProjectStatus')}:{' '}
           <span className='text-shark-950 dark:text-shark-50'>
-            {project.info.status === 'completed' ? 'Concluido' : 'Em andamento'}
+            {project.info.status === 'completed'
+              ? w('Concluded')
+              : t('InProgress')}
           </span>
           <span
             className={`inline-block size-2 rounded-full animate-pulse ${project.info.status === 'completed' ? 'bg-green-500' : 'bg-yellow-500'}`}
           ></span>
         </p>
         <p className='inline-flex justify-between'>
-          <span>Criado: </span>
+          <span>{w('Created')}: </span>
           {project.info.createdAt.toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: '2-digit',
@@ -78,7 +84,7 @@ export default function IntroContent({ project }: { project: IProject }) {
           })}
         </p>
         <p className='inline-flex justify-between lg:col-start-2'>
-          <span>Concluído: </span>
+          <span>{w('Concluded')}: </span>
           {project.info.endedAt
             ? project.info.endedAt.toLocaleDateString('pt-BR', {
                 day: '2-digit',
@@ -90,7 +96,9 @@ export default function IntroContent({ project }: { project: IProject }) {
       </section>
       <div className='flex text-sm gap-1 my-2 md:text-base'>
         <h3>
-          {project.info.category.length > 1 ? 'Categorias: ' : 'Categoria: '}
+          {project.info.category.length > 1
+            ? `${w('Categories')}: `
+            : `${w('Category')}: `}
         </h3>
         <ul className='flex flex-wrap gap-1'>
           {project.info.category.map((category, idx) => (
@@ -105,7 +113,7 @@ export default function IntroContent({ project }: { project: IProject }) {
         </ul>
       </div>
       <div>
-        <h3 className='text-base'>Tecnologias Utilizadas: </h3>
+        <h3 className='text-base'>{t('UsedTechs')}: </h3>
         <ul className='flex min-h-12 gap-2 p-1 overflow-x-auto scrollbar-base'>
           {project.techs.map((tech) => (
             <li

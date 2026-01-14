@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { type Dispatch, type SetStateAction, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import { Inert } from '@/components/shared';
@@ -22,6 +23,9 @@ export default function VisualContent({
   const [mediaToShow, setMediaToShow] = useState<'image' | 'video'>('image');
   const [isShowingOverlay, setIsShowingOverlay] = useState(false);
 
+  const t = useTranslations('Projects.Expanded');
+  const w = useTranslations('Words');
+
   return (
     <figure className='group project-expanded-card relative min-h-64 overflow-clip sm:col-span-1'>
       {/** biome-ignore lint/a11y/useSemanticElements: <Needed to avoid hydratation error> */}
@@ -35,7 +39,7 @@ export default function VisualContent({
         }
         onMouseEnter={() => setIsShowingOverlay(true)}
         onMouseLeave={() => setIsShowingOverlay(false)}
-        aria-label={isShowingOverlay ? 'Fechar overlay' : 'Abrir overlay'}
+        aria-label={isShowingOverlay ? t('CloseOverlay') : t('OpenOverlay')}
         aria-pressed={isShowingOverlay}
       >
         <Inert isVisible={isShowingOverlay}>
@@ -47,7 +51,7 @@ export default function VisualContent({
                 className={`flex items-center justify-center absolute top-0 z-10 min-h-0 w-full gap-2 rounded-t-lg duration-300 ease-in-out bg-gradient-to-b from-black to-transparent ${isShowingOverlay ? 'h-16' : 'h-0'}`}
               >
                 <Button
-                  label='Imagem'
+                  label={w('Image')}
                   action={(e) => {
                     e.stopPropagation();
                     setMediaToShow('image');
@@ -55,7 +59,7 @@ export default function VisualContent({
                   disabled={!media.images}
                 />
                 <Button
-                  label='Vídeo'
+                  label={w('Video')}
                   action={(e) => {
                     e.stopPropagation();
                     setMediaToShow('video');
@@ -67,7 +71,7 @@ export default function VisualContent({
                 className={`flex items-center justify-center absolute bottom-0 z-10 min-h-0 w-full gap-2 rounded-b-lg duration-300 ease-in-out bg-gradient-to-t from-black to-transparent ${isShowingOverlay ? 'h-16' : 'h-0'}`}
               >
                 <Button
-                  ariaLabel='Anterior'
+                  ariaLabel={w('Previous')}
                   action={(e) => {
                     e.stopPropagation();
                     setMediaIndex(mediaIndex - 1);
@@ -107,7 +111,7 @@ export default function VisualContent({
                   />
                 ))}
                 <Button
-                  ariaLabel='Próxima'
+                  ariaLabel={w('Next')}
                   action={(e) => {
                     e.stopPropagation();
                     setMediaIndex(mediaIndex + 1);

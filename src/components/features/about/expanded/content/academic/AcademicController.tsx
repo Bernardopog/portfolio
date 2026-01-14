@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import {
   MdCheckCircle,
@@ -24,12 +25,14 @@ export default function AcademicController({
 }: AcademicControllerProps) {
   const [isControllerOpen, setIsControllerOpen] = useState(true);
 
+  const t = useTranslations('Words');
+
   return (
     <div className='flex items-center lg:absolute lg:z-20 lg:top-1/2 lg:-translate-y-1/2 lg:right-1'>
       {!isMobile && (
         <Button
           action={() => setIsControllerOpen(!isControllerOpen)}
-          ariaLabel={isControllerOpen ? 'Fechar' : 'Abrir'}
+          ariaLabel={isControllerOpen ? t('Close') : t('Open')}
           className='btn-default-color absolute -top-4 right-0 z-10 border p-0.5 rounded-full lg:duration-300 lg:ease-in-out'
           icon={
             isControllerOpen ? (

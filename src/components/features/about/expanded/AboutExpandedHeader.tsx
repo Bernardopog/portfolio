@@ -11,7 +11,7 @@ export default function AboutExpandedHeader({
   const [title, setTitle] = useState<string>('');
 
   const tAboutMe = useTranslations('AboutMe');
-  const tBack = useTranslations();
+  const tBack = useTranslations('Words');
 
   useEffect(() => {
     switch (currentView) {
@@ -44,7 +44,7 @@ export default function AboutExpandedHeader({
         label={tBack('Back')}
         action={() => changeCurrentView('none')}
         icon={<IoArrowBack className='text-xl' />}
-        ariaLabel='Voltar'
+        ariaLabel={tBack('Back')}
         className='btn-default btn-default-color self-end'
       />
     </header>

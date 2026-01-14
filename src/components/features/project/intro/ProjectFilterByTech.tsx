@@ -54,7 +54,7 @@ export default function ProjectFilterByTech({
             handleSubSectionToOpen();
           }
         }}
-        aria-label={`${subSectionOpen ? 'Fechar filtro' : 'Abrir filtro'}`}
+        aria-label={`${subSectionOpen ? t('CloseFilter') : t('OpenFilter')}`}
         ref={toggleFilter}
       >
         <ul className='grid grid-cols-5 w-full h-12 p-1 border rounded-lg gap-1 ease-in-out duration-300 cursor-pointer border-black/25 hover:border-black/50 dark:border-white/25 dark:hover:border-white/50'>

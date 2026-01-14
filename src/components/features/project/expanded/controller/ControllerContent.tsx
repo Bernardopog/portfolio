@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { type Dispatch, type SetStateAction, useEffect, useState } from 'react';
 import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import { useShallow } from 'zustand/shallow';
@@ -17,6 +18,8 @@ export default function ControllerContent({
       selectProject: s.selectProject,
     })),
   );
+
+  const t = useTranslations('Words');
 
   const [index, setIndex] = useState(0);
 
@@ -43,7 +46,7 @@ export default function ControllerContent({
   return (
     <footer className='project-expanded-card flex justify-between items-center px-2 sm:col-span-2 md:col-span-1'>
       <Button
-        label='Anterior'
+        label={t('Previous')}
         icon={<IoArrowBack />}
         action={() => {
           if (index === 0) return;
@@ -55,7 +58,7 @@ export default function ControllerContent({
         disabled={index === 0}
       />
       <Button
-        label='Próximo'
+        label={t('Next')}
         icon={<IoArrowForward className='order-1' />}
         action={() => {
           if (index === projectList.length - 1) return;

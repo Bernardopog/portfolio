@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import { FaPlus, FaUser } from 'react-icons/fa6';
 import { SiFrontendmentor } from 'react-icons/si';
@@ -20,6 +21,7 @@ export default function ProjectCard({
 }: IProjectCardProps) {
   const selectProject = useProjectSelectionStore((s) => s.selectProject);
   const setProjectSubview = useAppViewStore((s) => s.setProjectSubview);
+  const t = useTranslations('Projects');
 
   const [isOpen, setIsOpen] = useState(false);
   const [almostHide, setAlmostHide] = useState(false);
@@ -79,8 +81,8 @@ export default function ProjectCard({
             setIsOpen(!isOpen);
           }
         }}
-        aria-label={`${isOpen ? `Fechar detalhes do projeto ${project.name}` : `Abrir detalhes do projeto ${project.name}`}`}
-        title={`${isOpen ? `Fechar detalhes do projeto ${project.name}` : `Abrir detalhes do projeto ${project.name}`}`}
+        aria-label={`${isOpen ? `${t('CloseProjectDetail')} ${project.name}` : `${t('OpenProjectDetail')} ${project.name}`}`}
+        title={`${isOpen ? `${t('CloseProjectDetail')} ${project.name}` : `${t('OpenProjectDetail')} ${project.name}`}`}
         aria-pressed={isOpen}
       ></button>
       <Inert
@@ -118,8 +120,8 @@ export default function ProjectCard({
                 selectProject(project);
               } else setProjectSubview('none');
             }}
-            aria-label='Abrir projeto'
-            title='Clique para ver mais'
+            aria-label={t('ClickToSee')}
+            title={t('ClickToSee')}
           >
             <FaPlus
               className={`text-4xl duration-700 ease-out opacity-0 group-hover:rotate-180 group-hover:opacity-100 group-focus:rotate-180 group-focus:opacity-100 ${project.backgroundColor === 'dark' ? 'text-shark-50' : 'text-shark-950'}`}

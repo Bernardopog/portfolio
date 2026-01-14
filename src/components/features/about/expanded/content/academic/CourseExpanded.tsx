@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
@@ -17,6 +18,7 @@ export default function CourseExpanded() {
       selectedBook: s.selectedCourse,
     })),
   );
+  const t = useTranslations('Words');
 
   useEffect(() => {
     const getData = () =>
@@ -34,7 +36,7 @@ export default function CourseExpanded() {
       <Button
         action={() => selectBook(null)}
         className='btn-default-color absolute top-1 right-1 p-1 rounded-full border text-xl'
-        ariaLabel='Fechar'
+        ariaLabel={t('Close')}
         icon={<MdClose />}
       />
       <section className='h-full scrollbar-base overflow-y-auto'>
