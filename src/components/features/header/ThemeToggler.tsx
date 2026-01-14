@@ -1,11 +1,14 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
 import { useThemeStore } from '@/store/ThemeStore';
 
 export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
+  const t = useTranslations();
+
   const { isDarkMode, setIsDarkMode, toggleTheme } = useThemeStore(
     useShallow((s) => ({
       isDarkMode: s.isDarkMode,
@@ -29,11 +32,11 @@ export default function ThemeToggler({ darkMode }: { darkMode: boolean }) {
       type='button'
       className='flex items-center relative w-20 p-0.5 rounded-full border-2 shadow-lg shadow-black/15 cursor-pointer border-shark-900 dark:border-shark-100 dark:shadow-white/15'
       onClick={() => handleThemeChange()}
-      aria-label='Alterar tema'
-      title='Alterar tema'
+      aria-label={t('Header.ChangeTheme')}
+      title={t('Header.ChangeTheme')}
     >
-      <span className='absolute left-8 font-medium duration-300 ease-in-out text-shark-950 dark:text-shark-50 dark:left-2'>
-        {isDarkMode ? 'Dark' : 'Light'}
+      <span className='absolute left-8 font-medium text-sm duration-300 ease-in-out text-shark-950 dark:text-shark-50 dark:left-2'>
+        {isDarkMode ? t('Words.Dark') : t('Words.Light')}
       </span>
       <div
         className='flex items-center justify-center size-6 rounded-full duration-300 ease-in-out transition-transform bg-shark-950 text-shark-50 dark:translate-x-[200%] dark:bg-shark-50 dark:text-shark-950 

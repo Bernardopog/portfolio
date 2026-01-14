@@ -19,7 +19,8 @@
   },
   "Header": {
     "LanguageDropdownAriaOpen": "Close language menu",
-    "LanguageDropdownAriaClose": "Open language menu"
+    "LanguageDropdownAriaClose": "Open language menu",
+    "ChangeTheme": "Change Theme"
   },
   "Navbar": {
     "About": "About",
@@ -224,5 +225,9 @@
       "Tools": "Tools"
     }
   },
-  "Back": "Back"
+  "Back": "Back",
+  "Words": {
+    "Light": "Light",
+    "Dark": "Dark"
+  }
 }

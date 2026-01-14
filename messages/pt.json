@@ -19,7 +19,8 @@
   },
   "Header": {
     "LanguageDropdownAriaOpen": "Fechar menu de idioma",
-    "LanguageDropdownAriaClose": "Abrir menu de idioma"
+    "LanguageDropdownAriaClose": "Abrir menu de idioma",
+    "ChangeTheme": "Alterar Tema"
   },
   "Navbar": {
     "About": "Sobre mim",
@@ -221,5 +222,9 @@
       "Tools": "Ferramentas"
     }
   },
-  "Back": "Voltar"
+  "Back": "Voltar",
+  "Words": {
+    "Light": "Claro",
+    "Dark": "Escuro"
+  }
 }
