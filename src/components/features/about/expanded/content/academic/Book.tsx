@@ -29,6 +29,9 @@ export default function Book({
   const blockNavbar = useNavbarStore((s) => s.blockNavbar);
 
   useEffect(() => {
+    if (!shouldShow) {
+      setHideCape(false);
+    }
     if (selectedBook === label) {
       setTimeout(() => {
         setHideCape(true);
@@ -36,7 +39,7 @@ export default function Book({
     } else {
       setHideCape(false);
     }
-  }, [selectedBook, label]);
+  }, [selectedBook, label, shouldShow]);
 
   return (
     <Inert

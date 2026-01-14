@@ -6,5 +6,9 @@ export default function AboutExpandedContent({
 }: {
   currentView: AboutViewTypes;
 }) {
-  return <div className='flex-1 w-full'>{aboutContentMap[currentView]}</div>;
+  return (
+    <div className='flex-1 w-full'>
+      {currentView === 'none' ? null : aboutContentMap[currentView]}
+    </div>
+  );
 }
