@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { type ReactNode, useEffect, useState } from 'react';
 import { MdArrowBack } from 'react-icons/md';
@@ -39,6 +40,8 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
   const setCurrent = useAppViewStore((s) => s.setCurrentView);
 
   const t = useTranslations('AboutMe');
+
+  const router = useRouter();
 
   useEffect(() => {
     if (tech) {
@@ -148,6 +151,7 @@ export default function ExplainCard({ tech }: { tech: TechNameType }) {
             if (filterTechList.length >= 1) clearTechList();
             addToTechList(tech);
             setCurrent('project');
+            router.push(`?view=project`);
           }}
           label={t('Expanded.Hardskill.SeeProjects')}
           icon={<MdArrowBack className='rotate-180 order-1' />}
