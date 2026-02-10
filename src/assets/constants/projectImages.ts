@@ -4,6 +4,12 @@ import ArticlePreviewImage from '@/assets/webp/article-preview.webp';
 import BentoGridImage from '@/assets/webp/bento-grid.webp';
 import BlogPreviewImage from '@/assets/webp/blog-preview-card.webp';
 import CalculatorAppImage from '@/assets/webp/calculator-app.webp';
+import KronosAppC1 from '@/assets/webp/carousel/kronos-app-c1.webp';
+import KronosAppC2 from '@/assets/webp/carousel/kronos-app-c2.webp';
+import KronosAppC3 from '@/assets/webp/carousel/kronos-app-c3.webp';
+import KronosAppC4 from '@/assets/webp/carousel/kronos-app-c4.webp';
+import KronosAppC5 from '@/assets/webp/carousel/kronos-app-c5.webp';
+import KronosAppC6 from '@/assets/webp/carousel/kronos-app-c6.webp';
 //Carousel
 import PlutoAppC1 from '@/assets/webp/carousel/pluto-app-c1.webp';
 import PlutoAppC2 from '@/assets/webp/carousel/pluto-app-c2.webp';
@@ -107,5 +113,13 @@ export const projectImagesCarousel = {
     plutoAppC3: PlutoAppC3,
     plutoAppC4: PlutoAppC4,
     plutoAppC5: PlutoAppC5,
+  },
+  kronosApp: {
+    kronosAppC1: KronosAppC1,
+    kronosAppC2: KronosAppC2,
+    kronosAppC3: KronosAppC3,
+    kronosAppC4: KronosAppC4,
+    kronosAppC5: KronosAppC5,
+    kronosAppC6: KronosAppC6,
   },
 };

@@ -168,6 +168,14 @@ export const projectList: IProject[] = [
     point: 100,
     media: {
       thumb: img.kronosApp,
+      images: {
+        '0': imgC.kronosApp.kronosAppC1,
+        '1': imgC.kronosApp.kronosAppC2,
+        '2': imgC.kronosApp.kronosAppC3,
+        '3': imgC.kronosApp.kronosAppC4,
+        '4': imgC.kronosApp.kronosAppC5,
+        '5': imgC.kronosApp.kronosAppC6,
+      },
     },
     techs: [
       'turborepo',
