@@ -2,26 +2,12 @@
 import { MdArrowDropDown, MdListAlt } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
 import { useProjectDescriptionStore } from '@/store/ProjectDescriptionStore';
-
-interface IChallenge {
-  name: string;
-  difficulty?: 'low' | 'mid' | 'high';
-  category?:
-    | 'frontend'
-    | 'backend'
-    | 'fullstack'
-    | 'ui&ux'
-    | 'accessibility'
-    | 'perfomance'
-    | 'security'
-    | 'other';
-  difficultyReason?: string;
-}
+import type { IChallenges } from '@/types/interfaces/IProject';
 
 export default function Challenges({
   challengeList,
 }: {
-  challengeList: IChallenge[];
+  challengeList: IChallenges[];
 }) {
   const { toggleField, isChallengeOpen } = useProjectDescriptionStore(
     useShallow((s) => ({

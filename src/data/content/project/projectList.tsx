@@ -2,15 +2,6 @@ import {
   projectImages as img,
   projectImagesCarousel as imgC,
 } from '@/assets/constants/projectImages';
-import {
-  Challenges,
-  Description,
-  FeatureList,
-  FuturePlans,
-  Highlights,
-  Learnings,
-  TechStack,
-} from '@/components/shared/project/descriptions';
 import type { IProject } from '@/types/interfaces/IProject';
 
 export const projectList: IProject[] = [
@@ -49,119 +40,105 @@ export const projectList: IProject[] = [
       status: 'completed',
       tagline: 'Aplicação para gerenciamento financeiro.',
     },
-    description: (
-      <>
-        <Description content='Pluto é um projeto fullstack com o objetivo de facilitar a gestão financeira, isso tudo através de uma UI/UX simples e acessível. Trazendo capacidade de gerenciar transações, poupança, orçamento e objetivos.' />
-        <FeatureList
-          featureList={[
-            'Monitoramento',
-            'Gerenciamento de Transação',
-            'Gerenciamento de Poupança',
-            'Gerenciamento de Orçamento',
-            'Gerenciamento de Objetivos',
-            'Autenticação',
-            'Acesso',
-            'Acessibilidade',
-          ]}
-        />
-        <TechStack
-          techList={[
-            {
-              tech: 'next',
-              reason:
-                'Utilizado devido a facilidade de criação de rotas, SSR, agilidade na construção da aplicação e API Routes a fim de evitar backend robusto.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado devido a alta velocidade de criação de componentes e estilização.',
-            },
-            {
-              tech: 'zustand',
-              reason:
-                'Utilizado devido a simplicidade e escalabilidade frente a Context API.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para garantir segutura de tipos pela aplicação.',
-            },
-            {
-              tech: 'prisma',
-              reason:
-                'Utilizado para abstrair queries e garantir integridade na aplicação.',
-            },
-            {
-              tech: 'postgresql',
-              reason: 'Utilizado para persistência dos dados.',
-            },
-            {
-              tech: 'supabase',
-              reason: 'Utilizado para armazenamento de dados.',
-            },
-          ]}
-        />
-        <Highlights
-          highlightList={[
-            'Autenticação & Acesso',
-            'UI & UX simples e acessível',
-            'Arquitetura Organizada (DDD)',
-          ]}
-        />
-        <Challenges
-          challengeList={[
-            { name: 'Autenticação', category: 'fullstack', difficulty: 'low' },
-            { name: 'Acesso', category: 'fullstack', difficulty: 'low' },
-            { name: 'Gráficos', category: 'frontend', difficulty: 'low' },
-            { name: 'Organização DDD', category: 'backend', difficulty: 'low' },
-            {
-              name: 'Filtros de Transação',
-              category: 'frontend',
-              difficulty: 'mid',
-            },
-            { name: 'Acessibilidade', category: 'frontend', difficulty: 'mid' },
-            {
-              name: 'Design Responsivo',
-              category: 'frontend',
-              difficulty: 'high',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Entendimento de Grid Layout',
-              tech: 'css',
-            },
-            {
-              learned: 'API Route',
-              tech: 'next',
-            },
-            { learned: 'Organização em DDD', tech: 'typescript' },
-            { learned: 'Utilização de Maps', tech: 'typescript' },
-            {
-              learned: 'Criação de gráficos com ApexChartJS e Recharts',
-              tech: 'react',
-            },
-            { learned: 'Uso do Zustand', tech: 'zustand' },
-            { learned: 'Integração com Supabase', tech: 'supabase' },
-          ]}
-        />
-        <FuturePlans
-          plans={[
-            {
-              name: 'Implementar mascote',
-            },
-            {
-              name: 'Implementar conselhos',
-            },
-            {
-              name: 'Integração com Testes',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Pluto é um projeto fullstack com o objetivo de facilitar a gestão financeira, isso tudo através de uma UI/UX simples e acessível. Trazendo capacidade de gerenciar transações, poupança, orçamento e objetivos.',
+      features: [
+        'Monitoramento',
+        'Gerenciamento de Transação',
+        'Gerenciamento de Poupança',
+        'Gerenciamento de Orçamento',
+        'Gerenciamento de Objetivos',
+        'Autenticação',
+        'Acesso',
+        'Acessibilidade',
+      ],
+      techs: [
+        {
+          tech: 'next',
+          reason:
+            'Utilizado devido a facilidade de criação de rotas, SSR, agilidade na construção da aplicação e API Routes a fim de evitar backend robusto.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado devido a alta velocidade de criação de componentes e estilização.',
+        },
+        {
+          tech: 'zustand',
+          reason:
+            'Utilizado devido a simplicidade e escalabilidade frente a Context API.',
+        },
+        {
+          tech: 'typescript',
+          reason: 'Utilizado para garantir segutura de tipos pela aplicação.',
+        },
+        {
+          tech: 'prisma',
+          reason:
+            'Utilizado para abstrair queries e garantir integridade na aplicação.',
+        },
+        {
+          tech: 'postgresql',
+          reason: 'Utilizado para persistência dos dados.',
+        },
+        {
+          tech: 'supabase',
+          reason: 'Utilizado para armazenamento de dados.',
+        },
+      ],
+      highlights: [
+        'Autenticação & Acesso',
+        'UI & UX simples e acessível',
+        'Arquitetura Organizada (DDD)',
+      ],
+      challenges: [
+        { name: 'Autenticação', category: 'fullstack', difficulty: 'low' },
+        { name: 'Acesso', category: 'fullstack', difficulty: 'low' },
+        { name: 'Gráficos', category: 'frontend', difficulty: 'low' },
+        { name: 'Organização DDD', category: 'backend', difficulty: 'low' },
+        {
+          name: 'Filtros de Transação',
+          category: 'frontend',
+          difficulty: 'mid',
+        },
+        { name: 'Acessibilidade', category: 'frontend', difficulty: 'mid' },
+        {
+          name: 'Design Responsivo',
+          category: 'frontend',
+          difficulty: 'high',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Entendimento de Grid Layout',
+          tech: 'css',
+        },
+        {
+          learned: 'API Route',
+          tech: 'next',
+        },
+        { learned: 'Organização em DDD', tech: 'typescript' },
+        { learned: 'Utilização de Maps', tech: 'typescript' },
+        {
+          learned: 'Criação de gráficos com ApexChartJS e Recharts',
+          tech: 'react',
+        },
+        { learned: 'Uso do Zustand', tech: 'zustand' },
+        { learned: 'Integração com Supabase', tech: 'supabase' },
+      ],
+      futurePlans: [
+        {
+          name: 'Implementar mascote',
+        },
+        {
+          name: 'Implementar conselhos',
+        },
+        {
+          name: 'Integração com Testes',
+        },
+      ],
+    },
   },
   {
     name: 'Kronos',
@@ -201,170 +178,155 @@ export const projectList: IProject[] = [
       status: 'completed',
       tagline: 'Aplicação para gerenciamento de tarefas, kanbans e notas',
     },
-    description: (
-      <>
-        <Description content='Kronos é um projeto fullstack com o objetivo de permitir que o usuário possa gerenciar Notas, Kanban e Tarefas. Com um sistema integrado de WebSocket que permite atualizações em tempo real que refletem para outros usuários de um mesmo time.' />
-        <FeatureList
-          featureList={[
-            'Gerenciamento de Tarefas',
-            'Gerenciamento de Notas',
-            'Markup Customizado',
-            'Gerenciamento de Kanban',
-            'Comunicação em Tempo real',
-            'Autenticação',
-            'Acesso',
-          ]}
-        />
-        <TechStack
-          techList={[
-            {
-              tech: 'turborepo',
-              reason:
-                'Utilizado para facilitar o gerenciamento de monorepo, otimizar builds e abrir margem para expansão.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para garantir segurança de tipos pela aplicação.',
-            },
-            {
-              tech: 'next',
-              reason:
-                'Utilizado devido a facilidade de criação de rotas dinâmicas, SSR e agilidade na construção da aplicação.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado devido a alta velocidade de criação de componentes e estilização.',
-            },
-            {
-              tech: 'nest',
-              reason:
-                'Utilizado para construção de uma API robusta, escalável e de fácil manutenção.',
-            },
-            {
-              tech: 'socket.io',
-              reason: 'Utilizado para implementar comunicação em tempo real.',
-            },
-            {
-              tech: 'prisma',
-              reason:
-                'Utilizado para abstrair queries e garantir integridade na aplicação.',
-            },
-            {
-              tech: 'postgresql',
-              reason: 'Utilizado para persistência dos dados.',
-            },
-            {
-              tech: 'supabase',
-              reason: 'Utilizado para fornecer um backend serverless robusto.',
-            },
-          ]}
-        />
-        <Highlights
-          highlightList={[
-            'Autenticação & Acesso',
-            'Realtime com WebSocket',
-            'Gestão de Time em Kanban',
-            'Rotas dinâmicas para Kanban',
-            'Drag and Drop sem lib',
-            'Markup Customizado',
-            'Monorepo',
-          ]}
-        />
-        <Challenges
-          challengeList={[
-            {
-              name: 'Autenticação',
-              category: 'fullstack',
-              difficulty: 'mid',
-              difficultyReason:
-                'Primeira vez tendo que utilizar o middleware do NextJS e NestJS',
-            },
-            {
-              name: 'Acesso',
-              category: 'fullstack',
-              difficulty: 'mid',
-              difficultyReason:
-                'Primeira vez trabalhando com proteção de rotas com NextJS e NestJS',
-            },
-            {
-              name: 'WebSocket',
-              category: 'fullstack',
-              difficulty: 'mid',
-              difficultyReason: 'Primeira vez trabalhando com WebSocket',
-            },
-            {
-              name: 'Markup customizado (RegExp)',
-              category: 'security',
-              difficulty: 'high',
-              difficultyReason:
-                'Garantindo a segurança do parser de markup customizado para evitar XSS',
-            },
-            {
-              name: 'Kanban com drag and drop',
-              category: 'frontend',
-              difficulty: 'high',
-              difficultyReason:
-                "Drag'n'Drop criado sem uso de libs específicas",
-            },
-            {
-              name: 'Gerenciamento de Times',
-              category: 'fullstack',
-              difficulty: 'high',
-              difficultyReason:
-                'Gerenciar permissão de múltiplos usuários e garantir comunicação via WebSocket.',
-            },
-            {
-              name: 'Problemas com CORS (cross-domain)',
-              category: 'fullstack',
-              difficulty: 'high',
-              difficultyReason:
-                'Permitir comunicação entre domínios diferentes.',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Implementar WebSocket com Socket.io',
-              tech: 'socket.io',
-            },
-            {
-              learned: 'Criar parser de markup customizado seguro',
-              tech: 'typescript',
-            },
-            { learned: 'Implementar drag and drop sem lib', tech: 'next' },
-            { learned: 'Autenticação e acesso com NextJS', tech: 'next' },
-            { learned: 'Autenticação e acesso com NestJS', tech: 'nest' },
-            { learned: 'Criar API com NestJS', tech: 'nest' },
-            { learned: 'Gerenciar monorepo com Turborepo', tech: 'turborepo' },
-            { learned: 'Gerenciar modelos com Prisma', tech: 'prisma' },
-            {
-              learned: 'Modelar banco de dados relacional',
-              tech: 'postgresql',
-            },
-            {
-              learned: 'Criar proxy pra evitar cross-domain',
-              tech: 'next',
-            },
-          ]}
-        />
-        <FuturePlans
-          plans={[
-            {
-              name: 'Melhorar UI & UX',
-            },
-            {
-              name: 'Melhorar Accessibilidade',
-            },
-            {
-              name: 'Integração com Testes',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Kronos é um projeto fullstack com o objetivo de permitir que o usuário possa gerenciar Notas, Kanban e Tarefas. Com um sistema integrado de WebSocket que permite atualizações em tempo real que refletem para outros usuários de um mesmo time.',
+      features: [
+        'Gerenciamento de Tarefas',
+        'Gerenciamento de Notas',
+        'Markup Customizado',
+        'Gerenciamento de Kanban',
+        'Comunicação em Tempo real',
+        'Autenticação',
+        'Acesso',
+      ],
+      techs: [
+        {
+          tech: 'turborepo',
+          reason:
+            'Utilizado para facilitar o gerenciamento de monorepo, otimizar builds e abrir margem para expansão.',
+        },
+        {
+          tech: 'typescript',
+          reason: 'Utilizado para garantir segurança de tipos pela aplicação.',
+        },
+        {
+          tech: 'next',
+          reason:
+            'Utilizado devido a facilidade de criação de rotas dinâmicas, SSR e agilidade na construção da aplicação.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado devido a alta velocidade de criação de componentes e estilização.',
+        },
+        {
+          tech: 'nest',
+          reason:
+            'Utilizado para construção de uma API robusta, escalável e de fácil manutenção.',
+        },
+        {
+          tech: 'socket.io',
+          reason: 'Utilizado para implementar comunicação em tempo real.',
+        },
+        {
+          tech: 'prisma',
+          reason:
+            'Utilizado para abstrair queries e garantir integridade na aplicação.',
+        },
+        {
+          tech: 'postgresql',
+          reason: 'Utilizado para persistência dos dados.',
+        },
+        {
+          tech: 'supabase',
+          reason: 'Utilizado para fornecer um backend serverless robusto.',
+        },
+      ],
+      highlights: [
+        'Autenticação & Acesso',
+        'Realtime com WebSocket',
+        'Gestão de Time em Kanban',
+        'Rotas dinâmicas para Kanban',
+        'Drag and Drop sem lib',
+        'Markup Customizado',
+        'Monorepo',
+      ],
+      challenges: [
+        {
+          name: 'Autenticação',
+          category: 'fullstack',
+          difficulty: 'mid',
+          difficultyReason:
+            'Primeira vez tendo que utilizar o middleware do NextJS e NestJS',
+        },
+        {
+          name: 'Acesso',
+          category: 'fullstack',
+          difficulty: 'mid',
+          difficultyReason:
+            'Primeira vez trabalhando com proteção de rotas com NextJS e NestJS',
+        },
+        {
+          name: 'WebSocket',
+          category: 'fullstack',
+          difficulty: 'mid',
+          difficultyReason: 'Primeira vez trabalhando com WebSocket',
+        },
+        {
+          name: 'Markup customizado (RegExp)',
+          category: 'security',
+          difficulty: 'high',
+          difficultyReason:
+            'Garantindo a segurança do parser de markup customizado para evitar XSS',
+        },
+        {
+          name: 'Kanban com drag and drop',
+          category: 'frontend',
+          difficulty: 'high',
+          difficultyReason: "Drag'n'Drop criado sem uso de libs específicas",
+        },
+        {
+          name: 'Gerenciamento de Times',
+          category: 'fullstack',
+          difficulty: 'high',
+          difficultyReason:
+            'Gerenciar permissão de múltiplos usuários e garantir comunicação via WebSocket.',
+        },
+        {
+          name: 'Problemas com CORS (cross-domain)',
+          category: 'fullstack',
+          difficulty: 'high',
+          difficultyReason: 'Permitir comunicação entre domínios diferentes.',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Implementar WebSocket com Socket.io',
+          tech: 'socket.io',
+        },
+        {
+          learned: 'Criar parser de markup customizado seguro',
+          tech: 'typescript',
+        },
+        { learned: 'Implementar drag and drop sem lib', tech: 'next' },
+        { learned: 'Autenticação e acesso com NextJS', tech: 'next' },
+        { learned: 'Autenticação e acesso com NestJS', tech: 'nest' },
+        { learned: 'Criar API com NestJS', tech: 'nest' },
+        { learned: 'Gerenciar monorepo com Turborepo', tech: 'turborepo' },
+        { learned: 'Gerenciar modelos com Prisma', tech: 'prisma' },
+        {
+          learned: 'Modelar banco de dados relacional',
+          tech: 'postgresql',
+        },
+        {
+          learned: 'Criar proxy pra evitar cross-domain',
+          tech: 'next',
+        },
+      ],
+      futurePlans: [
+        {
+          name: 'Melhorar UI & UX',
+          completionDate: new Date(2026, 1, 10),
+        },
+        {
+          name: 'Melhorar Accessibilidade',
+        },
+        {
+          name: 'Integração com Testes',
+        },
+      ],
+    },
   },
   {
     name: 'REST Countries',
@@ -387,106 +349,92 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='REST Counties é um desafio de nível 4 do site Frontend Mentor, o foco é implementar um sistema de filtragem por pesquisa ou regiões, alternância de temas e detalhes de cada país.' />
-        <FeatureList
-          featureList={[
-            'Filtro de pesquisa',
-            'Filtro por regiões',
-            'Alternância de temas',
-            'Detalhes de cada país',
-            'Consumo de API',
-          ]}
-        />
-        <TechStack
-          techList={[
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para garantir segurança de tipos pela aplicação.',
-            },
-            {
-              tech: 'next',
-              reason:
-                'Utilizado devido a facilidade de criação de rotas dinâmicas, SSR e agilidade na construção da aplicação.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado devido a alta velocidade de criação de componentes e estilização.',
-            },
-          ]}
-        />
-        <Highlights
-          highlightList={['Consumo de API', 'Refatoração de Código legado']}
-        />
-        <Challenges
-          challengeList={[
-            {
-              name: 'Tipagem',
-              category: 'frontend',
-              difficulty: 'low',
-              difficultyReason:
-                'Primeira vez tendo que utilizar tipagens com Typescript',
-            },
-            {
-              name: 'Consumo de API',
-              category: 'frontend',
-              difficulty: 'mid',
-              difficultyReason:
-                'Primeira vez trabalhando com fetch de dados para buscar dados de uma API',
-            },
-            {
-              name: 'Refatoração de Código',
-              category: 'frontend',
-              difficulty: 'mid',
-              difficultyReason:
-                'O código estava com muitas funcionalidades e estava dificil de entender.',
-            },
-            {
-              name: 'Filtros e Buscas',
-              category: 'frontend',
-              difficulty: 'high',
-              difficultyReason:
-                'A época não se sabia como implementar filtros e buscas com facilidade.',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Importância de tipagem e lints',
-              tech: 'typescript',
-            },
-            {
-              learned: 'Criação de filtros e buscas',
-              tech: 'typescript',
-            },
-            {
-              learned: 'Uso de SSG',
-              tech: 'next',
-            },
-            {
-              learned: 'Consumo de API',
-              tech: 'next',
-            },
-          ]}
-        />
-        <FuturePlans
-          plans={[
-            {
-              name: 'Consertar bug da página não carregar',
-              completionDate: new Date(2025, 10, 28),
-            },
-            {
-              name: 'Refatorar código',
-              completionDate: new Date(2025, 10, 28),
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'REST Counties é um desafio de nível 4 do site Frontend Mentor, o foco é implementar um sistema de filtragem por pesquisa ou regiões, alternância de temas e detalhes de cada país.',
+      features: [
+        'Filtro de pesquisa',
+        'Filtro por regiões',
+        'Alternância de temas',
+        'Detalhes de cada país',
+        'Consumo de API',
+      ],
+      techs: [
+        {
+          tech: 'typescript',
+          reason: 'Utilizado para garantir segurança de tipos pela aplicação.',
+        },
+        {
+          tech: 'next',
+          reason:
+            'Utilizado devido a facilidade de criação de rotas dinâmicas, SSR e agilidade na construção da aplicação.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado devido a alta velocidade de criação de componentes e estilização.',
+        },
+      ],
+      highlights: ['Consumo de API', 'Refatoração de Código legado'],
+      challenges: [
+        {
+          name: 'Tipagem',
+          category: 'frontend',
+          difficulty: 'low',
+          difficultyReason:
+            'Primeira vez tendo que utilizar tipagens com Typescript',
+        },
+        {
+          name: 'Consumo de API',
+          category: 'frontend',
+          difficulty: 'mid',
+          difficultyReason:
+            'Primeira vez trabalhando com fetch de dados para buscar dados de uma API',
+        },
+        {
+          name: 'Refatoração de Código',
+          category: 'frontend',
+          difficulty: 'mid',
+          difficultyReason:
+            'O código estava com muitas funcionalidades e estava dificil de entender.',
+        },
+        {
+          name: 'Filtros e Buscas',
+          category: 'frontend',
+          difficulty: 'high',
+          difficultyReason:
+            'A época não se sabia como implementar filtros e buscas com facilidade.',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Importância de tipagem e lints',
+          tech: 'typescript',
+        },
+        {
+          learned: 'Criação de filtros e buscas',
+          tech: 'typescript',
+        },
+        {
+          learned: 'Uso de SSG',
+          tech: 'next',
+        },
+        {
+          learned: 'Consumo de API',
+          tech: 'next',
+        },
+      ],
+      futurePlans: [
+        {
+          name: 'Consertar bug da página não carregar',
+          completionDate: new Date(2025, 10, 28),
+        },
+        {
+          name: 'Refatorar código',
+          completionDate: new Date(2025, 10, 28),
+        },
+      ],
+    },
   },
   {
     name: 'Social Dashboard',
@@ -507,28 +455,25 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Social Dashboard é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout e alternância de tema.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'next',
-              reason:
-                'Utilizado devido a aprensetar uma forma mais moderna de usar ReactJS e SSR.',
-            },
-            {
-              tech: 'tailwind',
-              reason: 'Utilizado devido a facilidade para criação de estilos.',
-            },
-            {
-              tech: 'typescript',
-              reason: 'Utilizado devido a garantia de segurança de tipos.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Social Dashboard é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout e alternância de tema.',
+      techs: [
+        {
+          tech: 'next',
+          reason:
+            'Utilizado devido a aprensetar uma forma mais moderna de usar ReactJS e SSR.',
+        },
+        {
+          tech: 'tailwind',
+          reason: 'Utilizado devido a facilidade para criação de estilos.',
+        },
+        {
+          tech: 'typescript',
+          reason: 'Utilizado devido a garantia de segurança de tipos.',
+        },
+      ],
+    },
   },
   {
     name: 'Faq Accordion 2',
@@ -549,30 +494,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Faq Accordion é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade, posicionamento de imagem e manipulação do DOM.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'csharp',
-              reason:
-                'Utilizado como base para o Blazor e para o trabalho de lógica utilizando-se do paradigma orientado a objetos (POO).',
-            },
-            {
-              tech: 'blazor',
-              reason:
-                'Utilizado pela primeira vez a fim de experimentar as capacidades do Blazor e C# no desenvolvimento web.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado a fim de facilitar a criação de estilos e experimentar como funcionaria com Blazor.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Faq Accordion é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade, posicionamento de imagem e manipulação do DOM.',
+      features: [],
+      techs: [
+        {
+          tech: 'csharp',
+          reason:
+            'Utilizado como base para o Blazor e para o trabalho de lógica utilizando-se do paradigma orientado a objetos (POO).',
+        },
+        {
+          tech: 'blazor',
+          reason:
+            'Utilizado pela primeira vez a fim de experimentar as capacidades do Blazor e C# no desenvolvimento web.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado a fim de facilitar a criação de estilos e experimentar como funcionaria com Blazor.',
+        },
+      ],
+      highlights: [],
+      challenges: [],
+      learnings: [],
+      futurePlans: [],
+    },
   },
   {
     name: 'Bento Grid',
@@ -592,28 +539,25 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Bento Grid é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout para criação de Bento Grid.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason:
-                'Utilizado para garantir uma boa estrutura semântica e ajudar na acessibilidade.',
-            },
-            {
-              tech: 'css',
-              reason: 'Utilizado para a criação de estilos de forma simples.',
-            },
-            {
-              tech: 'javascript',
-              reason: 'Utilizado para criação de lógico no botão de links.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Bento Grid é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout para criação de Bento Grid.',
+      techs: [
+        {
+          tech: 'html',
+          reason:
+            'Utilizado para garantir uma boa estrutura semântica e ajudar na acessibilidade.',
+        },
+        {
+          tech: 'css',
+          reason: 'Utilizado para a criação de estilos de forma simples.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para criação de lógico no botão de links.',
+        },
+      ],
+    },
   },
   {
     name: 'ToDo App',
@@ -633,29 +577,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='ToDo App é um desafio de nível 3 do site Frontend Mentor, onde o objetivo é praticar CRUD com criação, leitura, atualização e deleção de tarefas, utilização de Drag and Drop, persistência de dados no navegador (local storage) e também alternância de temas.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado a fim de experimentar como criar um CRUD apenas utilizando React.',
-            },
-            {
-              tech: 'tailwind',
-              reason: 'Utilizado para rápido desenvolvimento da estilização.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para garantir segurança de tipo na aplicação, e lógica de CRUD por de trás do to do list.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'ToDo App é um desafio de nível 3 do site Frontend Mentor, onde o objetivo é praticar CRUD com criação, leitura, atualização e deleção de tarefas, utilização de Drag and Drop, persistência de dados no navegador (local storage) e também alternância de temas.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado a fim de experimentar como criar um CRUD apenas utilizando React.',
+        },
+        {
+          tech: 'tailwind',
+          reason: 'Utilizado para rápido desenvolvimento da estilização.',
+        },
+        {
+          tech: 'typescript',
+          reason:
+            'Utilizado para garantir segurança de tipo na aplicação, e lógica de CRUD por de trás do to do list.',
+        },
+      ],
+    },
   },
   {
     name: 'Contact Form',
@@ -676,35 +617,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Contact Form é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar validação de multi-campos de um formulário, indo de inputs a botões.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado para facilitar a criação de componentes reutilizáveis, gestão de estados e reatividade.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para a criação da lógica de validação de email e garantir segurança de tipos.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Contact Form é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar validação de multi-campos de um formulário, indo de inputs a botões.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado para facilitar a criação de componentes reutilizáveis, gestão de estados e reatividade.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'typescript',
+          reason:
+            'Utilizado para a criação da lógica de validação de email e garantir segurança de tipos.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Calculator App',
@@ -725,33 +663,30 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Calculator App é um desafio de nível 3 do site Frontend Mentor, onde o objetivo é praticar uso de lógica de programção com calculos matemáticos e alternância de temas.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado devido a facilitar a criação de componentes reutilizáveis de forma simples.',
-            },
-            {
-              tech: 'javascript',
-              reason: 'Utilizado para a criação de lógica de cálculos.',
-            },
-            {
-              tech: 'pinia',
-              reason: 'Utilizado para gerenciamento de estados globais no Vue.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Calculator App é um desafio de nível 3 do site Frontend Mentor, onde o objetivo é praticar uso de lógica de programção com calculos matemáticos e alternância de temas.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado devido a facilitar a criação de componentes reutilizáveis de forma simples.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para a criação de lógica de cálculos.',
+        },
+        {
+          tech: 'pinia',
+          reason: 'Utilizado para gerenciamento de estados globais no Vue.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Sunnyside Homepage',
@@ -772,35 +707,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Sunnyside Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade, trabalho com imagens e uso de javascript para criação de menu com renderização condicional.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado devido a facilidade de criação de componentes, estilização e gerenciamento de estados.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado para a experimentação com outros frameworks além de Angular e garantir segurança através de tipagem.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Sunnyside Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade, trabalho com imagens e uso de javascript para criação de menu com renderização condicional.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado devido a facilidade de criação de componentes, estilização e gerenciamento de estados.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'typescript',
+          reason:
+            'Utilizado para a experimentação com outros frameworks além de Angular e garantir segurança através de tipagem.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Pricing Component',
@@ -821,34 +753,30 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Pricing Component é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar construção de Layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para criação da lógica de alteração de preços.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado para garantir uma maior perfomance de desenvolvimento.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Pricing Component é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar construção de Layout.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para criação da lógica de alteração de preços.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado para garantir uma maior performance de desenvolvimento.',
+        },
+      ],
+    },
   },
   {
     name: 'Multi Step Form',
@@ -869,35 +797,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Multi Step Form é um desafio de nível 4 do site Frontend Mentor, onde o objetivo é praticar uso de Javascript, com lógica de renderização condicional e estados globais que se mantém pelo formulário.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason:
-                'Utilizado para a criação de tags semânticas e garantia de acessibilidade.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para criação de lógica da validação de cada etapa do formulário.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado para garantir uma maior perfomance de desenvolvimento.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Multi Step Form é um desafio de nível 4 do site Frontend Mentor, onde o objetivo é praticar uso de Javascript, com lógica de renderização condicional e estados globais que se mantém pelo formulário.',
+      techs: [
+        {
+          tech: 'html',
+          reason:
+            'Utilizado para a criação de tags semânticas e garantia de acessibilidade.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason:
+            'Utilizado para criação de lógica da validação de cada etapa do formulário.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado para garantir uma maior performance de desenvolvimento.',
+        },
+      ],
+    },
   },
   {
     name: 'Tip Calculator App',
@@ -918,35 +843,31 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Tip Calculator App é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de reforçar o HTML e CSS, praticar lógica de validação, type casting e matemática.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a garantir uma fácil manipulação de estados, criação de componentes e renderização condicional.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para a criação da lógica de cálculo de gorjeta.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Tip Calculator App é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de reforçar o HTML e CSS, praticar lógica de validação, type casting e matemática.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a garantir uma fácil manipulação de estados, criação de componentes e renderização condicional.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para a criação da lógica de cálculo de gorjeta.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Expense Chart',
@@ -967,35 +888,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Expense Chart é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar consumo de JSON.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a possibilidade de criação de componentes e modularidade.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para verificação da data a fim de criar uma estilização dinâmica entre as barras.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Expense Chart é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar consumo de JSON.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a possibilidade de criação de componentes e modularidade.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason:
+            'Utilizado para verificação da data a fim de criar uma estilização dinâmica entre as barras.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Clipboard Landing Page',
@@ -1017,29 +935,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Clipboard Landing Page é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar criação de uma landing page, focando principalmente em HTML e CSS.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'python',
-              reason:
-                'Utilizado pela primeira vez a fim de entender como uma linguagem não web funcionaria nesse cenário.',
-            },
-            {
-              tech: 'flask',
-              reason:
-                'Utilizado para experimentação de utilizar um framework de outra linguagem a fim de criar uma UI sem lógica.',
-            },
-            {
-              tech: 'tailwind',
-              reason: 'Utilizado para garantir uma rápida estilização.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Clipboard Landing Page é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar criação de uma landing page, focando principalmente em HTML e CSS.',
+      techs: [
+        {
+          tech: 'python',
+          reason:
+            'Utilizado pela primeira vez a fim de entender como uma linguagem não web funcionaria nesse cenário.',
+        },
+        {
+          tech: 'flask',
+          reason:
+            'Utilizado para experimentação de utilizar um framework de outra linguagem a fim de criar uma UI sem lógica.',
+        },
+        {
+          tech: 'tailwind',
+          reason: 'Utilizado para garantir uma rápida estilização.',
+        },
+      ],
+    },
   },
   {
     name: 'Time Tracking Dashboard',
@@ -1060,30 +975,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Time Tracking Dashboard é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar grid layout e consumo de JSON.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a possibilidade de criação de componentes e modularidade.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Time Tracking Dashboard é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar grid layout e consumo de JSON.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a possibilidade de criação de componentes e modularidade.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Advice Generator App',
@@ -1104,30 +1016,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Advice Generator App é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de consumo de API.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'solid',
-              reason:
-                'Utilizado pela primeira vez a fim de experimentar a diferença com React.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para realizar as buscas de dados na API através do fetch.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Advice Generator App é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de consumo de API.',
+      techs: [
+        {
+          tech: 'solid',
+          reason:
+            'Utilizado pela primeira vez a fim de experimentar a diferença com React.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason:
+            'Utilizado para realizar as buscas de dados na API através do fetch.',
+        },
+      ],
+    },
   },
   {
     name: 'Snap Homepage',
@@ -1148,34 +1057,31 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Snap Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de criação de menu dropdown e layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado para trabalhar com a manipulação de estados e renderização condicional dos menus.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason: 'Utilizado para a lógica de manipulação dos menus.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Snap Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de criação de menu dropdown e layout.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado para trabalhar com a manipulação de estados e renderização condicional dos menus.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para a lógica de manipulação dos menus.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'News Homepage',
@@ -1196,34 +1102,31 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='News Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado devido a simplicidade para criação de componentes.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason: 'Utilizado para trabalhar com a lógica do menu.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'News Homepage é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de grid layout.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado devido a simplicidade para criação de componentes.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para trabalhar com a lógica do menu.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Age Calculator',
@@ -1244,34 +1147,31 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Age Calculator é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso lógica de programação com cálculos de idade, validação de formulário e type casting.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a funcionalidade de criação de componentes e gestão de estados.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason: 'Utilizado para a criação da lógica de cálculo de idade.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Age Calculator é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso lógica de programação com cálculos de idade, validação de formulário e type casting.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a funcionalidade de criação de componentes e gestão de estados.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason: 'Utilizado para a criação da lógica de cálculo de idade.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Huddle Landing Page',
@@ -1292,29 +1192,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Huddle Landing Page é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de flexbox.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado devido a simplicidade na criação de componentes e manipulação de estados.',
-            },
-            {
-              tech: 'tailwind',
-              reason: 'Utilizado a fim de experimentar a integração com Vue.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Huddle Landing Page é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de flexbox.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado devido a simplicidade na criação de componentes e manipulação de estados.',
+        },
+        {
+          tech: 'tailwind',
+          reason: 'Utilizado a fim de experimentar a integração com Vue.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Easybank Landing Page',
@@ -1335,30 +1232,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Easybank Landing Page é um desafio de nível 3 do site Frontend Mentor, onde o objetivo criar uma landing page com menu.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'angular',
-              reason:
-                'Utilizado devido a querer experimentar o Angular em um projeto básico, comparando-o ao React e Vue.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'typescript',
-              reason:
-                'Utilizado devido a ser um requisito obrigatório do Angular 17 mas também pela segurança de tipos.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Easybank Landing Page é um desafio de nível 3 do site Frontend Mentor, onde o objetivo criar uma landing page com menu.',
+      techs: [
+        {
+          tech: 'angular',
+          reason:
+            'Utilizado devido a querer experimentar o Angular em um projeto básico, comparando-o ao React e Vue.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'typescript',
+          reason:
+            'Utilizado devido a ser um requisito obrigatório do Angular 17 mas também pela segurança de tipos.',
+        },
+      ],
+    },
   },
   {
     name: 'Intro Form',
@@ -1379,30 +1273,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Sign-up Form é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar validação de formulário com múltiplos campos.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'svelte',
-              reason:
-                'Utilizado devido a querer experimentar o Svelte em um projeto básico e ver quais os benefícios dele frente aos outros frameworks.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a ser uma ferramenta de desenvolvimento que suporta diversos frameworks front end.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Sign-up Form é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar validação de formulário com múltiplos campos.',
+      techs: [
+        {
+          tech: 'svelte',
+          reason:
+            'Utilizado devido a querer experimentar o Svelte em um projeto básico e ver quais os benefícios dele frente aos outros frameworks.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a ser uma ferramenta de desenvolvimento que suporta diversos frameworks front end.',
+        },
+      ],
+    },
   },
   {
     name: 'Article Preview',
@@ -1423,30 +1314,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Article Preview é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e manipulação do DOM com renderização condicional.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a reforçar o conhecimento de React com manipulação de estados e renderização condicional.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Article Preview é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e manipulação do DOM com renderização condicional.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a reforçar o conhecimento de React com manipulação de estados e renderização condicional.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Single Price',
@@ -1467,30 +1355,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Single Price é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Flexbox ou Grid Layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a criação de componentes e modularidade.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Single Price é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Flexbox ou Grid Layout.',
+      techs: [
+        {
+          tech: 'react',
+          reason: 'Utilizado devido a criação de componentes e modularidade.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Ping Coming Soon',
@@ -1511,35 +1395,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Ping Coming Soon é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar criação de validação simples de formulário.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado devido a alta legibilidade e facilidade de criação e manutenção de componentes.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para trabalhar com a parte lógica da validação de formulário.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Ping Coming Soon é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar criação de validação simples de formulário.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado devido a alta legibilidade e facilidade de criação e manutenção de componentes.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'javascript',
+          reason:
+            'Utilizado para trabalhar com a parte lógica da validação de formulário.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Testimonials Grid',
@@ -1560,30 +1441,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Testimonials Grid é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de Grid Layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado para a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'styled-components',
-              reason:
-                'Utilizado devido a melhora na produtividade de desenvolvimento.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Testimonials Grid é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de Grid Layout.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado para a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'styled-components',
+          reason:
+            'Utilizado devido a melhora na produtividade de desenvolvimento.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Interactive Card Details',
@@ -1605,30 +1483,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Interactive Card Details é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é reforçar os conhecimentos em HTML e CSS com uso de position e tags semânticas e também de criar uma validação simples de formulário.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado para a capacidade de criação de componentes de forma rápida, modular e disponibilidade de estados para trabalhar com DOM.',
-            },
-            {
-              tech: 'styled-components',
-              reason:
-                'Utilizado pela primeira vez a fim de experimentar os benefícios do CSS-IN-JS e aprender sobre a tecnologia.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Interactive Card Details é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é reforçar os conhecimentos em HTML e CSS com uso de position e tags semânticas e também de criar uma validação simples de formulário.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado para a capacidade de criação de componentes de forma rápida, modular e disponibilidade de estados para trabalhar com DOM.',
+        },
+        {
+          tech: 'styled-components',
+          reason:
+            'Utilizado pela primeira vez a fim de experimentar os benefícios do CSS-IN-JS e aprender sobre a tecnologia.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Notification Page',
@@ -1649,30 +1524,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Notification Page é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Notification Page é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Profile Card',
@@ -1693,30 +1565,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Profile Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado devido a alta melhora na produtividade de desenvolvimento.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Profile Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado devido a alta melhora na produtividade de desenvolvimento.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Stats Card',
@@ -1738,30 +1607,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Stats Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e base do HTML e CSS.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado a fim de experimentar a integração com React e melhorar a produtividade de desenvolvimento.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Stats Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e base do HTML e CSS.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado a fim de experimentar a integração com React e melhorar a produtividade de desenvolvimento.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Social Links Profile',
@@ -1782,30 +1648,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Social Links Profile é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é criar um card com links para redes sociais, focando em uso de estados como ::hover.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis, aninhamento, modularidade e experimentação em trabalhar com css modules usando sass.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Social Links Profile é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é criar um card com links para redes sociais, focando em uso de estados como ::hover.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis, aninhamento, modularidade e experimentação em trabalhar com css modules usando sass.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Four Cards Section',
@@ -1826,30 +1689,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Four Cards Section é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Flexbox e/ou Grid Layout para a construção do layout.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Four Cards Section é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Flexbox e/ou Grid Layout para a construção do layout.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a capacidade de criação de componentes de forma rápida e modular.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Base Apparel Coming Soon',
@@ -1870,35 +1730,32 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Base Apparel Coming Soon é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de CSS com position e validação simples de formulário.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'vue',
-              reason:
-                'Utilizado pela primeira vez a fim de experimentar a tecnologia e entender suas diferenças com React.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção..',
-            },
-            {
-              tech: 'javascript',
-              reason:
-                'Utilizado para trabalhar com a lógica das ações de validação do formulário.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e integração nativa com Vue',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Base Apparel Coming Soon é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de CSS com position e validação simples de formulário.',
+      techs: [
+        {
+          tech: 'vue',
+          reason:
+            'Utilizado pela primeira vez a fim de experimentar a tecnologia e entender suas diferenças com React.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção..',
+        },
+        {
+          tech: 'javascript',
+          reason:
+            'Utilizado para trabalhar com a lógica das ações de validação do formulário.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e integração nativa com Vue',
+        },
+      ],
+    },
   },
   {
     name: 'Social Proof',
@@ -1919,30 +1776,27 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Social Proof é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Grid Layout e Flexbox.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason:
-                'Utilizado devido a alta agilidade para construir aplicações e alta modularidade.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado pela primeira vez a fim de aprender sobre a tecnologia e seus benefícios.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Social Proof é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de Grid Layout e Flexbox.',
+      techs: [
+        {
+          tech: 'react',
+          reason:
+            'Utilizado devido a alta agilidade para construir aplicações e alta modularidade.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado pela primeira vez a fim de aprender sobre a tecnologia e seus benefícios.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'Recipe Page',
@@ -1962,29 +1816,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Recipe Page é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e principalmente uso de HTML semântico.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'react',
-              reason: 'Utilizado pela primeira vez para explorar a tecnologia.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
-            },
-            {
-              tech: 'vite',
-              reason:
-                'Utilizado devido a excelente perfomance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Recipe Page é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade e principalmente uso de HTML semântico.',
+      techs: [
+        {
+          tech: 'react',
+          reason: 'Utilizado pela primeira vez para explorar a tecnologia.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis e aninhamento em prol de modularidade e fácil manutenção.',
+        },
+        {
+          tech: 'vite',
+          reason:
+            'Utilizado devido a excelente performance de bundling, hot module replacement e capacidade de converter JSX em arquivo estático para leitura no navegador.',
+        },
+      ],
+    },
   },
   {
     name: 'FAQ Accordion',
@@ -2005,29 +1856,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='FAQ Accordion é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM e renderização condicional.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis em prol de modularidade.',
-            },
-            {
-              tech: 'jquery',
-              reason:
-                'Utilizado devido a alta simplicidade para manipulação do DOM.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'FAQ Accordion é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM e renderização condicional.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis em prol de modularidade.',
+        },
+        {
+          tech: 'jquery',
+          reason:
+            'Utilizado devido a alta simplicidade para manipulação do DOM.',
+        },
+      ],
+    },
   },
   {
     name: 'NFT Card',
@@ -2048,24 +1896,21 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='NFT Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar reforçar o aprendizado com HTML e CSS, trazendo um overlay para simular uma renderização condicional.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'less',
-              reason:
-                'Utilizado para facilitar a criação da estilização e utilização de mixins.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'NFT Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar reforçar o aprendizado com HTML e CSS, trazendo um overlay para simular uma renderização condicional.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'less',
+          reason:
+            'Utilizado para facilitar a criação da estilização e utilização de mixins.',
+        },
+      ],
+    },
   },
   {
     name: 'Blog Preview Card',
@@ -2086,24 +1931,21 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Blog Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é reforçar uso de HTML e CSS trazendo estados para utilização de ::hover.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'tailwind',
-              reason:
-                'Utilizado pela primeira vez a fim de entender a tecnologia e observar seus benefícios.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Blog Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é reforçar uso de HTML e CSS trazendo estados para utilização de ::hover.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'tailwind',
+          reason:
+            'Utilizado pela primeira vez a fim de entender a tecnologia e observar seus benefícios.',
+        },
+      ],
+    },
   },
   {
     name: 'Order Summary Card',
@@ -2124,24 +1966,21 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Order Summary Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é reforçar conhecimentos de HTML e CSS através da criação de um card que utiliza flexbox.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'less',
-              reason:
-                'Utilizado pela primeira vez a fim de experimentar a tecnologia e observar as diferenças com o SASS.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Order Summary Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é reforçar conhecimentos de HTML e CSS através da criação de um card que utiliza flexbox.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'less',
+          reason:
+            'Utilizado pela primeira vez a fim de experimentar a tecnologia e observar as diferenças com o SASS.',
+        },
+      ],
+    },
   },
   {
     name: 'Newsletter Signup',
@@ -2162,29 +2001,25 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Newsletter Signup é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é o de praticar validação de email, manipulação do DOM com captura de input e renderização condicional.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado para criação de variáveis em prol de modularidade.',
-            },
-            {
-              tech: 'jquery',
-              reason:
-                'Utilizado devido a simplicidade para manipulação do DOM.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Newsletter Signup é um desafio de nível 2 do site Frontend Mentor, onde o objetivo é o de praticar validação de email, manipulação do DOM com captura de input e renderização condicional.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado para criação de variáveis em prol de modularidade.',
+        },
+        {
+          tech: 'jquery',
+          reason: 'Utilizado devido a simplicidade para manipulação do DOM.',
+        },
+      ],
+    },
   },
   {
     name: 'Rating Card',
@@ -2206,29 +2041,26 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Rating Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM, renderização condicional e interatividade.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação da estrutura e semântica.',
-            },
-            {
-              tech: 'sass',
-              reason:
-                'Utilizado pela primeira vez a fim de obter experiência e conhecer a ferramenta.',
-            },
-            {
-              tech: 'jquery',
-              reason:
-                'Utilizado pela primeira vez a fim de facilitar manipulação do DOM e estudar a tecnologia.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Rating Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de manipulação do DOM, renderização condicional e interatividade.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação da estrutura e semântica.',
+        },
+        {
+          tech: 'sass',
+          reason:
+            'Utilizado pela primeira vez a fim de obter experiência e conhecer a ferramenta.',
+        },
+        {
+          tech: 'jquery',
+          reason:
+            'Utilizado pela primeira vez a fim de facilitar manipulação do DOM e estudar a tecnologia.',
+        },
+      ],
+    },
   },
   {
     name: 'Three Column Preview Card',
@@ -2250,23 +2082,20 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Three Column Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para estruturação do projeto.',
-            },
-            {
-              tech: 'css',
-              reason: 'Utilizado para a criação da estilização.',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Three Column Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de responsividade.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para estruturação do projeto.',
+        },
+        {
+          tech: 'css',
+          reason: 'Utilizado para a criação da estilização.',
+        },
+      ],
+    },
   },
   {
     name: 'Product Preview Card',
@@ -2287,42 +2116,35 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Product Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de flexbox e responsividade.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado para a criação de elementos semânticos.',
-            },
-            {
-              tech: 'css',
-              reason: 'Utilizado para dominar os fundamentos de estilização.',
-            },
-          ]}
-        />
-        <Challenges
-          challengeList={[
-            {
-              name: 'Uso de Tags semânticas',
-              category: 'frontend',
-              difficulty: 'mid',
-              difficultyReason:
-                'Primeira vez utilizando e estudando sobre semântica no HTML.',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Aprendi a usar tags semânticas.',
-              tech: 'html',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Product Preview Card é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é praticar uso de flexbox e responsividade.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado para a criação de elementos semânticos.',
+        },
+        {
+          tech: 'css',
+          reason: 'Utilizado para dominar os fundamentos de estilização.',
+        },
+      ],
+      challenges: [
+        {
+          name: 'Uso de Tags semânticas',
+          category: 'frontend',
+          difficulty: 'mid',
+          difficultyReason:
+            'Primeira vez utilizando e estudando sobre semântica no HTML.',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Aprendi a usar tags semânticas.',
+          tech: 'html',
+        },
+      ],
+    },
   },
   {
     name: 'Results Summary',
@@ -2344,36 +2166,31 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='Results Summary é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é criar uma interface de resumo de resultados e usar HTML, CSS e JSON para popular os dados.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado devido a ser a base de criação de projetos.',
-            },
-            {
-              tech: 'css',
-              reason:
-                'Utilizado para dominar os fundamentos de estilização e a aplicação prática de Flexbox e responsividade.',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Aprendi a usar Flexbox e alguns de seus elementos',
-              tech: 'css',
-            },
-            {
-              learned: 'Aprendi a usar seletores e ::hover',
-              tech: 'css',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'Results Summary é um desafio de nível 1 do site Frontend Mentor, onde o objetivo é criar uma interface de resumo de resultados e usar HTML, CSS e JSON para popular os dados.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado devido a ser a base de criação de projetos.',
+        },
+        {
+          tech: 'css',
+          reason:
+            'Utilizado para dominar os fundamentos de estilização e a aplicação prática de Flexbox e responsividade.',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Aprendi a usar Flexbox e alguns de seus elementos',
+          tech: 'css',
+        },
+        {
+          learned: 'Aprendi a usar seletores e ::hover',
+          tech: 'css',
+        },
+      ],
+    },
   },
   {
     name: 'QR Code',
@@ -2395,30 +2212,25 @@ export const projectList: IProject[] = [
       category: ['frontend'],
       status: 'completed',
     },
-    description: (
-      <>
-        <Description content='QR Code é um desafio de nível 1 do site Frontend Mentor, o foco é servir como um desafio inicial para quem busca testar as habilidades com HTML e CSS.' />
-        <TechStack
-          techList={[
-            {
-              tech: 'html',
-              reason: 'Utilizado a fim de praticar HTML.',
-            },
-            {
-              tech: 'css',
-              reason: 'Utilizado a fim de praticar CSS.',
-            },
-          ]}
-        />
-        <Learnings
-          learningsList={[
-            {
-              learned: 'Aprendi a usar Media queries',
-              tech: 'css',
-            },
-          ]}
-        />
-      </>
-    ),
+    description: {
+      content:
+        'QR Code é um desafio de nível 1 do site Frontend Mentor, o foco é servir como um desafio inicial para quem busca testar as habilidades com HTML e CSS.',
+      techs: [
+        {
+          tech: 'html',
+          reason: 'Utilizado a fim de praticar HTML.',
+        },
+        {
+          tech: 'css',
+          reason: 'Utilizado a fim de praticar CSS.',
+        },
+      ],
+      learnings: [
+        {
+          learned: 'Aprendi a usar Media queries',
+          tech: 'css',
+        },
+      ],
+    },
   },
 ];
