@@ -50,79 +50,83 @@ export default function VisualContent({
               <div
                 className={`flex items-center justify-center absolute top-0 z-10 min-h-0 w-full gap-2 rounded-t-lg duration-300 ease-in-out bg-gradient-to-b from-black to-transparent ${isShowingOverlay ? 'h-16' : 'h-0'}`}
               >
-                <Button
-                  label={w('Image')}
-                  action={(e) => {
-                    e.stopPropagation();
-                    setMediaToShow('image');
-                  }}
-                  disabled={!media.images}
-                />
-                <Button
-                  label={w('Video')}
-                  action={(e) => {
-                    e.stopPropagation();
-                    setMediaToShow('video');
-                  }}
-                  disabled={!media.videos}
-                />
+                <div className='flex items-center p-1 gap-2 rounded-lg shadow-md bg-white dark:bg-black'>
+                  <Button
+                    label={w('Image')}
+                    action={(e) => {
+                      e.stopPropagation();
+                      setMediaToShow('image');
+                    }}
+                    disabled={!media.images}
+                  />
+                  <Button
+                    label={w('Video')}
+                    action={(e) => {
+                      e.stopPropagation();
+                      setMediaToShow('video');
+                    }}
+                    disabled={!media.videos}
+                  />
+                </div>
               </div>
               <div
-                className={`flex items-center justify-center absolute bottom-0 z-10 min-h-0 w-full gap-2 rounded-b-lg duration-300 ease-in-out bg-gradient-to-t from-black to-transparent ${isShowingOverlay ? 'h-16' : 'h-0'}`}
+                className={`flex items-center justify-center absolute bottom-0 z-10 min-h-0 w-full rounded-b-lg duration-300 ease-in-out bg-gradient-to-t from-black to-transparent ${isShowingOverlay ? 'h-16' : 'h-0'}`}
               >
-                <Button
-                  ariaLabel={w('Previous')}
-                  action={(e) => {
-                    e.stopPropagation();
-                    setMediaIndex(mediaIndex - 1);
-                  }}
-                  disabled={!media.images || mediaIndex === 0}
-                  icon={<FaArrowLeft />}
-                  className='btn-default-color min-w-fit p-2 border rounded-full text-sm ease-in-out duration-300 bg-white dark:bg-transparent'
-                />
-                {Object.keys(media.images ?? {}).map((_, idx) => (
+                <div className='flex items-center px-2 py-1 gap-2 rounded-full shadow-md bg-white dark:bg-black'>
                   <Button
-                    // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
-                    key={idx}
-                    className={`btn-default-color flex items-center justify-center size-6 border rounded-full text-xs ease-in-out duration-300 ${
-                      idx === mediaIndex &&
-                      'shadow-base shadow-white bg-shark-400'
-                    }`}
+                    ariaLabel={w('Previous')}
                     action={(e) => {
                       e.stopPropagation();
-                      setMediaIndex(idx);
+                      setMediaIndex(mediaIndex - 1);
                     }}
-                    label={(idx + 1).toString()}
+                    disabled={!media.images || mediaIndex === 0}
+                    icon={<FaArrowLeft />}
+                    className='btn-default-color min-w-fit p-2 border rounded-full text-sm ease-in-out duration-300 bg-white dark:bg-transparent'
                   />
-                ))}
-                {Object.keys(media.videos ?? {}).map((_, idx) => (
+                  {Object.keys(media.images ?? {}).map((_, idx) => (
+                    <Button
+                      // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
+                      key={idx}
+                      className={`btn-default-color flex items-center justify-center size-6 border rounded-full text-xs ease-in-out duration-300 ${
+                        idx === mediaIndex &&
+                        'shadow-base shadow-white bg-shark-400'
+                      }`}
+                      action={(e) => {
+                        e.stopPropagation();
+                        setMediaIndex(idx);
+                      }}
+                      label={(idx + 1).toString()}
+                    />
+                  ))}
+                  {Object.keys(media.videos ?? {}).map((_, idx) => (
+                    <Button
+                      // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
+                      key={idx}
+                      className={`btn-default-color flex items-center justify-center size-6 border rounded-full text-xs ease-in-out duration-300 ${
+                        idx === mediaIndex &&
+                        'shadow-base shadow-white bg-shark-400'
+                      }`}
+                      action={(e) => {
+                        e.stopPropagation();
+                        setMediaIndex(idx);
+                      }}
+                      label={(idx + 1).toString()}
+                    />
+                  ))}
                   <Button
-                    // biome-ignore lint/suspicious/noArrayIndexKey: <Imutable list>
-                    key={idx}
-                    className={`btn-default-color flex items-center justify-center size-6 border rounded-full text-xs ease-in-out duration-300 ${
-                      idx === mediaIndex &&
-                      'shadow-base shadow-white bg-shark-400'
-                    }`}
+                    ariaLabel={w('Next')}
                     action={(e) => {
                       e.stopPropagation();
-                      setMediaIndex(idx);
+                      setMediaIndex(mediaIndex + 1);
                     }}
-                    label={(idx + 1).toString()}
+                    disabled={
+                      !media.images ||
+                      mediaIndex === Object.keys(media.images ?? {}).length - 1
+                    }
+                    icon={<FaArrowRight />}
+                    className='btn-default-color min-w-fit p-2 border rounded-full text-sm ease-in-out duration-300 bg-white dark:bg-transparent'
                   />
-                ))}
-                <Button
-                  ariaLabel={w('Next')}
-                  action={(e) => {
-                    e.stopPropagation();
-                    setMediaIndex(mediaIndex + 1);
-                  }}
-                  disabled={
-                    !media.images ||
-                    mediaIndex === Object.keys(media.images ?? {}).length - 1
-                  }
-                  icon={<FaArrowRight />}
-                  className='btn-default-color min-w-fit p-2 border rounded-full text-sm ease-in-out duration-300 bg-white dark:bg-transparent'
-                />
+                </div>
               </div>
             </div>
           )}
