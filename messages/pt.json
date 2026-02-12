@@ -67,7 +67,8 @@
           "Phrase3": "Feedback não é critica — ele é combustível para crescimento.",
           "Phrase4": "Ensinar outras pessoas é a melhor forma de aprender a si mesmos.",
           "Phrase5": "Debaixo de cada linha de código, há uma pessoa aprendendo."
-        }
+        },
+        "SoftskillFetchError": "Um erro ocorreu enquando buscava os dados de soft skill. Por favor tente novamente mais tarde."
       },
       "Hardskill": {
         "SelectATechnology": "Selecione uma Tecnologia",

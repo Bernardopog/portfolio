@@ -67,7 +67,8 @@
           "Phrase3": "Feedback isn’t criticism — it’s fuel for growth.",
           "Phrase4": "Teaching others is the fastest way to learn yourself.",
           "Phrase5": "Behind every line of code, there’s a person learning."
-        }
+        },
+        "SoftskillFetchError": "An error occurred while fetching soft skill data. Please try again later."
       },
       "Hardskill": {
         "SelectATechnology": "Select a Technology",

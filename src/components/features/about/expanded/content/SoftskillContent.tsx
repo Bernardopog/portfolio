@@ -12,6 +12,7 @@ import { AnimatedCounter, Comment, SoftskillIntroPhrase } from './softskill';
 
 export default function SoftskillSubpage() {
   const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
+  const [hasFetchError, setHasFetchError] = useState(false);
   const [FEMStats, setFEMStats] = useState<Record<string, number> | null>(null);
   const t = useTranslations('AboutMe.Expanded.Softskill');
   const { blockNavbar, unblockNavbar } = useNavbarStore(
@@ -23,9 +24,13 @@ export default function SoftskillSubpage() {
 
   useEffect(() => {
     const getStatsData = async () => {
-      const res = await fetch('/api/stats');
-      const data: { stats: Record<string, number> } = await res.json();
-      setFEMStats(data.stats);
+      try {
+        const res = await fetch('/api/stats');
+        const data: { stats: Record<string, number> } = await res.json();
+        setFEMStats(data.stats);
+      } catch {
+        setHasFetchError(true);
+      }
     };
     getStatsData();
   }, []);
@@ -86,28 +91,35 @@ export default function SoftskillSubpage() {
             {t('SoftskillFrontendMentor')}
           </p>
           <section className='flex flex-col items-center'>
-            <ul className='grid grid-cols-1 w-full gap-2 mt-2 md:grid-cols-2 lg:grid-cols-3 '>
-              {FEMStatsArr.map((stat) => {
-                return (
-                  <li
-                    key={stat.name}
-                    className='flex flex-col items-center justify-center w-full p-2 border rounded-lg shadow-md backdrop-blur-xs border-black/15 dark:border-white/15 lg:first:col-span-3'
-                  >
-                    <p className='text-center uppercase font-bold text-sm sm:text-lg'>
-                      {t(stat.name)}
-                    </p>
-                    {stat.value ? (
-                      <AnimatedCounter target={stat.value} duration={5000} />
-                    ) : (
-                      <span className='text-xl sm:text-2xl lg:text-4xl font-black'>
-                        0
-                      </span>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-            <p className='opacity-50 italic text-xs text-shark-950 dark:text-shark-50'>
+            {hasFetchError ? (
+              <p className='text-lg font-medium text-shark-950 dark:text-shark-50'>
+                {t('SoftskillFetchError')} Error
+              </p>
+            ) : (
+              <ul className='grid grid-cols-1 w-full gap-2 mt-2 md:grid-cols-2 lg:grid-cols-3 '>
+                {FEMStatsArr.map((stat) => {
+                  return (
+                    <li
+                      key={stat.name}
+                      className='flex flex-col items-center justify-center w-full p-2 border rounded-lg shadow-md backdrop-blur-xs border-black/15 dark:border-white/15 lg:first:col-span-3'
+                    >
+                      <p className='text-center uppercase font-bold text-sm sm:text-lg'>
+                        {t(stat.name)}
+                      </p>
+                      {stat.value ? (
+                        <AnimatedCounter target={stat.value} duration={5000} />
+                      ) : (
+                        <span className='text-xl sm:text-2xl lg:text-4xl font-black'>
+                          0
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+
+            <p className='mt-4 opacity-50 italic text-xs text-shark-950 dark:text-shark-50'>
               {t('SoftskillCardNote')}
             </p>
 
