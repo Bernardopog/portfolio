@@ -1,5 +1,8 @@
 {
-  "cron": {
-    "jobs": [{ "path": "/api/update-stats", "schedule": "0 15 * * 6" }]
-  }
+  "crons": [
+    {
+      "path": "/api/update-stats",
+      "schedule": "0 15 * * 6"
+    }
+  ]
 }
