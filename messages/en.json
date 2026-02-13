@@ -61,6 +61,28 @@
         "OpenEvidence": "Open Evidence",
         "CloseEvidence": "Close Evidence",
         "EvidenceSectionTitle": "Soft skill Evidence",
+        "EvidenceComments": {
+          "Comment1": {
+            "Title": "CSS Architecture and BEM",
+            "Description": "Detailed feedback on CSS file organization, BEM methodology, and HTML semantics for a beginner developer."
+          },
+          "Comment2": {
+            "Title": "Accessibility and Semantics",
+            "Description": "Feedback with analysis on the impact of relative units and HTML hierarchy on UX."
+          },
+          "Comment3": {
+            "Title": "JS Architecture and UX Principles",
+            "Description": "Feedback on scalability and unnecessary complexity in JS. Focus on best practices for API consumption and UX."
+          },
+          "Comment4": {
+            "Title": "Stack and Frameworks Analysis",
+            "Description": "Feedback on componentization in React, conscious use of Next.js, and optimizations."
+          },
+          "Comment5": {
+            "Title": "Ongoing Mentorship and Social Proof",
+            "Description": "Feedback with recognition of the positive and didactic impact of mentorships, focusing on progressive developer growth."
+          }
+        },
         "Phrases": {
           "Phrase1": "Soft skills aren’t about me, they’re about how I help others grow.",
           "Phrase2": "Code builds projects, but empathy builds developers.",
@@ -257,6 +279,15 @@
     "Created": "Created",
     "Concluded": "Concluded",
     "Categories": "Categories",
-    "Category": "Category"
+    "Category": "Category",
+    "Empathy": "Empathy",
+    "Communication": "Communication",
+    "Didactics": "Didactics",
+    "Mentoring": "Mentoring",
+    "Accessbility": "Accessbility",
+    "CleanCode": "Clean Code",
+    "Diplomacy": "Diplomacy",
+    "CriticalThinking": "Critical Thinking",
+    "Performance": "Performance"
   }
 }

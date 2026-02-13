@@ -61,6 +61,28 @@
         "OpenEvidence": "Abrir Evidência",
         "CloseEvidence": "Fechar Evidência",
         "EvidenceSectionTitle": "Evidência de Soft skill",
+        "EvidenceComments": {
+          "Comment1": {
+            "Title": "Arquitetura CSS e BEM",
+            "Description": "Feedback detalhado sobre organização de arquivos CSS, metodologia BEM e semântica HTML para uma desenvolvedora iniciante."
+          },
+          "Comment2": {
+            "Title": "Acessibilidade e Semântica",
+            "Description": "Feedback com análise sobre o impacto de unidades relativas e hierarquia HTML na UX."
+          },
+          "Comment3": {
+            "Title": "Arquitetura JS e Princípios de UX",
+            "Description": "Feedback sobre escalabilidade e complexidade desnecessária em JS. Foco em boas práticas de consumo de APIs e UX."
+          },
+          "Comment4": {
+            "Title": "Análise de Stack e Frameworks",
+            "Description": "Feedback sobre componentização em React, uso consciente de Next.js e otimizações."
+          },
+          "Comment5": {
+            "Title": "Mentoria Continuada e Prova Social",
+            "Description": "Feedback com reconhecimento pelo impacto positivo e didático das mentorias, com foco em evolução progressiva de dev's."
+          }
+        },
         "Phrases": {
           "Phrase1": "Soft skills não são sobre mim, eles são sobre como eu ajudo outras pessoas a crescerem.",
           "Phrase2": "Código cria projetos, mas empatia cria desenvolvedores.",
@@ -257,6 +279,15 @@
     "Created": "Criado",
     "Concluded": "Concluido",
     "Categories": "Categorias",
-    "Category": "Categoria"
+    "Category": "Categoria",
+    "Empathy": "Empatia",
+    "Communication": "Comunicação",
+    "Didactics": "Didáticas",
+    "Mentoring": "Mentoria",
+    "Accessbility": "Acessibilidade",
+    "CleanCode": "Clean Code",
+    "Diplomacy": "Diplomacia",
+    "CriticalThinking": "Pensamento Crítico",
+    "Performance": "Performance"
   }
 }
