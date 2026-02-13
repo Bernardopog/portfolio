@@ -13,8 +13,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portfolio-bernardo-poggioni.vercel.app'),
   title: 'Portfólio | Bernardo',
-  description: 'Portfólio do Bernardo',
+  description:
+    'Desenvolvedor Fullstack focado em projetos modernos, reais e robustos.',
+  openGraph: {
+    title: 'Portfólio | Bernardo',
+    description:
+      'Confira meus projetos e experiências como desenvolvedor Fullstack.',
+    url: 'https://portfolio-bernardo-poggioni.vercel.app',
+    siteName: 'Portfólio Bernardo',
+    locale: 'pt_BR',
+    type: 'website',
+    images: {
+      url: '/og-image.webp',
+      width: 1200,
+      height: 630,
+      alt: 'Portfólio Bernardo',
+    },
+  },
 };
 
 export default async function RootLayout({
