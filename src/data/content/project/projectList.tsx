@@ -333,10 +333,15 @@ export const projectList: IProject[] = [
     point: 20,
     media: {
       thumb: img.restCountries,
+      images: {
+        '0': imgC.restCountries.restCountriesC1,
+        '1': imgC.restCountries.restCountriesC2,
+        '2': imgC.restCountries.restCountriesC3,
+      },
     },
     techs: ['typescript', 'next', 'tailwind'],
     source: 'frontendmentor',
-    backgroundColor: 'light',
+    backgroundColor: 'dark',
     links: {
       github: 'https://github.com/Bernardopog/rest-countries-api-next-ts',
       live: 'https://rest-countries-api-next-ts.vercel.app/',

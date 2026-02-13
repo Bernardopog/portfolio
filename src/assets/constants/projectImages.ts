@@ -10,12 +10,14 @@ import KronosAppC3 from '@/assets/webp/carousel/kronos-app-c3.webp';
 import KronosAppC4 from '@/assets/webp/carousel/kronos-app-c4.webp';
 import KronosAppC5 from '@/assets/webp/carousel/kronos-app-c5.webp';
 import KronosAppC6 from '@/assets/webp/carousel/kronos-app-c6.webp';
-//Carousel
 import PlutoAppC1 from '@/assets/webp/carousel/pluto-app-c1.webp';
 import PlutoAppC2 from '@/assets/webp/carousel/pluto-app-c2.webp';
 import PlutoAppC3 from '@/assets/webp/carousel/pluto-app-c3.webp';
 import PlutoAppC4 from '@/assets/webp/carousel/pluto-app-c4.webp';
 import PlutoAppC5 from '@/assets/webp/carousel/pluto-app-c5.webp';
+import RestCountriesC1 from '@/assets/webp/carousel/rest-countries-c1.webp';
+import RestCountriesC2 from '@/assets/webp/carousel/rest-countries-c2.webp';
+import RestCountriesC3 from '@/assets/webp/carousel/rest-countries-c3.webp';
 import ClipboardLandingPageImage from '@/assets/webp/clipboard-landing-page.webp';
 import ComingSoonPageImage from '@/assets/webp/coming-soon-page.webp';
 import ContactFormImage from '@/assets/webp/contact-form.webp';
@@ -121,5 +123,10 @@ export const projectImagesCarousel = {
     kronosAppC4: KronosAppC4,
     kronosAppC5: KronosAppC5,
     kronosAppC6: KronosAppC6,
+  },
+  restCountries: {
+    restCountriesC1: RestCountriesC1,
+    restCountriesC2: RestCountriesC2,
+    restCountriesC3: RestCountriesC3,
   },
 };
