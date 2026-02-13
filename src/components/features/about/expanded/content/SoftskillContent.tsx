@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
-import { MdCheck, MdClose } from 'react-icons/md';
+import { MdCheck, MdClose, MdComment, MdPerson } from 'react-icons/md';
 import { useShallow } from 'zustand/shallow';
 import { Inert } from '@/components/shared';
 import { Button } from '@/components/ui';
@@ -56,14 +56,34 @@ export default function SoftskillSubpage() {
       >
         {/** biome-ignore lint/a11y/noStaticElementInteractions: <Necessary to avoid event propagation> */}
         <div
-          className='p-4 bg-shark-100 dark:bg-shark-950 overflow-y-auto scrollbar-base cursor-auto'
+          className='w-80 p-4 bg-shark-100 dark:bg-shark-950 overflow-y-auto scrollbar-base cursor-auto xs:w-88'
           onClick={(ev) => ev.stopPropagation()}
           onKeyDown={(ev) => ev.stopPropagation()}
         >
           <h4 className='text-center text-lg font-medium text-shark-950 dark:text-shark-50'>
             {t('EvidenceSectionTitle')}
           </h4>
-          <ul className='flex flex-col mt-8 gap-2'>
+          <ul className='flex mt-1 gap-2 text-shark-950 dark:text-shark-50'>
+            <a
+              target='_blank'
+              className='flex-1 flex items-center p-1 gap-2 rounded-lg border shadow-lg border-shark-950/15 dark:border-shark-50/15'
+              href='https://www.frontendmentor.io/profile/Bernardopog'
+              rel='noopener'
+            >
+              <MdPerson className='border p-1 text-3xl rounded-lg border-shark-950/25 dark:border-shark-50/25' />
+              <span>Perfil</span>
+            </a>
+            <a
+              target='_blank'
+              className='flex-1 flex items-center p-1 gap-2 rounded-lg border shadow-lg border-shark-950/15 dark:border-shark-50/15'
+              href='https://www.frontendmentor.io/profile/Bernardopog/comments'
+              rel='noopener'
+            >
+              <MdComment className='border p-1 text-3xl rounded-lg border-shark-950/25 dark:border-shark-50/25' />
+              <span>Comentários</span>
+            </a>
+          </ul>
+          <ul className='flex flex-col mt-2 gap-2'>
             {softskillComments.map((comment) => (
               <Comment key={comment.title} {...comment} />
             ))}
