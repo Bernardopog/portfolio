@@ -5,6 +5,7 @@ import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import { useShallow } from 'zustand/shallow';
 import { Button } from '@/components/ui';
 import { projectList } from '@/data/content/project/projectList';
+import { useProjectExpandedSectionStore } from '@/store/ProjectExpandedSectionStore';
 import { useProjectSelectionStore } from '@/store/ProjectSelectionStore';
 
 export default function ControllerContent({
@@ -17,6 +18,10 @@ export default function ControllerContent({
       selectedProject: s.selectedProject,
       selectProject: s.selectProject,
     })),
+  );
+
+  const hasToResizeImage = useProjectExpandedSectionStore(
+    (s) => s.hasToResizeImage,
   );
 
   const t = useTranslations('Words');
@@ -44,7 +49,9 @@ export default function ControllerContent({
   };
 
   return (
-    <footer className='project-expanded-card flex justify-between items-center px-2 sm:col-span-2 md:col-span-1'>
+    <footer
+      className={`project-expanded-card flex justify-between items-center px-2 sm:col-span-2 md:col-span-1 ${hasToResizeImage && 'md:col-start-3 md:row-start-3 md:row-end-4'}`}
+    >
       <Button
         label={t('Previous')}
         icon={<IoArrowBack />}

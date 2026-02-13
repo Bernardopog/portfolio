@@ -237,7 +237,10 @@
       "PersonalProject": "Projeto pessoal",
       "ProjectStatus": "Status do Projeto",
       "UsedTechs": "Tecnologias utilizadas",
-      "InProgress": "Em andamento"
+      "InProgress": "Em andamento",
+      "ExpandImage": "Expandir imagem",
+      "RetractImage": "Recolher imagem",
+      "UnavailableDescription": "Descrição indisponível com imagem expandida"
     }
   },
   "Words": {
