@@ -8,12 +8,12 @@ import { Inert } from '@/components/shared';
 import { Button } from '@/components/ui';
 import { softskillComments } from '@/data/content/about/softskillComments';
 import { useNavbarStore } from '@/store/NavbarStore';
+import { useSoftskillStatsStore } from '@/store/SoftskillStatsStore';
 import { AnimatedCounter, Comment, SoftskillIntroPhrase } from './softskill';
 
 export default function SoftskillSubpage() {
   const [isEvidenceOpen, setIsEvidenceOpen] = useState(false);
   const [hasFetchError, setHasFetchError] = useState(false);
-  const [FEMStats, setFEMStats] = useState<Record<string, number> | null>(null);
   const t = useTranslations('AboutMe.Expanded.Softskill');
   const { blockNavbar, unblockNavbar } = useNavbarStore(
     useShallow((s) => ({
@@ -22,24 +22,41 @@ export default function SoftskillSubpage() {
     })),
   );
 
+  const { softskillStats, getStats } = useSoftskillStatsStore(
+    useShallow((s) => ({
+      softskillStats: s.softskillStats,
+      getStats: s.getStats,
+    })),
+  );
+
   useEffect(() => {
     const getStatsData = async () => {
       try {
-        const res = await fetch('/api/stats');
-        const data: { stats: Record<string, number> } = await res.json();
-        setFEMStats(data.stats);
+        const result = await getStats('frontendMentor');
+        if (!result) setHasFetchError(true);
+        else setHasFetchError(false);
       } catch {
         setHasFetchError(true);
       }
     };
     getStatsData();
-  }, []);
+  }, [getStats]);
 
   const order = ['wallOfFame', 'mentorScore', 'helpfulComments', 'comments'];
 
-  const FEMStatsArr: { name: string; value: number }[] = FEMStats
-    ? order.map((key) => ({ name: key, value: FEMStats[key] }))
-    : [];
+  type FEMStatsKeys =
+    | 'wallOfFame'
+    | 'mentorScore'
+    | 'helpfulComments'
+    | 'comments';
+
+  const FEMStatsArr: { name: string; value: number }[] =
+    (softskillStats.frontendMentor as Record<FEMStatsKeys, number>)
+      ? order.map((key) => ({
+          name: key,
+          value: softskillStats.frontendMentor[key],
+        }))
+      : [];
 
   const handleEvidenceBarClose = () => {
     setIsEvidenceOpen(false);
@@ -113,7 +130,7 @@ export default function SoftskillSubpage() {
           <section className='flex flex-col items-center'>
             {hasFetchError ? (
               <p className='text-lg font-medium text-shark-950 dark:text-shark-50'>
-                {t('SoftskillFetchError')} Error
+                {t('SoftskillFetchError')}
               </p>
             ) : (
               <ul className='grid grid-cols-1 w-full gap-2 mt-2 md:grid-cols-2 lg:grid-cols-3 '>
