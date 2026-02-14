@@ -1,80 +1,83 @@
 import { kv } from '@vercel/kv';
 import { NextResponse } from 'next/server';
-import { chromium } from 'playwright';
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
-    const browser = await chromium.launch({
-      headless: true,
-      args: ['--no-sandbox'],
-    });
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.get('authorization');
 
-    const storageState = JSON.parse(process.env.AUTH_JSON || '{}');
+      if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+        const phrases = [
+          'Someone is trying to exploit the Matrix. 😨',
+          "Don't need to try bro, go chill 😎",
+          'Thank you good sir, for trying to update my stats, but this is not necessary, bye. 😊',
+          "Sorry, but you can't update it, LOL 🤣",
+          'Oh... Hi 😀🖐',
+        ];
 
-    const context = await browser.newContext({ storageState });
-    const page = await context.newPage();
+        const phrase = phrases[Math.floor(Math.random() * phrases.length)];
 
-    await page.goto('https://www.frontendmentor.io/home', {
-      waitUntil: 'load',
-      timeout: 20000,
-    });
-
-    //? Verify if it's logged or not
-    const loggedOutText = page.locator('h1');
-
-    if ((await loggedOutText.innerText()) === 'Oops! You’re not logged in') {
-      return NextResponse.json({ ok: false, message: 'Not logged in' });
-    }
-
-    const liMentorScore = page.locator('li:has-text("Mentor Score")');
-    const liComments = page.locator('li:has-text("Comments")');
-
-    const mentorScore = await liMentorScore.locator('span').nth(1).innerText();
-    const comments = await liComments.locator('span').nth(1).innerText();
-
-    const liHelpfulComments = page.locator('li:has-text("Helpful comments")');
-    const helpfulComments = await liHelpfulComments
-      .locator('span')
-      .nth(1)
-      .innerText();
-
-    await page.goto('https://www.frontendmentor.io/wall-of-fame?tab=all');
-    await page.waitForSelector('text=Bernardopog');
-
-    const rankList = await page
-      .locator('main > div:nth-of-type(2) div ul li')
-      .all();
-
-    let position = -1;
-    for (let i = 0; i < rankList.length; i++) {
-      const text = await rankList[i].innerText();
-      if (
-        text.toLowerCase().includes('bernardopog') ||
-        text.toLowerCase().includes('bernardo poggioni')
-      ) {
-        position = i + 1;
-        break;
+        return new Response(phrase, {
+          status: 401,
+        });
       }
     }
 
-    const convertedValues = (value: string) => parseInt(value, 10);
+    const headers = new Headers();
+    if (process.env.SESSION_TOKEN) {
+      headers.set('Cookie', process.env.SESSION_TOKEN);
+    }
+
+    const [resHome, resWallOfFame] = await Promise.all([
+      fetch('https://www.frontendmentor.io/api/v3/learner/profile', {
+        headers,
+        cache: 'no-store',
+      }),
+      fetch('https://www.frontendmentor.io/api/v3/wall-of-fame/total', {
+        headers,
+        cache: 'no-store',
+      }),
+    ]);
+
+    if (!resHome.ok || !resWallOfFame.ok)
+      throw new Error('Error getting data from FEM.');
+
+    const homeFull: {
+      data: {
+        commentCount: number;
+        helpfulCount: number;
+        mentorScore: { total: number };
+      };
+    } = await resHome.json();
+    const { commentCount, helpfulCount, mentorScore } = homeFull.data;
+
+    const wallOfFameFull: { data: { displayName: string }[] } =
+      await resWallOfFame.json();
+
+    const position = wallOfFameFull.data.findIndex(
+      (item) => item.displayName === 'Bernardo Poggioni',
+    );
 
     await kv.set('frontendmentor', {
-      mentorScore: convertedValues(
-        mentorScore.replaceAll(',', '').replaceAll('.', ''),
-      ),
-      comments: convertedValues(comments),
-      helpfulComments: convertedValues(helpfulComments),
-      wallOfFame: position,
+      mentorScore: mentorScore.total,
+      comments: commentCount,
+      helpfulComments: helpfulCount,
+      wallOfFame: position + 1,
     });
 
-    await browser.close();
+    return NextResponse.json(
+      {
+        ok: true,
+        message: 'Data updated successfully',
+      },
+      { status: 200 },
+    );
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
 
-    return NextResponse.json({
-      ok: true,
-      message: 'Data updated successfully',
-    });
-  } catch {
-    return NextResponse.json({ ok: false, message: 'Unexpected error' });
+    return NextResponse.json(
+      { ok: false, message: errorMessage },
+      { status: 500 },
+    );
   }
 }
